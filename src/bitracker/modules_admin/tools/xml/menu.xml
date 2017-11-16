@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Tools</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Maintenance</subitemtitle>
+					<subitemlang>bit_maintenance</subitemlang>
+					<subsection>maintenance</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Bulk Import from Directory</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Bulk Import from Directory</subitemtitle>
+					<subitemlang>bit_bulkdir</subitemlang>
+					<subsection>bulkimport</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Bulk Import from Zip File</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Bulk Import from Zip File</subitemtitle>
+					<subitemlang>bit_bulkzip</subitemlang>
+					<subsection>bulkimport</subsection>
+					<subitemurl>do=bulkZip</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

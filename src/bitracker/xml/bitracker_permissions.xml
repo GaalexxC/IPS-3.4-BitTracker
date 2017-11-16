@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+      <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_perm</conf_title_keyword>
+      <conf_title_title>devCU biTracker Permissions 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker Permissions</conf_title_desc>
+      <conf_title_tab>devCU</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>devCU biTracker online</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_online</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Tracker Access Permissions</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_perm</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Offline message</conf_title>
+      <conf_description><![CDATA[Enter the offline message you wish to display to users when CU Bittorrent Tracker is offline.<br /><span style='color:gray;'>HTML enabled</span>]]></conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bit_offline_msg</conf_key>
+      <conf_default>Hello and thank you for visiting our Tracker.  Unfortunately it is temporarily offline for maintenance.  Please check back soon!</conf_default>
+      <conf_extra/>
+      <conf_evalphp>if( $show == 1 )&#13;
+{&#13;
+ $value = htmlspecialchars($value);&#13;
+}</conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_perm</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Offline access</conf_title>
+      <conf_description>Please select the groups who can access devCU biTracker when it is offline.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>bit_offline_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['bit_offline_groups']) )
+	{
+		$_POST['bit_offline_groups'] = implode(",",$_POST['bit_offline_groups']);
+	}
+	else
+	{
+		$_POST['bit_offline_groups'] = "";
+	}
+	
+	$key = 'bit_offline_groups';
+}
+if ( $show == 1 )
+{
+    $key='bit_offline_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_perm</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

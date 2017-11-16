@@ -1,0 +1,2822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="bitracker" templategroups="a:1:{s:14:&quot;skin_bitracker&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_bitracker">
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[{parse js_module="bitportal"}
+<ul class='topic_buttons'>
+	<if test="indexcanadd:|:$canadd">
+		<li><a href='{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;c={$this->request['catid']}" base="public"}' title='{$this->lang->words['upload_file_alt']}' accesskey='s'>{$this->lang->words['upload_file_alt']}</a></li>
+	<else />
+		<li class='disabled'><span>{$this->lang->words['noupload_perm_alt']}</span></li>
+	</if>
+</ul>
+<h1 class='ipsType_pagetitle'>{IPSLib::getAppTitle('bitracker')}</h1>
+<br />
+<div id='main-layout' class='ipsLayout ipsLayout_withleft ipsLayout_withright ipsLayout_largeleft ipsLayout_largeright'>
+	
+	<div class='ipsLayout_left'>
+		<div class='general_box'>
+			<h3><a href='{parse url="app=bitracker&amp;showall=1" base="public"}' class='right desc'>{$this->lang->words['view_all']}</a>{$this->lang->words['category_main_header']}</h3>
+			<ul id='bit_categories'>
+				<foreach loop="category_loop:$category_rows as $data">
+					<li class='<if test="indexsubcategories:|:is_array($data['subcategories']) AND count($data['subcategories'])">with_sub closed</if>'>
+						<span class='file_count right'>
+							{parse format_number="$data['cfileinfo']['total_files']"}
+						</span>
+						<a href="{parse url="app=bitracker&amp;showcat={$data['cid']}" base="public" template="bitshowcat" seotitle="{$data['cname_furl']}"}" title='{$this->lang->words['view_category']}'>{$data['cname']}</a>
+						<if test="indexsubcategories:|:is_array($data['subcategories']) AND count($data['subcategories'])">
+							<ul class='subforums' style='display: none'>
+								<foreach loop="subcats:$data['subcategories'] as $link">
+									<if test="showSubCatsLit:|:$link['new']"><li class='newposts'><else /><li></if><a href="{parse url="app=bitracker&amp;showcat={$link['cid']}" base="public" template="bitshowcat" seotitle="{$link['cname_furl']}"}" title='{$this->lang->words['gotosubcat']}'>{$link['cname']}</a></li>
+								</foreach>
+							</ul>
+						</if>
+						<if test="indexsubcategories:|:is_array($data['subcategories']) AND count($data['subcategories'])">
+							<a href='#' class='cat_toggle'>{$this->lang->words['toggle']}</a>
+						</if>
+					</li>
+				</foreach>
+			</ul>
+		</div>
+	</div>
+	
+	<div class='ipsLayout_right'>
+		<if test="hasNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && count( $feeds['toppaid'] )">
+			{parse template="portalSidebarBlock" group="bitracker" params="$this->lang->words['top_free'], $this->lang->words['portal_no_bitracker'], $feeds['topfree'], 'file', $recordIds, 'free'"}
+			<br />
+			{parse template="portalSidebarBlock" group="bitracker" params="$this->lang->words['top_paid'], $this->lang->words['portal_no_bitracker'], $feeds['toppaid'], 'file', $recordIds, 'paid'"}
+			<br />
+		<else />
+			{parse template="portalSidebarBlock" group="bitracker" params="$this->lang->words['top_dl'], $this->lang->words['portal_no_bitracker'], $feeds['topfiles'], 'file', $recordIds, 'all'"}
+			<br />
+		</if>
+		{parse template="portalSidebarBlock" group="bitracker" params="$this->lang->words['top_authors'], $this->lang->words['portal_no_users'], $feeds['topusers'], 'author', '', 'author'"}
+	</div>	
+	
+	<div id='main-content' class='ipsLayout_content'>
+		<div class='ipsBox'>
+			<div class='ipsBox_container ipsPad'>
+				<if test="featured:|:is_array($feeds['featured']) && count($feeds['featured'])">
+					<div id='featured_pane' class='ipsBox ipsPad_double rounded clearfix'>
+					
+						<a href='{parse url="app=bitracker&amp;showfile={$feeds['featured']['file_id']}" base="public" template="bitshowfile" seotitle="{$feeds['featured']['file_name_furl']}"}' class='left screenshot'>
+							<if test="checkForNexusFeatured:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && !$feeds['featured']['file_nexus']">
+								<span class='ipsBadge ipsBadge_green'>
+									<if test="featuredFree:|:$feeds['featured']['file_cost'] == 0">
+										{$this->lang->words['free']}
+									<else />
+										{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $feeds['featured']['file_cost'], false )"}
+									</if>
+								</span>
+							</if>
+							<img src='{$this->registry->bitFunctions->returnScreenshotUrl( $recordIds[ $feeds['featured']['file_id'] ], true, true )}' />
+						</a>
+						
+						<div class='file_info'>
+							<if test="featuredPaid:|:($feeds['featured']['file_cost'] or $feeds['featured']['file_nexus']) AND IPSLib::appIsInstalled('nexus') AND $this->settings['bit_nexus_on'] AND !$this->memberData['bit_bypass_paid'] AND $feeds['featured']['_purchased'] != 'ACTIVE'">
+								<if test="featuredExpired:|:$feeds['featured']['_purchased'] == 'EXPIRED'">
+									<a href='{parse url="app=nexus&amp;module=clients&amp;section=purchases&amp;do=renew&amp;secure_key={$this->member->form_hash}&amp;itemApp=bitracker&amp;itemType=file&amp;itemId={$feeds['featured']['file_id']}" base="public""}' class='track_button rounded right'>{$this->lang->words['file_renew']}</a>
+								<else />
+									<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=buy&amp;id={$feeds['featured']['file_id']}" base="public" template="bitbuy" seotitle="{$feeds['featured']['file_name_furl']}"}' class='track_button rounded right'>
+										{$this->lang->words['dpage_buy']}
+									</a>
+								</if>
+							<else />
+								<if test="dynUrls:|:$this->settings['bit_dynamic_urls']">
+									<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=confirm_track&amp;hash={$feeds['featured']['_hash']}" base="public" template="bitdd" seotitle="{$feeds['featured']['file_name_furl']}"}' class='track_button rounded right'>
+								<else />
+									<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=confirm_track&amp;id={$feeds['featured']['file_id']}" base="public" template="bittrack" seotitle="{$feeds['featured']['file_name_furl']}"}' class='track_button rounded right'>
+								</if>
+									{$this->lang->words['dpage_button_short']}
+								</a>
+							</if>
+							<h2 class='ipsType_subtitle'>{$this->lang->words['featured_file_head']}</h2>
+							<h3>
+								<a href='{parse url="app=bitracker&amp;showfile={$feeds['featured']['file_id']}" base="public" template="bitshowfile" seotitle="{$feeds['featured']['file_name_furl']}"}'>{$feeds['featured']['file_name']} <if test="hasversionfeat:|:$feeds['featured']['file_version']"><span class='ipsType_small'>{$feeds['featured']['file_version']}</span></if></a>
+							</h3>
+							<span class='mini_rate'>
+								<foreach loop="featuredRatingLoop:array(1,2,3,4,5) as $_rating">
+									<if test="filerate:|:$feeds['featured']['file_rating'] >= $_rating">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+								</foreach>
+							</span>
+							<if test="featuredCatReviews:|:$this->registry->categories->cat_lookup[ $feeds['featured']['file_cat'] ]['coptions']['opt_comments']">
+								<strong>
+									<a href='{parse url="app=bitracker&amp;showfile={$feeds['featured']['file_id']}" base="public" template="bitshowfile" seotitle="{$feeds['featured']['file_name_furl']}"}#commentsStart'>{$feeds['featured']['file_comments']} {$this->lang->words['reviews']}</a>
+								</strong>
+							</if>
+						
+							<br /><br /><span class='desc'>{IPSText::truncate( strip_tags( IPSText::getTextClass('bbcode')->stripAllTags( $feeds['featured']['file_desc'] ), '<br>' ), 120 )}</span>
+						</div>
+					</div>
+					<br />
+				</if>
+				
+				<div class='ipsPad clearfix track_pane with_scroll'>
+					<h2 class='ipsType_subtitle'>{$this->lang->words['whats_new']}</h2>
+					<br />
+					<a href='#' class='scroll_left left disabled' id='new_pane_l'>{$this->lang->words['_larr']}</a>
+					<a href='#' class='scroll_right right disabled' id='new_pane_r'>{$this->lang->words['_rarr']}</a>
+					<div class='pane_wrap three_column' id='new_pane_wrap'>
+					<php>
+						$this->whatsnew	= array(
+											1	=> array_slice( $feeds['whatsnew'], 0, 6 ),
+											2	=> array_slice( $feeds['whatsnew'], 6, 6 ),
+											3	=> array_slice( $feeds['whatsnew'], 12, 6 ),
+											);
+					</php>
+						<ul id='new_pane_1'>
+							<if test="haswhatsnewpane1:|:count($this->whatsnew[1])">
+								<foreach loop="whatsnew1:$this->whatsnew[1] as $_feed">
+									{parse template="portalPaneItem" group="bitracker" params="$_feed, 'new', $recordIds"}
+								</foreach>
+							</if>
+						</ul>
+						<if test="haswhatsnewpane2:|:count($this->whatsnew[2])">
+							<ul id='new_pane_2' style='display: none'>
+									<foreach loop="whatsnew2:$this->whatsnew[2] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'new', $recordIds"}
+									</foreach>
+							</ul>
+						</if>
+						<if test="haswhatsnewpane3:|:count($this->whatsnew[3])">
+							<ul id='new_pane_3' style='display: none'>
+								<foreach loop="whatsnew3:$this->whatsnew[3] as $_feed">
+									{parse template="portalPaneItem" group="bitracker" params="$_feed, 'new', $recordIds"}
+								</foreach>
+							</ul>
+						</if>
+					</div>
+				</div>
+				<script type='text/javascript'>
+					document.observe("dom:loaded", function(){
+						var scrollerNew = new ipb.bitportal.scroller('new_pane', <if test="whatsnewcount3:|:count($this->whatsnew[3])">3<else /><if test="whatsnewcount2:|:count($this->whatsnew[2])">2<else />1</if></if>);
+					});
+				</script>
+				<br />
+				
+				<if test="hasRatedFiles:|:is_array($feeds['highrated']) && count($feeds['highrated'])">
+					<div class='ipsPad clearfix track_pane with_scroll'>
+						<h2 class='ipsType_subtitle'>{$this->lang->words['highest_rated']}</h2>
+						<br />
+						<a href='#' class='scroll_left left disabled' id='rated_pane_l'>{$this->lang->words['_larr']}</a>
+						<a href='#' class='scroll_right right disabled' id='rated_pane_r'>{$this->lang->words['_rarr']}</a>
+						<div class='pane_wrap three_column' id='rated_pane_wrap'>
+						<php>
+							$this->toprated	= array(
+												1	=> array_slice( $feeds['highrated'], 0, 6 ),
+												2	=> array_slice( $feeds['highrated'], 6, 6 ),
+												3	=> array_slice( $feeds['highrated'], 12, 6 ),
+												);
+						</php>
+							<ul id='rated_pane_1'>
+								<if test="hastopratedpane1:|:count($this->toprated[1])">
+									<foreach loop="toprated1:$this->toprated[1] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'rated', $recordIds"}
+									</foreach>
+								</if>
+							</ul>
+							<if test="hastopratedpane2:|:count($this->toprated[2])">
+								<ul id='rated_pane_2' style='display: none'>
+									<foreach loop="toprated2:$this->toprated[2] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'rated', $recordIds"}
+									</foreach>								
+								</ul>
+							</if>
+							<if test="hastopratedpane3:|:count($this->toprated[3])">
+								<ul id='rated_pane_3' style='display: none'>
+									<foreach loop="toprated3:$this->toprated[3] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'rated', $recordIds"}
+									</foreach>								
+								</ul>
+							</if>
+						</div>
+					</div>
+					<script type='text/javascript'>
+						document.observe("dom:loaded", function(){
+							var scrollerRate = new ipb.bitportal.scroller('rated_pane', <if test="topratedcount3:|:count($this->toprated[3])">3<else /><if test="topratedcount2:|:count($this->toprated[2])">2<else />1</if></if>);
+						});
+					</script>
+					<br />
+				</if>
+				
+				<if test="hasWatchedFiles:|:is_array($feeds['watched']) && count($feeds['watched'])">
+					<div class='ipsPad clearfix track_pane with_scroll'>
+						<h2 class='ipsType_subtitle'>{$this->lang->words['most_watched']}</h2>
+						<br />
+						<a href='#' class='scroll_left left disabled' id='watched_pane_l'>{$this->lang->words['_larr']}</a>
+						<a href='#' class='scroll_right right disabled' id='watched_pane_r'>{$this->lang->words['_rarr']}</a>
+						<div class='pane_wrap three_column' id='watched_pane_wrap'>
+						<php>
+							$this->topwatched	= array(
+												1	=> array_slice( $feeds['watched'], 0, 6 ),
+												2	=> array_slice( $feeds['watched'], 6, 6 ),
+												3	=> array_slice( $feeds['watched'], 12, 6 ),
+												);
+						</php>
+							<ul id='watched_pane_1'>
+								<if test="hastopwatchpane1:|:count($this->topwatched[1])">
+									<foreach loop="topwatch1:$this->topwatched[1] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'watched', $recordIds"}
+									</foreach>
+								</if>
+							</ul>
+							<if test="hastopwatchpane2:|:count($this->topwatched[2])">
+								<ul id='watched_pane_2' style='display: none'>
+									<foreach loop="topwatch2:$this->topwatched[2] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'watched', $recordIds"}
+									</foreach>								
+								</ul>
+							</if>
+							<if test="hastopwatchpane3:|:count($this->topwatched[3])">
+								<ul id='watched_pane_3' style='display: none'>								
+									<foreach loop="topwatch3:$this->topwatched[3] as $_feed">
+										{parse template="portalPaneItem" group="bitracker" params="$_feed, 'watched', $recordIds"}
+									</foreach>
+								</ul>
+							</if>
+						</div>
+						<script type='text/javascript'>
+							document.observe("dom:loaded", function(){
+								var scrollerWatch = new ipb.bitportal.scroller('watched_pane', <if test="topwatchedcount3:|:count($this->topwatched[3])">3<else /><if test="topwatchedcount2:|:count($this->topwatched[2])">2<else />1</if></if>);
+							});
+						</script>
+					</div>
+				</if>
+			</div>
+		</div>
+	</div>
+</div>
+<br class='clear' />
+<script type='text/javascript'>
+	// Adaptive layout
+	var screenWidth = document.viewport.getWidth();
+	
+	if ( screenWidth < 1329 ){	
+		try {
+			// Adaptive layout
+			// Removes the right sidebar and puts contents on the left, if on a small res screen
+			$('main-layout').removeClassName('ipsLayout_withright').removeClassName('ipsLayout_largeright').select(".ipsLayout_left")[0].insert( 
+				$('main-layout').select(".ipsLayout_right")[0].innerHTML
+			);
+			
+			$('main-layout').select(".ipsLayout_right")[0].hide();
+		} catch(err){}
+	}
+</script>]]></template_content>
+      <template_name>bitrackerPortal</template_name>
+      <template_data>$canadd=false, $canmod=false, $category_rows=array(), $feeds=array(), $recordIds=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[{parse js_module="bitportal"}
+{$like}
+<h1 class='ipsType_pagetitle'>{$category['cname']}</h1>
+<br />
+<ul class='topic_buttons'>
+	<if test="subcatadd:|:$permissions['canadd']">
+		<li><a href='{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;do=add_cont&amp;file_cat={$this->request['catid']}" base="public"}' title='{$this->lang->words['upload_file_alt']}' accesskey='s'>{$this->lang->words['upload_file_alt']}</a></li>
+	<else />
+		<li class='disabled'><span>{$this->lang->words['noupload_perm_alt']}</span></li>
+	</if>
+</ul>
+<br class='clear' />
+<div class='ipsLayout ipsLayout_withleft'>
+	<div class='ipsLayout_left'>
+		<div class='general_box'>
+			<php>$this->_catList = $this->registry->getClass('categories')->cat_cache[ intval($category['cid']) ];</php>
+			<if test="catList:|:count( $this->_catList )">
+				<!-- If this category has subcategories -->
+				<h3 class='bar'>{$category['cname']}</h3>
+				<ul id='bit_categories'>
+					<foreach loop="catListLoop:$this->_catList as $_cid => $_cat">
+						<if test="copen:|:$_cat['copen']"> 
+							<if test="hasShow:|:in_array( $_cid, $this->registry->getClass('categories')->member_access['view']) AND in_array( $_cid, $this->registry->getClass('categories')->member_access['show'])"> 
+								<li>
+									<span class='file_count right'>{parse format_number="$_cat['cfileinfo']['total_files']"}</span>
+									<a href='{parse url="app=bitracker&amp;showcat={$_cat['cid']}" base="public" seotitle="{$_cat['cname_furl']}" template="bitshowcat"}'>{$_cat['cname']}</a>
+								</li>
+					          </if> 
+					     </if> 
+					</foreach>
+				</ul>
+			<else />
+				<!-- If this category doesn't have subcats, show the parent cat -->
+				<php>$this->_catList2 = $this->registry->getClass('categories')->cat_cache[ $category['cparent'] ];</php>
+				<if test="catList2:|:count( $this->_catList2 )">
+					<if test="catParent:|:$category['cparent']">
+						<h3 class='bar'><a href='{parse url="app=bitracker&amp;showcat={$category['cparent']}" base="public" seotitle="{$this->registry->getClass('categories')->cat_lookup[ $category['cparent'] ]['cname_furl']}" template="bitshowcat"}'>
+								{$this->registry->getClass('categories')->cat_lookup[ $category['cparent'] ]['cname']}</a></h3>
+					</if>
+					<ul id='bit_categories'>
+						<foreach loop="catListLoop2:$this->_catList2 as $_cid => $_cat">
+							<if test="parentcopen:|:$_cat['copen']"> 
+								<if test="parentHasShow:|:in_array( $_cid, $this->registry->getClass('categories')->member_access['view']) AND in_array( $_cid, $this->registry->getClass('categories')->member_access['show'])"> 
+									<li <if test="catSelected:|:$_cid == $category['cid']">class='selected row1'</if>>
+										<span class='file_count right'>{parse format_number="$_cat['cfileinfo']['total_files']"}</span>
+										<a href='{parse url="app=bitracker&amp;showcat={$_cat['cid']}" base="public" seotitle="{$_cat['cname_furl']}" template="bitshowcat"}'>{$_cat['cname']}</a>
+									</li>
+						          </if> 
+						     </if>
+						</foreach>
+					</ul>
+				</if>
+			</if>
+		</div>
+		<br />
+		
+		<div class='general_box'>
+			<h3>{$this->lang->words['statistics']}</h3>
+			<ul class='ipsPad'>
+				<li><strong>{parse format_number="$category['cfileinfo']['total_files']"}</strong> {$this->lang->words['sidebar_files']}</li>
+				<li><strong>{parse format_number="$category['cfileinfo']['total_bitracker']"}</strong> {$this->lang->words['sidebar_bitracker']}</li>
+				<if test="subcatmod:|:$permissions['canmod']">
+					<li><strong>{parse format_number="$category['cfileinfo']['broken_files']"}</strong> {$this->lang->words['sidebar_broken']}</li>
+					<li><strong>{parse format_number="$category['cfileinfo']['pending_files']"}</strong> {$this->lang->words['sidebar_pending']}</li>
+				</if>
+			</ul>
+		</div>
+		
+	</div>
+	
+	{parse striping="blocks" classes="row1,row2"}
+	<div class='ipsLayout_content'>		
+		<div class='maintitle ipsFilterbar'>
+			<if test="filterPaidFree:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on']">
+				<a href='#filter_paid_menucontent' id='filter_paid' class='right ipsType_smaller'>
+					<if test="filterKeyAll:|:$this->request['filter_key'] == 'all' || !$this->request['filter_key']">{$this->lang->words['free_and_paid']}</if>
+					<if test="filterKeyFree:|:$this->request['filter_key'] == 'free'">{$this->lang->words['free_only']}</if>
+					<if test="filterKeyPaid:|:$this->request['filter_key'] == 'paid'">{$this->lang->words['paid_only']}</if>
+					<img src='{$this->settings['img_url']}/useropts_arrow.png' />
+				</a>
+			</if>
+			<ul class='ipsList_inline'>
+				<li <if test="sortUpdated:|:( $sort['current_key'] == 'file_updated' ) && ( strtolower( $sort['current_by'] ) == 'desc' || !$sort['current_by'] )">class='active'</if>>
+					<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key=file_updated&amp;sort_order=desc&amp;num={$this->request['num']}&amp;filter_key={$this->request['filter_key']}" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['filter_most_recent']}</a>
+				</li>
+				<li <if test="sortbitracker:|:$sort['current_key'] == 'file_bitracker' && strtolower( $sort['current_by'] ) == 'desc'">class='active'</if>>
+					<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key=file_bitracker&amp;sort_order=desc&amp;num={$this->request['num']}&amp;filter_key={$this->request['filter_key']}" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['filter_most_popular']}</a>
+				</li>
+				<li <if test="sortRating:|:$sort['current_key'] == 'file_rating' && strtolower( $sort['current_by'] ) == 'desc'">class='active'</if>>
+					<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key=file_rating&amp;sort_order=desc&amp;num={$this->request['num']}&amp;filter_key={$this->request['filter_key']}" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['filter_highest_rated']}</a>
+				</li>
+				<if test="catComEnabled:|:$category['coptions']['opt_comments']">
+					<li <if test="sortComments:|:$sort['current_key'] == 'file_comments' && strtolower( $sort['current_by'] ) == 'desc'">class='active'</if>>
+						<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key=file_comments&amp;sort_order=desc&amp;num={$this->request['num']}&amp;filter_key={$this->request['filter_key']}" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['filter_most_comments']}</a>
+					</li>
+				</if>
+				<if test="catsortBar:|:count($sort)">
+					<li <if test="catsortBarActive:|:strtolower( $sort['current_by'] ) != 'desc' or !in_array( strtolower( $sort['current_key'] ), array( 'file_updated', 'file_bitracker', 'file_rating', 'file_comments' ) )">class='active'</if>>
+						<a href='#category_filter_menucontent' id='category_filter'>{$this->lang->words['cat_sort_custom']}</a>
+					</li>
+				</if>
+			</ul>
+		</div>
+		
+		<if test="catsort:|:count($sort)">
+			<div id='category_filter_menucontent' class='ipbmenu_content ipsPad' style='display: none'>
+				<form id='filter_form' action="{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1" base="public" seotitle="{$forum_data['name_seo']}" template="showforum"}" method="post">
+					<if test="filterPaidFree:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on']">
+						<strong>{$this->lang->words['search_filterby']}</strong><br />
+						<select name='filter_key' id='filter_key' class='input_select'>
+							<option value='all'<if test="catkeyall:|:$sort['filter_key'] == 'all'"> selected='selected'</if>>{$this->lang->words['free_and_paid']}</option>
+							<option value='free'<if test="catkeyfree:|:$sort['filter_key'] == 'free'"> selected='selected'</if>>{$this->lang->words['free_only']}</option>
+							<option value='paid'<if test="catkeypaid:|:$sort['filter_key'] == 'paid'"> selected='selected'</if>>{$this->lang->words['paid_only']}</option>
+						</select>
+						<br /><br />
+					</if>
+					
+					<strong>{$this->lang->words['search_sortby2']}</strong><br />
+					<select name='sort_key' id='sort_key' class='input_select'>
+						<foreach loop="sortkey:$sort['options_key'] as $k => $v">
+							<option value='{$k}'<if test="catkey:|:$sort['current_key'] == $k"> selected='selected'</if>>{$this->lang->words['sortby_' . $v ]}</option>
+						</foreach>
+					</select>
+					<br /><br />
+					
+					<strong>{$this->lang->words['search_sortorder']}</strong><br />
+					<select name='sort_order' id='sort_order' class='input_select'>
+						<foreach loop="sortby:$sort['options_by'] as $k => $v">
+							<option value='{$v}'<if test="catby:|:$sort['current_by'] == $v"> selected='selected'</if>>{$k}</option>
+						</foreach>
+					</select>
+					<br /><br />
+					
+					<strong>{$this->lang->words['search_limitresults']}</strong><br />
+					<select name='num' id='limit' class='input_select'>
+						<foreach loop="sortnum:$sort['options_num'] as $k => $v">
+							<option value='{$v}'<if test="catnum:|:$sort['current_num'] == $v"> selected='selected'</if>><if test="cathasnum:|:$v > 0">{$v}<else />{$this->lang->words['search_nolimit']}</if></option>
+						</foreach>
+					</select>
+					<br /><br />
+					
+					<input type='submit' value="{$this->lang->words['resort_button']}" class='input_submit' />
+				</form>
+			</div>
+			<script type='text/javascript'>
+				new ipb.Menu( $('category_filter'), $('category_filter_menucontent'), { stopClose: true } );
+			</script>
+		</if>
+		
+		<if test="filterPaidFree:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on']">
+			<ul id='filter_paid_menucontent' class='ipbmenu_content with_checks' style='display: none'>
+				<li <if test="filterPaidAll:|:$this->request['filter_key'] == 'all' || !$this->request['filter_key']">class='selected'</if>>
+					<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key={$this->request['sort_key']}&amp;sort_order=desc&amp;num=20&amp;filter_key=all" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['free_and_paid']}</a>
+				</li>
+				<li <if test="filterPaidFree:|:$this->request['filter_key'] == 'free'">class='selected'</if>>
+					<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key={$this->request['sort_key']}&amp;sort_order=desc&amp;num=20&amp;filter_key=free" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['free_only']}</a>
+				</li>
+				<li <if test="filterPaidPaid:|:$this->request['filter_key'] == 'paid'">class='selected'</if>>
+					<a href='{parse url="app=bitracker&amp;showcat={$category['cid']}&amp;dosort=1&amp;sort_key={$this->request['sort_key']}&amp;sort_order=desc&amp;num=20&amp;filter_key=paid" base="public" seotitle="{$category['cname_furl']}" template="bitshowcat"}'>{$this->lang->words['paid_only']}</a>
+				</li>
+			</ul>
+			<script type='text/javascript'>
+				new ipb.Menu( $('filter_paid'), $('filter_paid_menucontent') );
+			</script>
+		</if>
+		
+		<if test="catnorows:|:!count($file_rows) OR !$category['coptions']['opt_disfiles']">
+			<div class='no_messages<if test="classDirectFiles:|:!$category['coptions']['opt_disfiles']"> ipsType_sectiontitle with_files</if>'>
+				<if test="directFiles:|:!$category['coptions']['opt_disfiles']">
+					{$this->lang->words['no_direct_files']}
+				<else />
+					{$this->lang->words['no_files_in_category']}
+				</if>
+			</div>
+		</if>
+		<if test="catrows:|:count($file_rows)">
+			<div id='bit_category'>
+				{parse striping="bitrackerTable" classes="row1,row2"}
+				<foreach loop="file_rows:$file_rows as $data">
+					<div class='<if test="catscreenshot:|:$this->registry->getClass('categories')->cat_lookup[$data['file_cat']]['coptions']['opt_catss']">with_screenshots<else />no_screenshots</if> bit_category_row clearfix {parse striping="bitrackerTable"} <if test="catfileopen:|:!$data['file_open']">moderated</if>' id='filerow_{$data['file_id']}'>
+						<if test="hasScreenshots:|:$this->registry->getClass('categories')->cat_lookup[$data['file_cat']]['coptions']['opt_catss']">
+							<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$data['file_name']}'><img src='{$this->registry->bitFunctions->returnScreenshotUrl( $recordIds[ $data['file_id'] ], true, true )}' class='screenshot' alt='{$this->lang->words['catdis_ssalt']}' /></a>
+						</if>
+						<div class='file_info right'>
+							<if test="catapprove:|:$permissions['canapp']">
+								<input type='checkbox' class='input_check topic_mod right' id='file_{$data['file_id']}' />
+							</if>
+							<span class='mini_rate'>
+								<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+									<if test="filerate:|:$data['file_rating'] >= $_rating">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+								</foreach>
+							</span>
+							<if test="catCom2:|:$category['coptions']['opt_comments']">
+								<strong><a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}#commentsStart' title='{$this->lang->words['view_comments']}'>{$data['file_comments']} {$this->lang->words['reviews']}</a></strong>
+							</if>
+							<br />
+							
+							<if test="catpendingcomments:|:$data['file_pendcomments'] > 0 AND $permissions['cancomments']">
+								<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}&amp;filter=que#commentsStart" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_pending_comments']}'><img src='{$this->settings['img_url']}/bullet_error.png' alt='' /></a>
+							</if>
+							
+							<if test="showPurchaseOrDL:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && $data['file_cost']">
+								{parse format_number="$data['file_purchases']"} 
+								<if test="catpurchaseslang:|:intval($data['file_purchases']) == 1">
+									{$this->lang->words['purchase_singular']}
+								<else />
+									{$this->lang->words['purchase_plural']}
+								</if>
+							<else />
+								<if test="canviewbitracker:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $data['file_submitter'] ) )">
+									<a href='#' class='view-bitracker' id='view-bitracker-{$data['file_id']}'>
+								</if>
+								{parse format_number="$data['file_bitracker']"} 
+								<if test="catbitrackerlang:|:intval($data['file_bitracker']) == 1">
+									{$this->lang->words['track_singular']}
+								<else />
+									{$this->lang->words['track_plural']}
+								</if>
+								<if test="canviewbitrackerclose:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $data['file_submitter'] ) )">
+									</a>
+								</if>
+							</if>
+							({$data['file_views']} {$this->lang->words['catinfo_totalviews']})
+							
+							<br />
+							
+							<span class='date'>
+								<if test="catfileupdated:|:$data['file_updated'] > $data['file_submitted']">
+									{$this->lang->words['catdis_updated']} {parse date="$data['file_updated']" format="date"}
+								<else />
+									{$this->lang->words['catdis_added']} {parse date="$data['file_submitted']" format="date"}
+								</if>
+							</span>
+						</div>
+						
+						<if test="filePinned:|:$data['file_pinned']">
+							<span class='ipsPad_half right'><span class='ipsBadge ipsBadge_purple'>{$this->lang->words['listing_pinned']}</span></span>
+						</if>
+						<if test="fileFeatured:|:$data['file_featured']">
+							<span class='ipsPad_half right'><span class='ipsBadge ipsBadge_grey'>{$this->lang->words['listing_featured']}</span></span>
+						</if>
+						<div class='basic_info'>
+							<h3 class='ipsType_subtitle'>
+								<if test="fileBroken:|:$data['file_broken']">
+									<span class='ipsBadge ipsBadge_red'>{$this->lang->words['listing_broken']}</span>
+								</if>
+								<if test="hasPrefix:|:!empty($data['tags']['formatted']['prefix'])">
+									{$data['tags']['formatted']['prefix']}
+								</if>
+								<if test="checkForNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && !$data['file_nexus']">
+									<span class='ipsBadge ipsBadge_green'>
+										<if test="freeFile:|:!$data['file_cost']">
+											{$this->lang->words['free']}
+										<else />
+											{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $data['file_cost'], false )"}
+										</if>
+									</span>
+								</if>
+								<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_file_named_title']} {$data['file_name']}'>{parse expression="IPSText::truncate( $data['file_name'], 46)"} <if test="hasversion:|:$data['file_version']"><span class='ipsType_small'>{$data['file_version']}</span></if></a>
+							</h3>
+							<if test="showingBreadcrumb:|:!$category['coptions']['opt_disfiles']">
+								<span class='cat_name'>
+									{$this->lang->words['catdis_in']} 
+									<php>
+										if( count($data['_breadcrumb']) ){
+											$bc = array_pop( $data['_breadcrumb'] );
+										}
+									</php>
+									<a href='{parse url="$bc[1]" base="public" template="bitshowcat" seotitle="$bc[2]"}'>{$bc[0]}</a>
+								</span>
+							</if>
+							
+							<div class='desc lighter'>
+								{$this->lang->words['_by']} <if test="catusername:|:$data['member_id']">{parse template="userHoverCard" group="global" params="$data"}<else />{$this->lang->words['global_guestname']}</if>
+								<if test="hasTags:|:isset($data['tags']) AND $data['tags']">
+									&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$data['tags']['formatted']['truncatedWithLinks']}</span>
+								</if>
+							</div>
+							
+							<if test="hasDescription:|:$data['file_desc']">
+								<br /><span class='desc'>{parse expression="IPSText::truncate( strip_tags( IPSText::getTextClass('bbcode')->stripAllTags( $data['file_desc'] ), '<br />' ), 70 )"}</span>
+							</if>
+						</div>
+					</div>	
+				</foreach>
+			</div>
+		</if>
+		
+		<if test="catcanapprove:|:$permissions['canapp']">
+			<div id='category_mod' class='moderation_bar rounded with_action clear'>
+				<form action='{parse url="app=bitracker&amp;module=moderate" base="public"}' method='post' id='modform'>
+				<input type='hidden' name='do' value='multimod' />
+				<input type='hidden' name='catid' value='{$this->request['showcat']}' />
+				<input type="hidden" name="secure_key" value="{$this->member->form_hash}" />
+				<input type="hidden" value="{$this->request['selectedfileids']}" name="selectedfileids" id="selectedfileids" />
+					<select name='doaction' id='doaction' class='input_select'>
+						<option value=''>{$this->lang->words['modact_select']}</option>
+						<option value='app'>{$this->lang->words['modact_approve']}</option>
+						<option value='unapp'>{$this->lang->words['modact_unapprove']}</option>
+						<option value='move'>{$this->lang->words['modact_move']}</option>
+						<option value='del'>{$this->lang->words['modact_delete']}</option>
+						<option value='pin'>{$this->lang->words['modact_pinfile']}</option>
+						<option value='unpin'>{$this->lang->words['modact_unpinfile']}</option>
+					</select>&nbsp;
+					<input type="submit" name="gobutton" value="{$this->lang->words['mod_button']}" class="input_submit alt" id='mod_submit' />
+				</form>
+			</div>
+			<div class='moderation_bar ipsType_small' style='text-align: center;'>
+				<a href='#' id='moderator_toggle'><img src='{$this->settings['img_url']}/moderation_cog.png' />&nbsp; {$this->lang->words['show_moderation_tools']}</a>
+			</div>
+			<script type='text/javascript'>
+				ipb.vars['lang_suredelete'] = '{$this->lang->words['bit_suredelete']}';
+				
+				$('modform').observe('submit', ipb.bitracker.submitModForm);
+				$('category_mod').hide();
+				
+				$('moderator_toggle').up('div').show().observe('click', function(e){
+					Event.stop(e);
+					$('moderator_toggle').up('div').hide();
+					$('category_mod').show();
+				});
+			</script>
+		</if>
+		<br class='clear' />
+		<if test="hasPagesBottom:|:$page_links">
+			{$page_links}
+			<br class='clear' />
+		</if>
+	</div>
+	
+</div>
+<br class='clear' />]]></template_content>
+      <template_name>categoryListing</template_name>
+      <template_data><![CDATA[$permissions=array(), $page_links='', $category=array(), $category_rows=array(), $file_rows=array(), $sort=array(), $like='', $recordIds=array()]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[{parse js_module="rating"}
+{parse template="include_lightbox" group="global" params=""}
+{parse template="include_highlighter" group="global" params="1"}
+<div class='ipsBox clear'>
+	<div class='<if test="fileUnapprovedClass:|:!$file['file_open']">moderated<else />ipsBox_container</if> ipsPad'>
+		<div class='ipsLayout ipsLayout_withright ipsLayout_bigright clearfix'>
+			<div class='ipsLayout_right'>
+				<h3 class='bar'>{$this->lang->words['submitter']}</h3>
+				<div class='ipsPad clearfix ipsSideBlock' id='submitter_info'>
+					{parse template="userSmallPhoto" group="global" params="$file"}
+					
+					<span class='ipsType_subtitle ipsPad'>
+						<if test="guestsubmitter:|:$file['file_submitter'] == 0 OR !$file['members_display_name']">{$this->lang->words['global_guestname']}<else />{parse template="userHoverCard" group="global" params="$file"}</if>
+						<if test="canchangeauthor:|:$this->registry->getClass('bitFunctions')->checkPerms( $file, 'modchangeauthor' )">
+							<a href='#' id='change_author' rel='{$file['file_id']}' title='{$this->lang->words['change_author']}'><img src='{$this->settings['img_url']}/display_name.png' alt='' title='{$this->lang->words['change_author']}' /></a>
+						</if>
+					</span>
+					<if test="filesearchauthor:|:$file['file_submitter']">
+						<br /><a class='ipsPad' href='{parse url="app=core&amp;module=search&amp;do=user_activity&amp;search_app=bitracker&amp;mid={$file['file_submitter']}" base="public"}'>{$this->lang->words['viewmember_other_files']}</a>
+					</if>
+				</div>
+				<if test="canchangeauthorform:|:$this->registry->getClass('bitFunctions')->checkPerms( $file, 'modchangeauthor' )">
+					<div class='pad clearfix' id='change_author_box' style='display: none'>
+						<form style='display:inline;' action='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=updateAuthor&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' method='post'>
+							<label for="change_author_input"><strong>{$this->lang->words['change_author_name']}</strong></label>
+							<input type='text' class='input_text' name='change_author_input' id='change_author_input' />
+							<input type='submit' class='input_submit' value='{$this->lang->words['change_author_submit']}' />
+						</form>
+					</div>
+				</if>
+				<h3 class='bar'>
+					<if test="filehastopic:|:$category['coptions']['opt_topice'] && $file['file_topicid']">
+						<span class='right'>
+							<a href='{parse url="showtopic={$file['file_topicid']}" base="public" template="showtopic" seotitle="{$file['file_topicseoname']}"}' data-tooltip="{$this->lang->words['file_support_tooltip']}">
+								<span class='ipsBadge ipsBadge_grey'>{$this->lang->words['file_support']}</span>
+							</a>
+						</span>
+					</if>
+					{$this->lang->words['file_information']}
+				</h3>
+				<div class='ipsPad ipsSideBlock'>
+					<ul class='ipsList_data'>
+						<li>
+							<strong class='title'>{$this->lang->words['submittedon']}:</strong>
+							{parse date="$file['file_submitted']" format="short"}
+						</li>
+						<li>
+							<strong class='title'>{$this->lang->words['lastupdated']}:</strong>
+							{parse date="$file['file_updated']" format="short"}
+						</li>
+						<li>
+							<strong class='title'>{$this->lang->words['filesize']}:</strong>
+							<if test="hasSize:|:$file['file_size']">{IPSLib::sizeFormat( $file['file_size'] )}<else />{$this->lang->words['filesize_unknown']}</if>
+						</li>
+						<li>
+							<strong class='title'>{$this->lang->words['fileviews']}:</strong>
+							{$file['file_views']}
+						</li>
+						<if test="hasNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && $file['file_cost']">
+							<li>
+								<strong class='title'>{$this->lang->words['filepurchases']}:</strong>
+								{$file['file_purchases']}
+							</li>
+						</if>
+						<li>
+							<strong class='title'>{$this->lang->words['filebitracker']}:</strong>
+							<if test="fileviewbitracker:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $file['file_submitter'] ) )"><a href='{parse url="app=bitracker&amp;module=display&amp;section=trackers&amp;id={$file['file_id']}" base="public"}' class='view-bitracker' id='view-bitracker-{$file['file_id']}'></if>
+								{parse format_number="$file['file_bitracker']"}
+							<if test="fileviewbitrackerclose:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $file['file_submitter'] ) )"></a></if>
+						</li>
+						<if test="fileshowapprover:|:$this->settings['bit_show_approver'] OR $permissions['can_approve']">
+							<if test="filehasapprover:|:$file['file_approver']">
+								<li>
+									<strong class='title'>{$this->lang->words['file_approvedby']}:</strong>
+									{IPSMember::makeProfileLink($file['approver_name'], $file['file_approver'], $file['file_approver_seoname'])}
+								</li>
+								<li>
+									<strong class='title'>{$this->lang->words['file_approvedon']}:</strong>
+									{parse date="$file['file_approvedon']" format="long"}
+								</li>
+							</if>
+						</if>
+						<if test="filecustomfields:|:count($file['custom_fields'])">
+							<foreach loop="cfields:$file['custom_fields'] as $data">
+								<li>
+									<strong class='title'>{$data['title']}:</strong>
+									{$data['data']}
+								</li>
+							</foreach>
+						</if>
+					</ul>
+				</div>
+				<if test="fileversions:|:$this->settings['bit_versioning'] && is_array($old_versions) && count($old_versions)">
+					<h3 class='bar'>{$this->lang->words['previous_versions']}</h3>
+					<div class='ipsPad ipsSideBlock'>
+						<ul class='ipsList_data' id='versions'>
+							<foreach loop="file_rows:$old_versions as $data">
+								<li<if test="fileversionhidden:|:$data['b_hidden']"> class='moderated'</if>>
+								<span class='desc right'>{parse date="$data['b_updated']" format="date"}</span>
+								<span class='version_control right'>
+									<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=version_track&amp;id={$data['b_id']}" base="public"}' title='{$this->lang->words['bversion_alt_track']}'><img src='{$this->settings['img_url']}/bitracker/bit_down.png' alt='{$this->lang->words['bversion_alt_track']}' /></a>
+									<if test="versionscandelete:|:$permissions['can_delete']==1">
+										<a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=versions&amp;id={$data['b_fileid']}&amp;process=restore&amp;rid={$data['b_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['bversion_alt_restore']}'><img src='{$this->settings['img_url']}/bitracker/bit_refresh.png' alt='{$this->lang->words['bversion_alt_restore']}' /></a>
+										<a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=versions&amp;id={$data['b_fileid']}&amp;process=delete&amp;rid={$data['b_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['bversion_alt_delete']}' onclick='return confirm("{$this->lang->words['revision_delete_confirm']}");'><img src='{$this->settings['img_url']}/bitracker/bit_delete.png' alt='{$this->lang->words['bversion_alt_delete']}' /></a>
+									</if>
+									<if test="versionscanapp:|:$permissions['can_approve']">
+										<if test="versionshidden:|:$data['b_hidden']==1">
+											<a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=versions&amp;id={$data['b_fileid']}&amp;process=unhide&amp;rid={$data['b_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['bversion_alt_unhide']}'><img src='{$this->settings['img_url']}/bitracker/bit_unhide.png' alt='{$this->lang->words['bversion_alt_unhide']}' /></a>
+										<else />
+											<a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=versions&amp;id={$data['b_fileid']}&amp;process=hide&amp;rid={$data['b_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['bversion_alt_hide']}'><img src='{$this->settings['img_url']}/bitracker/bit_hide.png' alt='{$this->lang->words['bversion_alt_hide']}' /></a>
+										</if>
+									</if>
+								</span>
+								<strong>{$data['b_filetitle']} <if test="previousversion:|:$data['b_version']">{$data['b_version']}</if></strong>							
+							</foreach>
+						</ul>
+					</div>
+				</if>
+			</div>
+		
+			<div class='ipsLayout_content'>
+				<if test="fileisbroke:|:$file['file_broken']">
+					<php>
+						$brokenInfo = explode( "|", $file['file_broken_info'] );
+						$date       = "{parse date="$brokenInfo[2]" format="short"}";
+					</php>
+					<div class='message error'>
+						<h3>{$this->lang->words['file_broken_text']}: {$file['file_broken_reason']}</h3>
+						<if test="filetestbroken:|:$permissions['can_broken']">
+							{parse expression="sprintf( $this->lang->words['file_broken_info'], IPSMember::makeProfileLink( $brokenInfo[1], $brokenInfo[0] ), $date )"}
+						</if>
+					</div>
+					<br class='clear' />
+				</if>
+				
+				<h1 class='ipsType_pagetitle'>
+					<if test="paidFile:|:( $file['file_cost'] or $file['file_nexus'] ) AND $this->memberData['member_id'] != $file['file_submitter']">
+						<if test="expired:|:$purchased == 'EXPIRED'">
+							<a href='{parse url="app=nexus&amp;module=clients&amp;section=purchases&amp;do=renew&amp;secure_key={$this->member->form_hash}&amp;itemApp=bitracker&amp;itemType=file&amp;itemId={$file['file_id']}" base="public""}' class='track_button rounded right'>{$this->lang->words['file_renew']}</a>
+						</if>					
+						<if test="purchased:|:$purchased == 'ACTIVE' OR $purchased == 'EXPIRED'">
+							<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=buy&amp;id={$file['file_id']}" base="public" template="bitbuy" seotitle="{$file['file_name_furl']}"}' class='track_button rounded right'>
+								{$this->lang->words['dpage_buy_another']}
+							</a>
+						<else />
+							<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=buy&amp;id={$file['file_id']}" base="public" template="bitbuy" seotitle="{$file['file_name_furl']}"}' class='track_button rounded right'>
+								{$this->lang->words['dpage_buy']}
+							</a>
+						</if>
+					</if>
+					<if test="cantrack:|:!($file['file_cost'] or $file['file_nexus']) OR $purchased == 'ACTIVE' OR $this->memberData['bit_bypass_paid'] OR $this->memberData['member_id'] == $file['file_submitter']">
+						<if test="dynUrls:|:$this->settings['bit_dynamic_urls']">
+							<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=confirm_track&amp;hash={$hash}" base="public" template="bitdd" seotitle="{$file['file_name_furl']}"}' class='track_button rounded right'>
+						<else />
+							<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=confirm_track&amp;id={$file['file_id']}" base="public" template="bittrack" seotitle="{$file['file_name_furl']}"}' class='track_button rounded right'>
+						</if>
+							{$this->lang->words['dpage_button_short']}
+						</a>
+					</if>
+					{$file['file_name']} <if test="hasversion:|:$file['file_version']">{$file['file_version']}</if>
+				</h1>
+				<if test="canRate:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['perm_6']">
+					<foreach loop="filerateCycle:array(1,2,3,4,5) as $_rating">
+						<if test="memberRateStart:|:$this->memberData['member_id'] && ( !$this->settings['must_dl_rate'] OR $tracked )">
+							<a href='{parse url="app=bitracker&amp;module=ajax&amp;section=rate&amp;id={$file['file_id']}&amp;rating={$_rating}&amp;secure_key={$this->member->form_hash}" base="public"}' id='file_rate_{$_rating}' title='{$this->lang->words['rate_file_'.$_rating]}'>
+						</if>
+						<if test="filerate:|:$file['file_rating'] >= $_rating">
+							{parse replacement="rate_on"}
+						<else />
+							{parse replacement="rate_off"}
+						</if>
+						<if test="memberRateEnd:|:$this->memberData['member_id'] && ( !$this->settings['must_dl_rate'] OR $tracked )">
+							</a>
+						</if>
+					</foreach>
+					<span id='rating_text' class='desc'>
+						<if test="filevotes:|:$file['_rate_cnt'] > 0">{$file['_rate_cnt']} {$this->lang->words['votes_cnt']}</if>
+						<if test="fileyourvote:|:$file['_rating_value']">({$this->lang->words['you_voted']} {$file['_rating_value']})</if>
+					</span>
+					<if test="checkGuestRate:|:$this->memberData['member_id']">
+						<if test="mustHavetracked:|:!$this->settings['must_dl_rate'] OR $tracked">
+							<script type='text/javascript'>
+								rating = new ipb.rating( 'file_rate_', { 
+													url:		ipb.vars['base_url'] + 'app=bitracker&amp;module=ajax&amp;section=rate&amp;id={$file['file_id']}&amp;xml=1&md5check=' + ipb.vars['secure_hash'],
+													cur_rating:	{$file['file_rating']},
+													rated:		<if test="filejsvotes:|:$file['_rating_value']">1<else />0</if>,
+													allow_rate:	<if test="filejsallowvote:|:in_array( $category['cid'], $this->registry->getClass('categories')->member_access['rate'] )">1<else />0</if>
+												  } );
+							</script>
+						</if>
+					</if>
+				</if>
+				<if test="fileCost:|:$file['file_cost']">
+						<br />
+						<span class='purchase_price right'>
+							{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $file['file_cost'], false )"}
+							<if test="renewals:|:$renewal_terms">
+								 ( {$renewal_terms} )
+							</if>
+						</span>
+						<br />
+					</if>
+				<if test="hasTags:|:is_array($file['tags'])">
+					<br />
+					{$file['tags']['formatted']['parsedWithoutComma']}
+				</if>
+				<br class='clear' />
+				{$like}
+				<br class='clear' />
+				
+				<br /><br />
+				<if test="allowss:|:$category['coptions']['opt_allowss']">
+					<if test="hasssssss:|:count($screenshots)">
+						<foreach loop="p_eachscreenshot:$screenshots as $screenshot">
+							<if test="p_findprimary:|:$screenshot['record_default']">
+								<if test="p_ssupload:|:$screenshot['record_type'] == 'ssupload'">
+									<a class='screenshot primary' href='{$this->registry->bitFunctions->returnScreenshotUrl( $screenshot, false )}' <if test="p_fileinfolightbox:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$this->registry->bitFunctions->returnScreenshotUrl( $screenshot )}' alt='{$this->lang->words['filescreenshot']}' /></a>
+								<else />
+									<if test="p_getremotesize:|:$ssurl = @getimagesize($screenshot['record_location']) AND $category['coptions']['opt_thumb_x'] AND $ssurl[0] > $category['coptions']['opt_thumb_x']">
+										<a class='screenshot primary' href='{$screenshot['record_location']}' <if test="p_fileinfolightbox2:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$screenshot['record_location']}' width='{$category['coptions']['opt_thumb_x']}' alt='{$this->lang->words['filescreenshot']}' /></a>
+									<else />
+										<if test="p_getremotesize2:|:$ssurl = @getimagesize($screenshot['record_location']) AND !$category['coptions']['opt_thumb_x'] AND $ssurl[0] > $this->settings['bit_default_dimensions']">
+											<a class='screenshot primary' href='{$screenshot['record_location']}' <if test="p_fileinfolightbox3:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$screenshot['record_location']}' width='{$this->settings['bit_default_dimensions']}' alt='{$this->lang->words['filescreenshot']}' /></a>
+										<else />
+											<a class='screenshot primary' href='{$screenshot['record_location']}' <if test="p_fileinfolightbox4:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$screenshot['record_location']}' alt='{$this->lang->words['filescreenshot']}' /></a>
+										</if>
+									</if>
+								</if>
+							</if>
+						</foreach>
+					</if>
+				</if>
+								
+				<div class='ipsType_textblock ipsPad_half description_content'>
+					{$file['file_desc']}
+				</div>
+				<br />
+				<if test="haschangelog:|:$file['file_changelog']">
+					<php>$this->_whatsnew = explode( "\n", $file['file_changelog'] );</php>
+					<if test="haschanges:|:is_array($this->_whatsnew) AND count($this->_whatsnew)">
+						<if test="changelogversion:|:$file['file_version']"><h3>{$this->lang->words['whats_new_in_v']} {$file['file_version']} (<a href='{parse url="app=bitracker&amp;module=display&amp;section=changelog&amp;file={$file['file_id']}" base="public"}' id='full-changelog'>{$this->lang->words['see_full_changelog']}</a>)</h3><else /><h3>{$this->lang->words['changelog']} (<a href='{parse url="app=bitracker&amp;module=display&amp;section=changelog&amp;file={$file['file_id']}" base="public"}' id='full-changelog'>{$this->lang->words['see_full_changelog']}</a>)</h3></if>
+						<div class='description'>
+							<ul class='bullets'>
+								<foreach loop="changes:$this->_whatsnew as $_new">
+									<if test="hasChangelog2:|:$_new"><li>{$_new}</li></if>
+								</foreach>
+							</ul>
+						</div>
+						<br />
+					</if>
+				</if>
+				<br />
+				
+				<if test="allowsss:|:$category['coptions']['opt_allowss']">
+					<if test="hassss:|:count($screenshots) > 1">
+						<h3>{$this->lang->words['filescreenshot']}</h3>
+						<div id='file_screenshots'>
+							<foreach loop="eachscreenshot:$screenshots as $screenshot">
+								<if test="notPrimary:|:!$screenshot['record_default']">
+									<if test="ssupload:|:$screenshot['record_type'] == 'ssupload'">
+										<a class='screenshot' href='{$this->registry->bitFunctions->returnScreenshotUrl( $screenshot, false )}' <if test="fileinfolightbox:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$this->registry->bitFunctions->returnScreenshotUrl( $screenshot )}' alt='{$this->lang->words['filescreenshot']}' /></a>
+									<else />
+										<if test="getremotesize:|:$ssurl = @getimagesize($screenshot['record_location']) AND $category['coptions']['opt_thumb_x'] AND $ssurl[0] > $category['coptions']['opt_thumb_x']">
+											<a class='screenshot' href='{$screenshot['record_location']}' <if test="fileinfolightbox2:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$screenshot['record_location']}' width='{$category['coptions']['opt_thumb_x']}' alt='{$this->lang->words['filescreenshot']}' /></a>
+										<else />
+											<if test="getremotesize2:|:$ssurl = @getimagesize($screenshot['record_location']) AND !$category['coptions']['opt_thumb_x'] AND $ssurl[0] > $this->settings['bit_default_dimensions']">
+												<a class='screenshot' href='{$screenshot['record_location']}' <if test="fileinfolightbox3:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$screenshot['record_location']}' width='{$this->settings['bit_default_dimensions']}' alt='{$this->lang->words['filescreenshot']}' /></a>
+											<else />
+												<a class='screenshot' href='{$screenshot['record_location']}' <if test="fileinfolightbox4:|:$this->settings['bit_ss_popup'] == 'l'">rel='lightbox[screenshot]'<else />rel='external'</if>><img src='{$screenshot['record_location']}' alt='{$this->lang->words['filescreenshot']}' /></a>
+											</if>
+										</if>
+									</if>
+								</if>
+							</foreach>
+						</div>
+					</if>
+				</if>
+				
+				<br />
+				
+				<if test="hasmemberid:|:$this->memberData['member_id']">
+					<br /><br />
+					<ul class='post_controls'>
+						<if test="filenotbroken:|:!$file['file_broken'] AND $this->memberData['bit_report_files']">
+							<li class='report'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=broken&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['reportbroken']}</a></li>
+						</if>
+						<if test="filerestorelink:|:$permissions['can_delete'] AND $this->settings['bit_versioning'] AND $file['_last_revision']">
+							<li class='post_del'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=versions&amp;id={$file['file_id']}&amp;process=restore&amp;rid={$file['_last_revision']['b_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['restorefile']}</a></li>
+						</if>
+	
+						<if test="fileeditlink:|:$permissions['can_edit']">
+							<li class='post_edit'><a href='#' onclick='return ipb.bitracker.editLink( "{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;do=edit_main&amp;id={$file['file_id']}" base="public"}" );'>{$this->lang->words['newversion']}</a></li>
+							
+							<if test="norevision:|:$this->memberData['bit_bypass_revision']">
+								<li class='post_edit'><a href='#' onclick='return ipb.bitracker.editLink( "{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;do=edit_main&amp;id={$file['file_id']}&amp;bypass_revision=1" base="public"}" );'>{$this->lang->words['editfile']}</a></li>
+							</if>
+						</if>
+	
+						<if test="filedeletelink:|:$permissions['can_delete']">
+							<li class='post_del'><a class='delete_link' href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=delete&amp;return=1&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['deletefile']}</a></li>
+						</if>
+	
+						<if test="fileapprovelink:|:$permissions['can_approve'] AND $file['file_open']">
+							<li class='post_toggle'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=togglefile&amp;return=1&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['unnapprovefile']}</a></li>
+						<else />
+							<if test="fileunapprovelink:|:$permissions['can_approve'] AND !$file['file_open']">
+								<li class='post_toggle'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=togglefile&amp;return=1&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['approvefile']}</a></li>
+							</if>
+						</if>
+						
+						<if test="filepinlink:|:$permissions['can_pin'] AND $file['file_pinned']">
+							<li class='post_toggle'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=unpin&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['unpin_file']}</a></li>
+						<else />
+							<if test="fileunpinlink:|:$permissions['can_pin'] AND !$file['file_pinned']">
+								<li class='post_toggle'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=pin&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['pin_file']}</a></li>
+							</if>
+						</if>
+	
+						<if test="filefeature:|:$permissions['can_feature'] AND $this->settings['bit_use_portal']">
+							<if test="fileisfeatured:|:$file['file_featured']">
+								<li class='post_toggle'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=setFeatured&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['unset_featured_file']}</a></li>
+							<else />
+								<li class='post_toggle'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=setFeatured&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['set_featured_file']}</a></li>
+							</if>
+						</if>
+	
+						<if test="fileunbreak:|:$permissions['can_broken'] AND $file['file_broken']">
+							<li class='report'><a href='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate&amp;do=notbroken&amp;id={$file['file_id']}&amp;secure_key={$this->member->form_hash}" base="public"}'>{$this->lang->words['unreportbroken']}</a></li>
+						</if>
+					</ul>
+				</if>
+			</div>
+		</div>
+	</div>
+</div>
+<if test="hasShareLinks:|:$this->settings['sl_enable']">
+	<div class='ipsPad'>
+		{IPSLib::shareLinks( $file['file_name'] )}
+	</div>
+</if>
+<if test="hasComments:|:$category['coptions']['opt_comments']">
+	<br />
+	{$comments['html']}
+</if>
+<if test="hasSimilar:|:count($similar['results'])">
+	<br />
+	<div class='ipsBox'>
+		<div class='ipsBox_container ipsPad track_pane'>
+			<h2 class='ipsType_subtitle'>{$this->lang->words['similarfiles_header']}</h2>
+			<br />
+			<div class='pane_wrap four_column' id='similar-files_wrap'>
+				<ul id='similar-files'>
+					<foreach loop="similarFiles:$similar['results'] as $data">
+						{parse template="portalPaneItem" group="bitracker" params="$data, 'new', $similar['records']"}
+					</foreach>
+				</ul>
+			</div>
+		</div>
+	</div>
+</if>
+{parse template="include_highlighter" group="global" params=""}]]></template_content>
+      <template_name>fileDisplay</template_name>
+      <template_data><![CDATA[$permissions=array(), $file=array(), $category=array(), $screenshots=array(), $old_versions=array(), $hash='', $purchased=FALSE, $like='', $comments=array(), $renewal_terms='', $similar=array(), $tracked=FALSE]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<script type='text/javascript'>
+//<!#^#|CDATA|
+	var markerURL  = ipb.vars['base_url'] + "app=bitracker&module=ajax&section=markasread&i=1&catid="; // Ajax URL so don't use &amp;
+	var unreadIcon = "<img src='{$this->settings['img_url']}/f_icon_read.png' />";
+//|#^#]>
+</script>
+<ul class='topic_buttons'>
+	<if test="indexcanadd:|:$canadd">
+		<li><a href='{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;c={$this->request['catid']}" base="public"}' title='{$this->lang->words['upload_file_alt']}' accesskey='s'>{$this->lang->words['upload_file_alt']}</a></li>
+	<else />
+		<li class='disabled'><span>{$this->lang->words['noupload_perm_alt']}</span></li>
+	</if>
+</ul>
+<h1 class='ipsType_pagetitle'>{$this->lang->words['category_main_header']}</h1>
+<br />
+<!-- Categories -->
+{parse striping="catTable" classes="row1,row2"}
+<div class='category_block block_wrap clear'>
+	<div class='ipsBox table_wrap'>
+		<div class='ipsBox_container'>
+		
+			<table class='ipb_table' summary="{$this->lang->words['bitracker_table_summary']}">
+				<tr class='header hide'>
+					<th scope='col' class='col_c_icon'>&nbsp;</th>
+					<th scope='col' class='col_c_forum'>{$this->lang->words['catinfo_description']}</th>
+					<th scope='col' class='col_c_stats stats'>{$this->lang->words['stats_th']}</th>
+					<th scope='col' class='col_c_post'>{$this->lang->words['latest_file_th']}</th>
+				</tr>
+				<!-- / CAT HEADER -->
+				<foreach loop="category_loop:$category_rows as $data">
+					<tr class='{parse striping="catTable"}<if test="isUnreadClass:|:$data['_has_unread']"> unread</if>'>
+						<td class='col_c_icon'>
+							<if test="indexreadmarker:|:$data['_has_unread']">
+								<a id='forum_img_{$data['cid']}' href="{parse url="app=bitracker&amp;module=display&amp;section=markasread&amp;catid={$data['cid']}&amp;returntocatid=0&amp;i=1" base="public"}" data-tooltip="{$this->lang->words['mark_cat_read']}" class='forum_marker'><img src='{$this->settings['img_url']}/f_icon.png' /></a>
+								<script type='text/javascript'>
+									ipb.global.registerMarker( "forum_img_{$data['cid']}", "f_read", markerURL + "{$data['cid']}" );
+								</script>
+							<else />
+								<img src='{$this->settings['img_url']}/f_icon_read.png' />
+							</if>
+						</td>
+						<td class='col_c_forum'>
+							<h4>
+								<if test="indexpending:|:$data['can_approve'] AND $data['cfileinfo']['pending_files']">
+									<a href='{parse url="app=bitracker&amp;showcat={$data['cid']}&amp;filter=que" base="public" template="bitshowcat" seotitle="{$data['cname_furl']}"}' title='{$this->lang->words['view_queued']}' class='ipsBadge ipsBadge_orange' data-tooltip="{parse expression="sprintf( $this->lang->words['queued_files_sprintf'], $data['cfileinfo']['pending_files'])"}" style='vertical-align: top'>{$this->lang->words['f_queued_badge']}</a>
+								</if>
+								<a href="{parse url="app=bitracker&amp;showcat={$data['cid']}" base="public" template="bitshowcat" seotitle="{$data['cname_furl']}"}" title='{$this->lang->words['view_category']}'>{$data['cname']}</a>
+							</h4>
+							
+							<if test="indexsubcategories:|:is_array($data['subcategories']) AND count($data['subcategories'])">
+								<br />
+								<ol class='ipsList_inline ipsType_small subforums' id='subforums_{$data['id']}'>
+									<foreach loop="subcats:$data['subcategories'] as $link">
+										<if test="showSubCatsLit:|:$link['new']"><li class='unread'><else /><li></if>
+											<a href="{parse url="app=bitracker&amp;showcat={$link['cid']}" base="public" template="bitshowcat" seotitle="{$link['cname_furl']}"}" title='{$this->lang->words['gotosubcat']}'>{$link['cname']}</a>
+										</li>
+									</foreach>
+								</ol>
+							</if>
+							
+							<p class='desc __forum_desc ipsType_small'>{$data['cdesc']}</p>
+						</td>
+						<td class='col_c_stats ipsType_small'>
+							<strong>{parse format_number="$data['cfileinfo']['total_files']"}</strong> {$this->lang->words['mini_stats_files']}<br />
+							<strong>{parse format_number="$data['cfileinfo']['total_views']"}</strong> {$this->lang->words['mini_stats_views']}<br />
+							<strong>{parse format_number="$data['cfileinfo']['total_bitracker']"}</strong> {$this->lang->words['mini_stats_bitracker']}
+						</td>
+						<td class='col_c_post'>
+							<if test="latestcatinfo:|:is_array($data['cfileinfo']) AND count($data['cfileinfo']) AND $data['cfileinfo']['fid']">
+								<if test="hasPhoto:|:$data['cfileinfo']['member']['pp_small_photo']">
+									<a href='{parse url="showuser={$data['cfileinfo']['mid']}" template="showuser" seotitle="{$data['cfileinfo']['seoname']}" base="public"}' class='ipsUserPhotoLink left'>
+										<img src='{$data['cfileinfo']['member']['pp_small_photo']}' alt='{$this->lang->words['photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+									</a>
+								<else />
+									<div class='left'>{IPSMember::buildNoPhoto(0, 'mini' )}</div>
+								</if>
+								
+								<ul class='last_post ipsType_small'>
+									<li><a href='{parse url="app=bitracker&amp;showfile={$data['cfileinfo']['fid']}" base="public" template="bitshowfile" seotitle="{$data['cfileinfo']['fname_furl']}"}' title='{$this->lang->words['view_file']}'>{$data['cfileinfo']['fname']}</a></li>
+									<li>{$this->lang->words['_by']}
+										<if test="latestcatmember:|:$data['cfileinfo']['mname']">
+											<if test="latestcatmid:|:$data['cfileinfo']['mid']">
+												{parse template="userHoverCard" group="global" params="$data['cfileinfo']['member']"}
+											<else />
+												{$this->settings['guest_name_pre']}{$data['cfileinfo']['mname']}{$this->settings['guest_name_suf']}
+											</if>
+										<else />
+											{$this->lang->words['global_guestname']}
+										</if>
+									</li>
+									<li class='desc lighter blend_links'>{parse date="$data['cfileinfo']['date']" format="LONG"}</li>
+								</ul>
+							<else />
+								<ul class='last_post ipsType_small'>
+									<li>{$this->lang->words['cat_no_info']}</li>
+								</ul>
+							</if>
+						</td>
+					</tr>
+				</foreach>
+			</table>
+		</div>
+	</div>
+</div>
+<br />
+<div class='topic_controls clearfix'>
+	<ul class='topic_buttons'>
+		<if test="indexcanaddbottom:|:$canadd">
+			<li><a href='{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;c={$this->request['catid']}" base="public"}' title='{$this->lang->words['upload_file_alt']}' accesskey='s'>{$this->lang->words['upload_file_alt']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['noupload_perm_alt']}</span></li>
+		</if>
+	</ul>
+</div>
+<br />]]></template_content>
+      <template_name>indexPage</template_name>
+      <template_data>$canadd=false, $canmod=false, $category_rows=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[{parse js_module="bitracker"}
+<if test="randomfiles:|:$this->settings['bit_randomfiles'] AND count($this->registry->getClass('categories')->member_access['view']) AND count($random)">
+	<br />
+	<div class='ipsBox'>
+		<div class='ipsBox_container ipsPad track_pane'>
+			<h2 class='ipsType_subtitle'>{$this->lang->words['randomfile_header']}</h2>
+			<br />
+			<div class='pane_wrap four_column' id='random-files_wrap'>
+				<ul id='random-files'>
+					<foreach loop="randomfiles:$random as $data">
+						{parse template="portalPaneItem" group="bitracker" params="$data, 'new', $recordIds"}
+					</foreach>
+				</ul>
+			</div>
+		</div>
+	</div>
+</if>
+<br /><br /><br />
+<php>
+	$latest_file	= $latest['fid'] ? "<a href='{parse url="app=bitracker&amp;showfile={$latest['fid']}" base="public" template="bitshowfile" seotitle="{$latest['fname_furl']}"}' class='value'>{$latest['fname']}</a>" : "<span class='value'>{$this->lang->words['stats_noneyet']}</span>";
+	$latest_author	= $latest['mid'] ? IPSMember::makeProfileLink( $latest['mname'], $latest['mid'], $latest['seoname'], 'value' ) : ( $latest['fid'] ? "<span class='value'>{$this->lang->words['global_guestname']}</span>" : "<span class='value'>{$this->lang->words['stats_noneyet']}</span>" );
+</php>
+<div id='board_stats'>		
+	<ul class='ipsType_small ipsList_inline'>
+		<li class='clear'>
+			<span class='value'>{parse format_number="$this->caches['bit_stats']['total_files']"}</span>
+			{$this->lang->words['total_files']}
+		</li>
+		<li class='clear'>
+			<span class='value'>{parse format_number="$this->caches['bit_stats']['total_categories']"}</span>
+			{$this->lang->words['total_categories']}
+		</li>
+		<li class='clear'>
+			<span class='value'>{parse format_number="$this->caches['bit_stats']['total_authors']"}</span>
+			{$this->lang->words['total_authors']}
+		</li>
+		<li class='clear'>
+			<span class='value'>{parse format_number="$this->caches['bit_stats']['total_bitracker']"}</span>
+			{$this->lang->words['total_bitracker']}
+		</li>
+		<li class='clear' data-tooltip="{parse date="$latest['date']"}">
+			{$latest_file}
+			{$this->lang->words['latest_file']}
+		</li>
+		<li class='clear'>
+			{$latest_author}
+			{$this->lang->words['latest_submitter']}
+		</li>
+	</ul>
+</div>
+<div id='board_statistics' class='statistics clearfix'>
+	<ul id='stat_links' class='ipsList_inline right ipsType_small'>
+		<if test="statsLinks:|:1==1"> <!-- Hook point -->
+			<li><a href='{parse url="app=core&amp;module=search&amp;do=viewNewContent&amp;search_app=bitracker&amp;period=today" base="public"}'>{$this->lang->words['search_last_ten']}</a></li>
+			<if test="searchlinks:|:$this->memberData['member_id']">
+				<li><a href='{parse url="app=core&amp;module=search&amp;do=viewNewContent&amp;search_app=bitracker&amp;period=lastvisit" base="public"}'>{$this->lang->words['search_last_visit']}</a></li>
+			</if>
+		</if>
+	</ul>
+	
+	<if test="activeusers:|:$this->settings['bit_displayactive']">
+		<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['active_users_header'], $active['stats']['total'], $this->settings['au_cutoff'])"}</h4>
+		<p class='statistics_brief'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $active['stats']['members'], $active['stats']['guests'], $active['stats']['anon'] )"}</p>
+		
+		<if test="hasactiveusers:|:is_array( $active['names'] ) AND count( $active['names'] )">
+			<br />
+			<p>
+				<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $active['names'] )"}</span>
+			</p>
+		</if>
+	</if>
+</div>]]></template_content>
+      <template_name>pageEnd</template_name>
+      <template_data>$show=array(), $active=array(), $latest=array(), $random=array(), $recordIds=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<li class='left'>
+		<a href='{parse url="app=bitracker&amp;showfile={$item['file_id']}" base="public" template="bitshowfile" seotitle="{$item['file_name_furl']}"}'>
+			<img src='{$this->registry->bitFunctions->returnScreenshotUrl( $recordIds[ $item['file_id'] ] ? $recordIds[ $item['file_id'] ] : $item, true, count($recordIds) ? true : false )}' class='screenshot mini left' />
+		</a>
+		<div class='file_info'>
+			<h4>
+				<a title="{$item['file_name']}" href='{parse url="app=bitracker&amp;showfile={$item['file_id']}" base="public" template="bitshowfile" seotitle="{$item['file_name_furl']}"}'>{parse expression="IPSText::truncate( $item['file_name'], 25)"} <if test="hasversionpane:|:$item['file_version']"><span class='ipsType_small'>{$item['file_version']}</span></if></a>
+			</h4>
+			<span>{$this->lang->words['_by']} {parse template="userHoverCard" group="global" params="$item"}</span><br />
+			<span class='context_info'>
+				<if test="watched:|:$type == 'watched'">
+					{parse format_number="$item['total_liked']"} {$this->lang->words['watchers']}
+				</if>
+				<if test="rated:|:$type == 'rated'">
+					<span class='mini_rate'>
+					<foreach loop="ratings:array(1,2,3,4,5) as $int">
+						<if test="ratinggood:|:$item['file_rating'] >= $int">
+							{parse replacement="mini_rate_on"}
+						<else />
+							{parse replacement="mini_rate_off"}
+						</if>
+					</foreach>
+					</span>
+				</if>
+				<if test="new:|:$type == 'new'">
+					{parse date="$item['file_submitted']" format="short"}
+				</if>
+			</span>
+			<if test="checkForNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && !$item['file_nexus']">
+				<span class='ipsBadge ipsBadge_green'>
+					<if test="fileCost:|:$item['file_cost'] == 0">
+						{$this->lang->words['free']}
+					<else />
+						{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $item['file_cost'], false )"}
+					</if>
+				</span>
+			</if>
+		</div>
+	</li>]]></template_content>
+      <template_name>portalPaneItem</template_name>
+      <template_data>$item, $type, $recordIds=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<div class='general_box'>
+	<h3>{$title} <span id='{$menutype}ajax' class='__freebla ipbmenu clickable right'><a href='#'><span class='ipsType_small' id='{$menutype}title'>{$this->lang->words['feed_tp_month']}</span> {parse replacement="dropdown"}</a></span></h3>
+	<div id='{$menutype}ajaxcontent'>
+		{parse template="portalSidebarBlockInsert" group="bitracker" params="$none, $items, $type, $recordIds"}
+	</div>
+	<ul class='ipbmenu_content' id='{$menutype}ajax_menucontent'>
+		<li><a href="#" class='c_block_title __{$menutype}menu __t{$menutype} __xall'>{$this->lang->words['feed_tp_all']}</a></li>
+		<li><a href="#" class='c_block_title __{$menutype}menu __t{$menutype} __xweek'>{$this->lang->words['feed_tp_week']}</a></li>
+		<li><a href="#" class='c_block_title __{$menutype}menu __t{$menutype} __xmonth'>{$this->lang->words['feed_tp_month']}</a></li>
+		<li><a href="#" class='c_block_title __{$menutype}menu __t{$menutype} __xyear'>{$this->lang->words['feed_tp_year']}</a></li>
+	</ul>
+	<script type='text/javascript'>
+	ipb.bitportal.setUpAjMenu( '{$menutype}' );
+	</script>
+</div>]]></template_content>
+      <template_name>portalSidebarBlock</template_name>
+      <template_data><![CDATA[$title, $none, $items, $type='file', $recordIds=array(), $menutype='all']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<ul class='ipsList_withminiphoto ipsPad_half'>
+			<if test="hasItems:|:count( $items )">
+				<foreach loop="itemData:$items as $item">
+					<if test="testtype:|:$type == 'file'">
+						<li class='{parse striping="blocks"} clear ipsPad_half'>
+							<a href='{parse url="app=bitracker&amp;showfile={$item['file_id']}" base="public" template="bitshowfile" seotitle="{$item['file_name_furl']}"}' class='ipsUserPhotoLink left ipsPad_half'>
+								<img src='{$this->registry->bitFunctions->returnScreenshotUrl( $recordIds[ $item['file_id'] ] ? $recordIds[ $item['file_id'] ] : $item, true, count($recordIds) ? true : false )}' class='ipsUserPhoto ipsUserPhoto_mini' />
+							</a>
+							<div class='list_content'>
+								<if test="checkForNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && !$item['file_nexus']">
+									<span class='ipsBadge ipsBadge_green right'>
+										<if test="fileCost:|:$item['file_cost'] == 0">
+											{$this->lang->words['free']}
+										<else />
+											{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $item['file_cost'], false )"}
+										</if>
+									</span>
+								</if>
+								<a href='{parse url="app=bitracker&amp;showfile={$item['file_id']}" base="public" template="bitshowfile" seotitle="{$item['file_name_furl']}"}'>{$item['file_name']} <if test="hasversionblk:|:$item['file_version']"><span class='ipsType_small'>{$item['file_version']}</span></if></a>
+								<div class='desc blend_links'>{$this->lang->words['_by']} {parse template="userHoverCard" group="global" params="$item"}</div>
+							</div>
+						</li>
+					<else />
+						<li class='{parse striping="blocks"} clear ipsPad_half'>
+							{parse template="userSmallPhoto" group="global" params="array_merge( $item, array( '_customClass' => 'ipsUserPhoto_mini' ) )"}
+							<div class='list_content'>
+								{parse template="userHoverCard" group="global" params="$item"}
+								<div class='desc'>{parse format_number="$item['total_files']"} {$this->lang->words['topauthors_ttldls']}</div>
+							</div>
+						</li>
+					</if>
+				</foreach>
+			<else />
+				<li class='ipsPad'>
+					{$none}
+				</li>
+			</if>
+		</ul>]]></template_content>
+      <template_name>portalSidebarBlockInsert</template_name>
+      <template_data><![CDATA[$none, $items, $type='file', $recordIds=array()]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_bitracker_external">
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<div class='_sharedMediaBbcode'>
+	<div class='bbcode_mediaWrap clearfix'>
+		<a href="{parse url="app=bitracker&amp;showfile={$file['file_id']}" seotitle="{$file['file_name_furl']}" template="bitshowfile" base="public"}"><img src='{$this->registry->bitFunctions->returnScreenshotUrl( $file )}' class='sharedmedia_screenshot' /></a>
+		<div class='details'>
+			<h5><a href="{parse url="app=bitracker&amp;showfile={$file['file_id']}" seotitle="{$file['file_name_furl']}" template="bitshowfile" base="public"}">{IPSText::truncate( $file['file_name'], 60 )} <if test="hasversionbbc:|:$file['file_version']"><span class='ipsType_small'>{$file['file_version']}</span></if></a></h5>
+			<div><a href="{parse url="app=bitracker&amp;showcat={$file['file_cat']}" base="public" seotitle="{$file['cname_furl']}" template="bitshowcat"}">{$this->lang->words['sharedmedia_cat']} {$file['cname']}</a></div>
+			<div>{$this->lang->words['sharedmedia_lastupdated']} {parse date="$file['file_updated']" format="short"}</div>
+		</div>
+	</div>
+</div>
+<br />]]></template_content>
+      <template_name>bbCodeFile</template_name>
+      <template_data>$file=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<fieldset class='{parse striping="search"}'>
+	<span class='search_msg'>
+		{$this->lang->words['s_bitsearch_desc']}
+	</span>
+	<ul class='ipsForm_horizontal'>
+		<li class='ipsField ipsField_select clear'>
+			<label class='ipsField_title' for='bitracker_filter'>{$this->lang->words['find_bit_category']}</label>
+			<p class='ipsField_content'>
+				<select name='search_app_filters[bitracker][bitracker][]' id='bitracker_filter' class='input input_select' size='6' multiple='multiple'>
+					<foreach loop="hascategories:$categories as $category">
+						<option value='{$category[0]}'>{$category[1]}</option>
+					</foreach>
+				</select>
+			</p>
+		</li>
+		<if test="filterPaidFree:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on']">
+			<li class='ipsField ipsField_select clear'>
+				<label class='ipsField_title' for='bitracker_nexus_filter'>{$this->lang->words['find_bit_paidfree']}</label>
+				<p class='ipsField_content'>
+					<select name='search_app_filters[bitracker][freepaid]' id='bitracker_nexus_filter'>
+						<option value='all'>{$this->lang->words['free_and_paid']}</option>
+						<option value='free'>{$this->lang->words['free_only']}</option>
+						<option value='paid'>{$this->lang->words['paid_only']}</option>
+					</select>
+				</p>
+			</li>
+		</if>
+		<if test="hasCustomFields:|:count($fields->out_fields)">
+			<foreach loop="cfields:$fields->out_fields as $id => $data">
+				<li class='ipsField clear'>
+					<label for='search_app_filters[bitracker][field_{$id}]' class='ipsField_title'>
+						{$fields->field_names[ $id ]}
+					</label>
+					<p class='ipsField_content'>
+						{parse expression="preg_replace( '/field_(\d+)/', 'search_app_filters[bitracker][field_$1]', $data )"}
+						<div class='desc'>{$fields->field_desc[ $id ]}</div>
+					</p>
+				</li>
+			</foreach>
+		</if>
+	</ul>
+</fieldset>]]></template_content>
+      <template_name>bitrackerAdvancedSearchFilters</template_name>
+      <template_data>$categories, $fields=null</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<tr class='<if test="isUnread:|:$r['newpost']"> unread</if><if test="unapproved:|:!$r['file_open']"> moderated</if>'>
+	<td class='col_f_icon short altrow'>
+		<if test="newdata:|:$r['newpost']">
+			<a href="{parse url="app=bitracker&amp;showfile={$r['file_id']}" template="bitshowfile" seotitle="{$r['file_name_furl']}" base="public"}" title='{$this->lang->words['view_newest_comment']}'>
+				<if test="isEntryAuthor:|:$this->memberData['member_id'] && $this->memberData['member_id'] == $r['member_id']">
+					{parse replacement="t_unread_dot"}
+				<else />
+					{parse replacement="t_unread"}
+				</if>
+			</a>
+		</if>
+	</td>
+	<td>
+		<h3 class='ipsType_subtitle'>
+			<a href='{parse url="app=core&amp;module=global&amp;section=comments&amp;do=findComment&amp;comment_id={$r['comment_id']}&amp;parentId={$r['file_id']}&amp;fromApp=bitracker-files" base="public"}'>{$r['content_title']} <if test="hasversionc:|:$r['file_version']"><span class='ipsType_small'>{$r['file_version']}</span></if></a>
+			<if test="hasbreadcrumb:|:count($r['_breadcrumb'])">
+				<span class='desc blend_links toggle_notify_off'>
+					{$this->lang->words['catdis_in']}
+					<foreach loop="catbreadloop:$r['_breadcrumb'] as $_pos => $crumb">
+						<if test="showarrow:|:$_pos > 0">
+							-&gt;
+						</if>
+						<a href='{parse url="$crumb[1]" base="public" template="bitshowcat" seotitle="$crumb[2]"}'>{$crumb[0]}</a>
+					</foreach>
+				</span>
+			</if>
+		</h3>
+		<br />
+		<div>{$r['content']}</div>
+	</td>
+	<td class='col_f_post'>
+		{parse template="userSmallPhoto" group="global" params="$r"}
+		<ul class='last_post ipsType_small'>
+			<li><if test="catuserid:|:$r['member_id']">{parse template="userHoverCard" group="global" params="$r"}<else />{$this->lang->words['global_guestname']}</if></li>
+			<li>{parse date="$r['comment_date']" format="LONG"}</li>
+		</ul>
+	</td>
+</tr>]]></template_content>
+      <template_name>commentSearchResult</template_name>
+      <template_data>$r, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<h3<if test="noAjax:|:$this->request['module'] != 'ajax'"> class='maintitle'</if>>{parse expression="sprintf( $this->lang->words['file_changelog'], $file['file_name'] . ' ' . $file['file_version'] )"}</h3>
+
+<if test="nochanges:|:!$file['file_changelog'] && ( !is_array($versions) || !count($versions) )">
+	<div class='no_messages'>{$this->lang->words['nochanges_at_all']}</div>
+<else />
+	<table class='ipb_table'>
+		<tr class='header'>
+			<th>{$this->lang->words['version_h3_bar']} {$file['file_version']}</th>
+		</tr>
+		<tr class='row2'>
+			<td>
+				<php>$this->_whatsnew = explode( "\n", $file['file_changelog'] );</php>
+				<if test="haschanges:|:$file['file_changelog'] && is_array($this->_whatsnew) && count($this->_whatsnew)">
+					<ul class='bullets'>
+						<foreach loop="changes:$this->_whatsnew as $_new">
+							<if test="hasCurrentNew:|:$_new"><li>{$_new}</li></if>
+						</foreach>
+					</ul>
+				<else />
+					<span class='ipsPad_left'>{$this->lang->words['nochanges_yet']}</span>
+				</if>
+			</td>
+		</tr>
+		
+		<if test="hasPreviousVersions:|:count($versions)">
+			<foreach loop="versionsLoop:$versions as $version">
+				<tr class='header'>
+					<th><if test="hasversion:|:$version['b_version']">{$this->lang->words['version_h3_bar']} {$version['b_version']}<else />{$this->lang->words['previousversion_h3bar']}</if></th>
+				</tr>
+				<tr class='row2'>
+					<td>
+						<php>$this->_whatsnew = $version['b_changelog'] ? explode( "\n", trim($version['b_changelog']) ) : array();</php>
+						<if test="haspreviouschanges:|:is_array($this->_whatsnew) AND count($this->_whatsnew)">
+							<ul class='bullets'>
+								<foreach loop="previouschanges:$this->_whatsnew as $_new">
+									<if test="hasPastNew:|:$_new"><li>{$_new}</li></if>
+								</foreach>
+							</ul>
+						<else />
+							<span class='ipsPad_left'>{$this->lang->words['nochanges_yet']}</span>
+						</if>
+					</td>
+				</tr>
+			</foreach>
+		</if>
+	</table>
+</if>]]></template_content>
+      <template_name>fileChanges</template_name>
+      <template_data>$file, $versions=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<tr class='<if test="isUnread:|:!$data['_isRead']"> unread</if><if test="isUnapproved:|:!$data['file_open']"> moderated</if>'>
+	<td class='col_f_icon short altrow'>
+		<if test="isUnreadIcon:|:!$data['_isRead']">
+			<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_file_named_title']} {$data['file_name']}'>
+				<if test="isFileUploader:|:$this->memberData['member_id'] && $this->memberData['member_id'] == $data['member_id']">
+					{parse replacement="t_unread_dot"}
+				<else />
+					{parse replacement="t_unread"}
+				</if>
+			</a>
+		</if>
+	</td>
+	<td>
+		<div class='right'>
+			<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+				<if test="filerate:|:$data['file_rating'] >= $_rating">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+			</foreach>
+		</div>
+		<h3 class='ipsType_subtitle'>
+			<if test="checkForNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && !$data['file_nexus']">
+				<span class='ipsBadge ipsBadge_green'>
+					<if test="fileCost:|:$data['file_cost'] == 0">
+						{$this->lang->words['free']}
+					<else />
+						{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $data['file_cost'], false )"}
+					</if>
+				</span>
+			</if>
+			<if test="hasPrefix:|:!empty($data['tags']['formatted']['prefix'])">
+				{$data['tags']['formatted']['prefix']}
+			</if>
+			<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_file_named_title']} {$data['file_name']}'>{$data['file_name']} <if test="hasversion:|:$data['file_version']"><span class='ipsType_small'>{$data['file_version']}</span></if></a>
+		</h3>
+		<if test="hasTags:|:isset($data['tags']) AND $data['tags']">
+			<div class='desc lighter blend_links right'><img src='{$this->settings['img_url']}/icon_tag.png' /> {$data['tags']['formatted']['truncatedWithLinks']}</div>
+		</if>
+		<if test="resultcontent:|:!$resultAsTitle">
+			<div>
+				{$r['content']}
+			</div>
+		</if>
+		<if test="hasbreadcrumb:|:count($data['_breadcrumb'])">
+			<br />
+			<span class='desc blend_links toggle_notify_off'>
+				{$this->lang->words['catdis_in']}
+				<foreach loop="catbreadloop:$data['_breadcrumb'] as $_pos => $crumb">
+					<if test="showarrow:|:$_pos > 0">
+						-&gt;
+					</if>
+					<a href='{parse url="$crumb[1]" base="public" template="bitshowcat" seotitle="$crumb[2]"}'>{$crumb[0]}</a>
+				</foreach>
+			</span>
+		</if>
+		<if test="isFollowedStuff:|:count($data['_followData'])">
+			{parse template="followData" group="search" params="$data['_followData']"}
+		</if>
+	</td>
+	<td class='col_f_views'>
+		<ul>
+			<li>
+				<if test="canviewbitrackerelse:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $data['file_submitter'] ) )"><a href='#' class='view-bitracker' id='view-bitracker-{$data['file_id']}'></if>
+				{parse format_number="$data['file_bitracker']"} <if test="catbitrackerlang2:|:intval($data['file_bitracker']) == 1">{$this->lang->words['track_singular']}<else />{$this->lang->words['track_plural']}</if>
+				<if test="canviewbitrackercloseend:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $data['file_submitter'] ) )"></a></if>
+			</li>
+			<!--<li class='views desc'>{parse format_number="$data['file_views']"} {$this->lang->words['catinfo_totalviews']}</li>-->
+			<li class='views desc'>{parse format_number="$data['file_comments']"} <if test="onecomment:|:$data['file_comments'] == 1">{$this->lang->words['catinfo_totalcomment']}<else />{$this->lang->words['catinfo_totalcomments']}</if></li>
+		</ul>
+	</td>
+	<td class='col_f_post'>
+		{parse template="userSmallPhoto" group="global" params="$data"}
+		<ul class='last_post ipsType_small'>
+			<li><if test="catuserid:|:$data['member_id']">{parse template="userHoverCard" group="global" params="$data"}<else />{$this->lang->words['global_guestname']}</if></li>
+			<li>
+				<if test="catfileupdated:|:$data['file_updated'] > $data['file_submitted']">
+					{parse date="$data['file_updated']" format="LONG"}
+				<else />
+					{parse date="$data['file_submitted']" format="LONG"}
+				</if>
+			</li>
+		</ul>
+	</td>
+	<if test="isFollowedStuffCheck:|:count($data['_followData'])">
+		<td class='col_f_mod'>
+			<input class='input_check checkall toggle_notify_on' type="checkbox" name="likes[]" value="{$data['_followData']['like_app']}-{$data['_followData']['like_area']}-{$data['_followData']['like_rel_id']}" />
+		</td>
+	</if>
+</tr>]]></template_content>
+      <template_name>fileSearchResult</template_name>
+      <template_data>$data, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<if test="ajaxtitle:|:$ajax">
+	<h3>{$this->lang->words['file_tracked_by_ajax']}</h3>
+<else />
+	<if test="pageLinksTop:|:$pagelinks"><div>{$pagelinks}</div><br class='clear'/></if>
+	<h3 class='maintitle clear'>{parse expression="sprintf( $this->lang->words['file_tracked_by'], $file['file_name'] . ' ' . $file['file_version'] )"}</h3>
+</if>
+
+<div class='likepop fixed_inner'>
+	<if test="hastrackers:|:count($trackers)">
+		<ul class='ipsList_withmediumphoto'>
+			{parse striping="trackers" classes="row1,row2"}
+			<foreach loop="trackersLoop:$trackers as $mid => $data">
+				<li class='{parse striping="trackers"} clearfix ipsPad_half'>
+					{parse template="userSmallPhoto" group="global" params="array_merge( $data, array( '_customClass' => 'ipsUserPhoto_medium' ) )"}
+					<div class='list_content'>
+						{parse template="userHoverCard" group="global" params="$data"}
+						<p class='desc'>{parse expression="IPSMember::makeNameFormatted( $data['g_title'], $data['g_id'] )"}</p>
+						<p class='desc'>{parse date="$data['_last_track']" format="short"}</p>
+					</div>
+				</li>
+			</foreach>
+		</ul>
+		<if test="showfulllink:|:$ajax AND count($trackers) == 20">
+			<p class='desc ipsPad ipsForm_center'>
+				<strong><a href='{parse url="app=bitracker&amp;module=display&amp;section=trackers&amp;id={$file['file_id']}" base="public"}'>{$this->lang->words['view_all_trackers']}</a></strong>
+			</p>
+		</if>
+	<else />
+		<p class='desc ipsPad ipsForm_center<if test="ajaxClass:|:!$ajax"> row2</if>'>
+			{$this->lang->words['notrackers_yet']}
+		</p>
+	</if>
+</div>
+<if test="pageLinksBottom:|:$pagelinks && !$ajax"><div>{$pagelinks}</div></if>]]></template_content>
+      <template_name>filetrackers</template_name>
+      <template_data>$file, $trackers=array(), $ajax=false, $pagelinks=null</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<script type='text/javascript'>
+//<!#^#|CDATA|
+	var markerURL  = ipb.vars['base_url'] + "app=bitracker&module=ajax&section=markasread&i=1&catid="; // Ajax URL so don't use &amp;
+	var unreadIcon = "<img src='{$this->settings['img_url']}/f_icon_read.png' />";
+//|#^#]>
+</script>
+<table class='ipb_table topic_list' id='forum_table'>
+	<if test="hasResults:|:is_array($results)">
+		<foreach loop="results:$results as $data">	
+			<tr<if test="isUnread:|:$data['_has_unread']"> class='unread'</if>>
+				<td class='col_c_icon altrow'>
+					<if test="indexreadmarker:|:$data['_has_unread']">
+						<a id='category_imd_{$data['cid']}' href="{parse url="app=bitracker&amp;module=display&amp;section=markasread&amp;catid={$data['cid']}&amp;returntocatid=0&amp;i=1" base="public"}" title="{$this->lang->words['bi_markread']}" class='forum_marker'><img src='{$this->settings['img_url']}/f_icon.png' /></a>
+						<script type='text/javascript'>
+							ipb.global.registerMarker( "category_imd_{$data['cid']}", "f_unread", markerURL + "{$data['cid']}" );
+						</script>
+					<else />
+						<img src='{$this->settings['img_url']}/f_icon_read.png' />
+					</if>
+				</td>
+				<td>
+					<if test="indexpending:|:$data['can_approve'] AND $data['cfileinfo']['pending_files']">
+						<a href='{parse url="app=bitracker&amp;showcat={$data['cid']}&amp;filter=que" base="public" template="bitshowcat" seotitle="{$data['cname_furl']}"}' title='{$this->lang->words['view_queued']}' data-tooltip="{parse expression="sprintf( $this->lang->words['queued_files_sprintf'], $data['cfileinfo']['pending_files'] )"}"><span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span></a>
+					</if>
+					<h4><a href="{parse url="app=bitracker&amp;showcat={$data['cid']}" base="public" template="bitshowcat" seotitle="{$data['cname_furl']}"}" title='{$this->lang->words['view_category']}'>{$data['cname']}</a></h4>
+					
+					<if test="indexsubcategories:|:is_array($data['subcategories']) AND count($data['subcategories'])">
+						<br />
+						<ol class='ipsList_inline ipsType_small subforums toggle_notify_off' id='subforums_{$data['cid']}'>
+							<foreach loop="subcats:$data['subcategories'] as $link">
+								<if test="showSubCatsLit:|:$link['new']"><li class='newposts'><else /><li></if><a href="{parse url="app=bitracker&amp;showcat={$link['cid']}" base="public" template="bitshowcat" seotitle="{$link['cname_furl']}"}" title='{$this->lang->words['gotosubcat']}'>{$link['cname']}</a></li>
+							</foreach>
+						</ol>
+					</if>
+					<if test="isFollowedStuff:|:count($data['_followData'])">
+						{parse template="followData" group="search" params="$data['_followData']"}
+					</if>
+				</td>
+				<td class='col_c_stats ipsType_small'>
+					<strong>{parse format_number="$data['cfileinfo']['total_files']"}</strong> {$this->lang->words['mini_stats_files']}<br />
+					<strong>{parse format_number="$data['cfileinfo']['total_views']"}</strong> {$this->lang->words['mini_stats_views']}<br />
+					<strong>{parse format_number="$data['cfileinfo']['total_bitracker']"}</strong> {$this->lang->words['mini_stats_bitracker']}
+				</td>
+				<td class='col_c_post'>
+					{parse template="userSmallPhoto" group="global" params="$data['member']"}
+					<ul class='last_post ipsType_small'>
+						<if test="latestcatinfo:|:is_array($data['cfileinfo']) AND count($data['cfileinfo']) AND $data['cfileinfo']['fid']">
+							<li>
+								<a href='{parse url="app=bitracker&amp;showfile={$data['cfileinfo']['fid']}" base="public" template="bitshowfile" seotitle="{$data['cfileinfo']['fname_furl']}"}' title='{$this->lang->words['view_file']}: {$data['cfileinfo']['fname']}'>
+									{parse expression="IPSText::truncate( $data['cfileinfo']['fname'], 28)"}
+								</a>
+							</li>
+							<li>{$this->lang->words['by_ucfirst']} <if test="latestcatmid:|:$data['member']['member_id']">{parse template="userHoverCard" group="global" params="$data['member']"}<else />{$this->lang->words['global_guestname']}</if></li>
+							<li class='desc lighter'>{parse date="$data['cfileinfo']['date']" format="LONG"}</li>
+						<else />
+							<li class='desc lighter'><em>{$this->lang->words['cat_no_info']}</em></li>
+						</if>
+					</ul>
+				</td>
+				<td class='col_f_mod'>
+					<input class='input_check checkall toggle_notify_on' type="checkbox" name="likes[]" value="{$data['_followData']['like_app']}-{$data['_followData']['like_area']}-{$data['_followData']['like_rel_id']}" />
+				</td>
+			</tr>
+		</foreach>
+	</if>
+</table>]]></template_content>
+      <template_name>followedCategoryResults</template_name>
+      <template_data>$results</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<h3 class='ipsType_subtitle'>{$this->lang->words['ucp_manage_bitracker']}</h3>
+<br />
+<div class='row1'>
+	<if test="hasPagesTop:|:$page_links">
+		<div class='topic_controls'>
+			{$page_links}
+		</div>
+	</if>
+	{parse striping="bitrackerTable" classes="row1,row2"}
+	<table class='ipb_table' summary="{$this->lang->words['files_tracked_summary']}">
+		<tr class='header'>
+			<th scope='col' width="31%"><a href='{parse url="app=core&amp;module=usercp&amp;tab=bitracker&amp;area=mybitracker&amp;order=file_name&amp;ascdesc={$this->request['ascdesc']}" base="public"}'>{$this->lang->words['ucp_filename']}</a></th>
+			<th scope='col' width="18%"><a href='{parse url="app=core&amp;module=usercp&amp;tab=bitracker&amp;area=mybitracker&amp;order=file_submitted&amp;ascdesc={$this->request['ascdesc']}" base="public"}'>{$this->lang->words['ucp_submitted']}</a></th>
+			<th scope='col' width="18%"><a href='{parse url="app=core&amp;module=usercp&amp;tab=bitracker&amp;area=mybitracker&amp;order=file_updated&amp;ascdesc={$this->request['ascdesc']}" base="public"}'>{$this->lang->words['ucp_updated']}</a></th>
+			<th scope='col' width="8%"><a href='{parse url="app=core&amp;module=usercp&amp;tab=bitracker&amp;area=mybitracker&amp;order=file_bitracker&amp;ascdesc={$this->request['ascdesc']}" base="public"}'>{$this->lang->words['ucp_bitracker']}</a></th>
+			<th scope='col' width="8%"><a href='{parse url="app=core&amp;module=usercp&amp;tab=bitracker&amp;area=mybitracker&amp;order=file_views&amp;ascdesc={$this->request['ascdesc']}" base="public"}'>{$this->lang->words['ucp_views']}</a></th>
+			<th scope='col' width="17%"><a href='{parse url="app=core&amp;module=usercp&amp;tab=bitracker&amp;area=mybitracker&amp;order=file_rating&amp;ascdesc={$this->request['ascdesc']}" base="public"}'>{$this->lang->words['ucp_rating']}</a></th>
+		</tr>
+	
+		<if test="mybitracker:|:count($files)">
+			<foreach loop="mybitrackerLoop:$files as $file">
+				<tr class='{parse striping="bitrackerTable"}<if test="mybitrackermod:|:!$file['file_open']"> moderated</if>'>
+					<td><a href='{parse url="app=bitracker&amp;showfile={$file['file_id']}" base="public" template="bitshowfile" seotitle="{$file['file_name_furl']}"}'>{$file['file_name']} <if test="hasversionmyd:|:$file['file_version']"><span class='ipsType_small'>{$file['file_version']}</span></if></a></td>
+					<td>{parse date="$file['file_submitted']" format="tiny"}</td>
+					<td><if test="mybitrackerupdated:|:$file['file_updated'] > $file['file_submitted']">{parse date="$file['file_updated']" format="tiny"}<else />{parse date="$file['file_submitted']" format="tiny"}</if></td>
+					<td>{$file['file_bitracker']}</td>
+					<td>{$file['file_views']}</td>
+					<td>
+						{parse template="topic_rating_image" group="forum" params="$file['file_rating']"}
+					</td>
+				</tr>
+			</foreach>
+		<else />
+			<tr>
+				<td colspan='6' class='no_messages'>{$this->lang->words['ucp_blank_row']}</td>
+			</tr>
+		</if>
+	</table>
+	
+	<if test="hasPagesBottom:|:$page_links">
+		<div class='topic_controls'>
+			{$page_links}
+		</div>
+	</if>
+</div>]]></template_content>
+      <template_name>mybitracker</template_name>
+      <template_data><![CDATA[$page_links='', $files=array()]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<if test="hasportalentries:|:is_array( $data ) && count( $data )">
+<div class='ipsSideBlock clearfix'>
+	<h3>{$lang}</h3>
+	<div class='_sbcollapsable'>
+		<ul class='ipsList_withminiphoto'>
+		<foreach loop="portalentry:$data as $row">
+		<li class='clearfix'>
+			{parse template="userSmallPhoto" group="global" params="$row"}
+			<div class='list_content'>
+				<a href='{parse url="app=bitracker&amp;showfile={$row['file_id']}" base="public" template="bitshowfile" seotitle="{$row['file_name_furl']}"}' rel='bookmark' class='ipsType_small' title='{$row['file_name']}'>{$row['file_name']} <if test="hasversionprt:|:$row['file_version']"><span class='ipsType_small'>{$row['file_version']}</span></if></a>
+				<p class='desc ipsType_smaller'>
+					{parse template="userHoverCard" group="global" params="$row"} - {parse date="$row['file_submitted']" format="short"}
+				</p>
+			</div>
+		</li>
+		</foreach>
+		</ul>
+	</div>
+</div>
+</if>]]></template_content>
+      <template_name>portalBlock</template_name>
+      <template_data><![CDATA[$lang='',$data=array(),$show_bitracker=0]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<h3 class='maintitle'>{parse expression="sprintf( $this->lang->words['profile_last_x_files'], count($rows) )"}</h3>
+<div class='ipsBox'>
+	<div class='ipsBox_container'>
+		<table class='ipb_table topic_list' summary='{$this->lang->words['files_submitted_summary']}' id='bitracker_table'>
+			<if test="loopfiles:|:is_array($rows) AND count($rows)">
+			 <foreach loop="memberfiles:$rows as $data">
+				<tr class='<if test="readunread:|:!$data['_isRead']"> unread</if><if test="queued:|:!$data['file_open']"> moderated</if>' id='filerow_{$data['file_id']}'>
+					<td class='col_f_icon short altrow'>
+						<if test="readunread:|:!$data['_isRead']">
+							{parse replacement="t_unread"}
+						<else />
+							{parse replacement="t_read"}
+						</if>
+					</td>
+					<td>
+						<div class='right'>
+							<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+								<if test="filerate:|:$data['file_rating'] >= $_rating">{parse replacement="mini_rate_on"}<else />{parse replacement="mini_rate_off"}</if>
+							</foreach>
+						</div>
+						<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_file_named_title']} {$data['file_name']}'>{$data['file_name']} <if test="hasversionprf:|:$data['file_version']"><span class='ipsType_small'>{$data['file_version']}</span></if></a>
+						<if test="navbar:|:count($data['navigation'])">
+							<div class='desc blend_links ipsType_smaller'>{parse expression="implode( ' -&gt; ', $data['navigation'] )"}</div>
+						</if>
+					</td>
+					<td class='col_f_views'>
+						<ul>
+							<li>{parse format_number="$data['file_bitracker']"} <if test="tracktext2:|:intval($data['file_bitracker']) == 1">{$this->lang->words['track_singular']}<else />{$this->lang->words['track_plural']}</if></li>
+							<li class='views desc'>{parse format_number="$data['file_views']"} {$this->lang->words['catinfo_totalviews']}</li>
+						</ul>
+					</td>
+					<td class='col_f_post'>
+						<a href='{parse url="showuser={$data['member_id']}" seotitle="{$data['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink left'>
+							<img src='{$data['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+						</a>
+						<ul class='last_post ipsType_small'>
+							<li>{parse date="$data['file_submitted']" format="LONG"}</li>
+							<if test="catfileupdated:|:$data['file_updated'] > $data['file_submitted']">
+								<li class='desc'>{$this->lang->words['catdis_updated']}: {parse date="$data['file_updated']" format="LONG"}</li>
+							</if>
+						</ul>
+					</td>
+				</tr>
+			 </foreach>
+			</if>
+		</table>
+	</div>
+</div>]]></template_content>
+      <template_name>profileDisplay</template_name>
+      <template_data>$rows=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[{parse js_module="bitracker"}
+{parse striping="bitrackerTable" classes="row1,row2"}
+
+<if test="hasResults:|:is_array($results)">
+	<table class='ipb_table topic_list' id='forum_table'>
+		<foreach loop="results:$results as $result">	
+			{$result['html']}
+		</foreach>
+	</table>
+</if>
+<script type='text/javascript'>
+if( $('tmod_all') )
+{
+	$('tmod_all').hide();
+}
+</script>]]></template_content>
+      <template_name>searchResultsWrapper</template_name>
+      <template_data>$results, $titlesOnly</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[{parse template="subTabLoop" group="modcp" params=""}
+<div class='clearfix'>
+	<if test="hasPosts:|:is_array( $comments ) AND count( $comments )">
+		<div id='ips_Posts2'>
+			<foreach loop="post_data:$comments as $comment">
+				<div class='post_block hentry clear no_sidebar'>
+					<div class='post_wrap'>
+						<h3 class='row2'>
+							{parse template="userSmallPhoto" group="global" params="array_merge( $comment, array( '_customClass' => 'ipsUserPhoto_tiny' ) )"}&nbsp;
+							<if test="postMember:|:$comment['member_id']">
+								<span class="author vcard">{parse template="userHoverCard" group="global" params="$comment"}</span>
+							<else />
+								{$comment['members_display_name']}
+							</if>
+						</h3>
+						
+						<div class='post_body'>
+							<ul class='ipsList_inline modcp_post_controls'>
+								<li class='post_edit'>
+									<a href='{parse url="app=core&module=global&section=comments&do=showEdit&comment_id={$comment['comment_id']}&parentId={$comment['file_id']}&fromApp=bitracker-files&modcp=bitcomments" base="public"}' title='{$this->lang->words['post_edit_title']}' class='ipsButton_secondary ipsType_smaller' id='edit_post_{$post['post']['pid']}'>{$this->lang->words['post_edit']}</a>
+								</li>
+								<li>
+									<a href='{parse url="app=core&amp;module=global&amp;section=comments&amp;do=approve&amp;comment_id={$comment['comment_id']}&amp;parentId={$comment['file_id']}&amp;fromApp=bitracker-files&amp;modcp=bitcomments&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['post_toggle_visible']}' class='ipsButton_secondary ipsType_smaller'>{$this->lang->words['post_approve']}</span></a>
+								</li>
+								<li class='post_del'>
+									<a href='{parse url="app=core&amp;module=global&amp;section=comments&amp;do=delete&amp;comment_id={$comment['comment_id']}&amp;parentId={$comment['file_id']}&amp;fromApp=bitracker-files&amp;modcp=bitcomments&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['post_delete_title']}' class='delete_post ipsButton_secondary important ipsType_smaller'>{$this->lang->words['post_delete']}</a>
+								</li>
+								<li class='desc'>
+									<strong>{$this->lang->words['posted']}:</strong> <a rel='bookmark' class='desc lighter ipsType_smaller' href='{parse url="app=core&amp;module=global&amp;section=comments&amp;do=findComment&amp;comment_id={$comment['comment_id']}&amp;parentId={$comment['file_id']}&amp;fromApp=bitracker-files" base="public"}' title='{$this->lang->words['comment_permalink']}'>{parse date="$comment['comment_date']" format="short"}</a>
+								</li>
+								<li class='desc'>
+									<strong>{$this->lang->words['in_bit_file_uc']}:</strong> <a class='desc lighter ipsType_smaller' href='{parse url="app=bitracker&amp;showfile={$comment['file_id']}" seotitle="{$comment['file_name_furl']}" template="bitshowfile" base="public"}'>{IPSText::truncate( $comment['file_name'], 35 )}</a>
+								</li>
+							</ul>
+							<div class='post entry-content'>
+								{$comment['comment_text']}
+							</div>
+							<br />
+						</div>
+					</div>
+				</div>
+			</foreach>
+		</div>
+	<else />
+		<div class='no_messages'>
+			{$this->lang->words['no_unapproved_posts']}
+		</div>
+	</if>
+</div>]]></template_content>
+      <template_name>unapprovedComments</template_name>
+      <template_data>$comments</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_bitracker_other">
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[<h2 class='maintitle'>{$this->lang->words['dpage_header']}: {$info['file_name']} <if test="hasversionbuy:|:$info['file_version']"><span class='ipsType_small'>{$info['file_version']}</span></if></h2>
+<div class='ipsBox'>
+	<div class='ipsBox_container ipsPad_double'>
+		<if test="hasdisclaimer:|:$category['cdisclaimer']">
+			<div id='disclaimer_wrap'>
+				<h3>{$this->lang->words['dppage_starting']}</h3>
+				<br />
+				<div id='disclaimer' class='row2'>{$category['cdisclaimer']}</div>
+				<br />
+				<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=buy&amp;id={$info['file_id']}&amp;confirm=1" base="public" template="bitbuy" seotitle="{$info['file_name_furl']}"}' class='input_submit'>
+					{$this->lang->words['dppage_button']} {$file['record_realname']}
+				</a>
+			</div>
+		</if>
+	</div>
+</div>]]></template_content>
+      <template_name>confirmToBuy</template_name>
+      <template_data>$info=array(), $category=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[{parse js_module="bitracker"}
+{parse js_module="rating"}
+<h2 class='maintitle'>{$this->lang->words['dpage_header']}: {$info['file_name']} <if test="hasversionddl:|:$info['file_version']"><span class='ipsType_small'>{$info['file_version']}</span></if></h2>
+<div class='ipsBox'>
+	<div class='ipsBox_container ipsPad_double'>
+		<div id='files_wrap'<if test="addRateClass:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['perm_6']"> class='with_rating clearfix'</if><if test="hasdisclaimer:|:$category['cdisclaimer'] && !$this->request['agreed']"> style='display: none'</if>>
+			<h3>{$this->lang->words['files_below']}</h3>
+			<if test="showRateBox:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['perm_6']">
+				<div id='file_rating' class='row2 right'>
+					<div class='pad'>
+						<if test="notGuestRate:|:$this->memberData['member_id']">
+							<h3>{$this->lang->words['rate_this_file']}</h3>
+							<p>{$this->lang->words['rate_file_blurb']}</p>
+							<br />
+						<else />
+							<h3>{$this->lang->words['file_dl_currate']}</h3>
+						</if>
+						<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+							<if test="guestrate:|:$this->memberData['member_id']"><a href='{parse url="app=bitracker&amp;module=ajax&amp;section=rate&amp;id={$info['file_id']}&amp;rating={$_rating}&amp;secure_key={$this->member->form_hash}" base="public"}' id='file_rate_{$_rating}' title='{$this->lang->words['rate_file_1']}'></if><if test="filerate:|:$info['_total_rating'] >= $_rating">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="endguestrate:|:$this->memberData['member_id']"></a></if>
+						</foreach>
+						<span id='rating_text' class='desc'>
+							<if test="filevotes:|:$info['_rate_cnt'] > 0">{$info['_rate_cnt']} {$this->lang->words['votes_cnt']}</if>
+							<if test="fileyourvote:|:$info['_rating_value']">({$this->lang->words['you_voted']} {$info['_rating_value']})</if>
+						</span>
+						<script type='text/javascript'>
+							rating = new ipb.rating( 'file_rate_', { 
+												img_off: 			"{$this->settings['img_url']}/star_off.png",
+												img_on: 			"{$this->settings['img_url']}/star.png",
+												img_rated:			"{$this->settings['img_url']}/star_rated.png",
+												url: ipb.vars['base_url'] + 'app=bitracker&amp;module=ajax&amp;section=rate&amp;id={$info['file_id']}&amp;xml=1&md5check=' + ipb.vars['secure_hash'],
+												cur_rating: {$info['file_rating']},
+												rated: <if test="filejsvotes:|:$info['_rating_value']">1<else />0</if>,
+												allow_rate: <if test="filejsallowvote:|:in_array( $category['cid'], $this->registry->getClass('categories')->member_access['rate'] )">1<else />0</if>
+											  } );
+						</script>
+						<if test="hasComments:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['coptions']['opt_comments']">
+							<br /><br />
+							<a href='{parse url="app=bitracker&amp;showfile={$info['file_id']}" base="public" template="bitshowfile" seotitle="{$info['file_name_furl']}"}#commentsStart' class='input_submit alt'>{$this->lang->words['or_leave_a_review']}</a>
+						</if>
+					</div>
+				</div>
+			</if>
+			<div id='files'>
+				<ul>
+					<foreach loop="trackfiles:$files as $file">
+						<li>
+							<span class='right'>
+								{parse expression="IPSLib::sizeFormat( $file['record_size'] )"}
+							</span>
+							<if test="confirmdlurl:|:$this->settings['bit_dynamic_urls']">
+								<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=do_track&amp;hash={$this->request['hash']}&amp;id={$file['record_id']}" base="public" template="bitdd2" seotitle="{$file['record_realname']}"}' class='track_button rounded'>
+							<else />
+								<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=do_track&amp;id={$file['record_id']}" base="public" template="bitdotrack" seotitle="{$info['file_name_furl']}"}' class='track_button rounded'>
+							</if>
+							 {$this->lang->words['dpage_button_short']}<if test="notlink:|:$file['record_type'] == 'link' AND $file['record_link_type']"> ({$file['record_link_type']})</if></a>
+							&nbsp;&nbsp;
+							<strong class='name'>{$file['record_realname']}</strong>
+						</li>
+					</foreach>
+				</ul>
+			</div>
+		</div>
+		<if test="hasdisclaimer:|:$category['cdisclaimer']">
+			<div id='disclaimer_wrap' class='ipsPad' <if test="agreed:|:$this->request['agreed']">style='display: none'</if>>
+				<h3>{$this->lang->words['dpage_starting']}</h3>
+				<br />
+				<div id='disclaimer' class='row2'>{$category['cdisclaimer']}</div>
+				<br />
+				<br />
+				<if test="dynUrls:|:$this->settings['bit_dynamic_urls']">
+					<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=confirm_track&amp;hash={$this->request['hash']}&amp;agreed=1" base="public" template="bitdd" seotitle="{$info['file_name_furl']}"}' class='input_submit' id='agree_disclaimer'>
+				<else />
+					<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=confirm_track&amp;id={$info['file_id']}&amp;agreed=1" base="public" template="bittrack" seotitle="{$info['file_name_furl']}"}' class='input_submit' id='agree_disclaimer'>
+				</if>
+					{$this->lang->words['agree_and_dl']}
+				</a>
+			</div>
+		</if>
+	</div>
+</div>
+<script type='text/javascript'>
+	<if test="hasWaitPeriod:|:$this->memberData['bit_wait_period']">
+		ipb.bitracker.waitPeriod		= parseInt("{$this->memberData['bit_wait_period']}");
+		ipb.lang['bitjs_wait_str']		= "{$this->lang->words['bitjs_wait_str']}";
+		ipb.lang['bitjs_nowait_str']	= "{$this->lang->words['dpage_button_short']}";
+	</if>
+	ipb.bitracker.inittrackPage();
+</script>]]></template_content>
+      <template_name>confirmtrack</template_name>
+      <template_data>$info=array(), $files=array(), $category=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[{parse js_module="bitracker"}
+{parse js_module="rating"}
+<h2 class='maintitle'>{$this->lang->words['dpage_header']}: {$info['file_name']} <if test="hasversionddl:|:$info['b_version']"><span class='ipsType_small'>{$info['b_version']}</span></if></h2>
+<div class='ipsBox'>
+	<div class='ipsBox_container ipsPad_double'>
+		<div id='files_wrap'<if test="addRateClass:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['perm_6']"> class='with_rating clearfix'</if><if test="hasdisclaimer:|:$category['cdisclaimer'] && !$this->request['agreed']"> style='display: none'</if>>
+			<h3>{$this->lang->words['files_below']}</h3>
+			<if test="showRateBox:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['perm_6']">
+				<div id='file_rating' class='row2 right'>
+					<div class='pad'>
+						<if test="notGuestRate:|:$this->memberData['member_id']">
+							<h3>{$this->lang->words['rate_this_file']}</h3>
+							<p>{$this->lang->words['rate_file_blurb']}</p>
+							<br />
+						<else />
+							<h3>{$this->lang->words['file_dl_currate']}</h3>
+						</if>
+						<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+							<if test="guestrate:|:$this->memberData['member_id']"><a href='{parse url="app=bitracker&amp;module=ajax&amp;section=rate&amp;id={$info['file_id']}&amp;rating={$_rating}&amp;secure_key={$this->member->form_hash}" base="public"}' id='file_rate_{$_rating}' title='{$this->lang->words['rate_file_1']}'></if><if test="filerate:|:$info['_total_rating'] >= $_rating">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="endguestrate:|:$this->memberData['member_id']"></a></if>
+						</foreach>
+						<span id='rating_text' class='desc'>
+							<if test="filevotes:|:$info['_rate_cnt'] > 0">{$info['_rate_cnt']} {$this->lang->words['votes_cnt']}</if>
+							<if test="fileyourvote:|:$info['_rating_value']">({$this->lang->words['you_voted']} {$info['_rating_value']})</if>
+						</span>
+						<script type='text/javascript'>
+							rating = new ipb.rating( 'file_rate_', { 
+												img_off: 			"{$this->settings['img_url']}/star_off.png",
+												img_on: 			"{$this->settings['img_url']}/star.png",
+												img_rated:			"{$this->settings['img_url']}/star_rated.png",
+												url: ipb.vars['base_url'] + 'app=bitracker&amp;module=ajax&amp;section=rate&amp;id={$info['file_id']}&amp;xml=1&md5check=' + ipb.vars['secure_hash'],
+												cur_rating: {$info['file_rating']},
+												rated: <if test="filejsvotes:|:$info['_rating_value']">1<else />0</if>,
+												allow_rate: <if test="filejsallowvote:|:in_array( $category['cid'], $this->registry->getClass('categories')->member_access['rate'] )">1<else />0</if>
+											  } );
+						</script>
+						<if test="catComs:|:$this->registry->getClass('categories')->cat_lookup[ $category['cid'] ]['coptions']['opt_comments']">
+							<br /><br />
+							<a href='{parse url="app=bitracker&amp;showfile={$info['file_id']}" base="public" template="bitshowfile" seotitle="{$info['file_name_furl']}"}#commentsStart' class='input_submit alt'>{$this->lang->words['or_leave_a_review']}</a>
+						</if>
+					</div>
+				</div>
+			</if>
+			<div id='files'>
+				<ul>
+					<foreach loop="trackfiles:$files as $file">
+						<li>
+							<span class='right'>
+								{parse expression="IPSLib::sizeFormat( $file['record_size'] )"}
+							</span>
+							<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=version_track&amp;id={$info['b_id']}&amp;record={$file['record_id']}" base="public"}' class='track_button rounded'>{$this->lang->words['dpage_button_short']}<if test="notlink:|:$file['record_type'] == 'link' AND $file['record_link_type']"> ({$file['record_link_type']})</if></a>
+							&nbsp;&nbsp;
+							<strong class='name'>{$file['record_realname']}</strong>
+						</li>
+					</foreach>
+				</ul>
+			</div>
+		</div>
+		<if test="hasdisclaimer:|:$category['cdisclaimer']">
+			<div id='disclaimer_wrap' class='ipsPad' <if test="agreed:|:$this->request['agreed']">style='display: none'</if>>
+				<h3>{$this->lang->words['dpage_starting']}</h3>
+				<br />
+				<div id='disclaimer' class='row2'>{$category['cdisclaimer']}</div>
+				<br />
+				<br />
+				<a href='{parse url="app=bitracker&amp;module=display&amp;section=download&amp;do=version_track&amp;id={$this->request['id']}&amp;agreed=1" base="public"}' class='input_submit' id='agree_disclaimer'>{$this->lang->words['agree_and_dl']}</a>
+			</div>
+		</if>
+	</div>
+</div>
+<script type='text/javascript'>
+	<if test="hasWaitPeriod:|:$this->memberData['bit_wait_period']">
+		ipb.bitracker.waitPeriod		= parseInt("{$this->memberData['bit_wait_period']}");
+		ipb.lang['bitjs_wait_str']		= "{$this->lang->words['bitjs_wait_str']}";
+		ipb.lang['bitjs_nowait_str']	= "{$this->lang->words['dpage_button_short']}";
+	</if>
+	ipb.bitracker.inittrackPage();
+</script>]]></template_content>
+      <template_name>confirmVersiontrack</template_name>
+      <template_data>$info=array(), $files=array(), $category=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[{parse js_module="bitracker"}
+<script type='text/javascript'>
+	ipb.vars['lang_suredelete'] = '{$this->lang->words['bit_suredelete']}';
+</script>
+<form action='{$this->settings['base_url']}' method='post' id='modform'>
+	<input type='hidden' name='app' value='bitracker' />
+	<input type='hidden' name='module' value='moderate' />
+	<input type='hidden' name='section' value='moderate' />
+	<input type='hidden' name='do' value='modaction' />
+	<input type='hidden' name='type' value='<if test="modpaneltype:|:$type == 'unapproved'">app<else />broke</if>' />
+	<input type='hidden' name='secure_key' value='{$this->member->form_hash}' />
+	
+	<div class='category_block block_wrap'>
+		<if test="modpaneltitle:|:$type == 'unapproved'">
+			{parse template="subTabLoop" group="modcp" params=""}
+		<else />
+			<h3 class='maintitle'>{$this->lang->words['moderate_broke_top']}</h3>
+		</if>
+		<table class='ipb_table topic_list' summary='<if test="modpanelsummary:|:$type == 'unapproved'">{$this->lang->words['files_pending_approval']}<else />{$this->lang->words['files_broken_summary']}</if>' id='bitracker_table'>
+			<if test="modpanelhiddenfiles:|:!count($results)">
+				<tr>
+					<td colspan='5' class='no_messages'><if test="modpanelnone:|:$type == 'unapproved'">{$this->lang->words['nofiles_pending_approval']}<else />{$this->lang->words['nofiles_pending_broken']}</if></td>
+				</tr>
+			<else />
+				<foreach loop="pendingfiles:$results as $data">
+					<tr class='<if test="isUnread:|:!$data['_isRead']"> unread</if><if test="modpanelhiddenpending:|:$type != 'unapproved' && !$data['file_open']"> moderated</if>' id='filerow_{$data['file_id']}'>
+						<td class='col_f_icon short altrow'>
+							<if test="isUnreadIcon:|:!$data['_isRead']">
+								<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_file_named_title']} {$data['file_name']}'>
+									<if test="isFileUploader:|:$this->memberData['member_id'] && $this->memberData['member_id'] == $data['member_id']">
+										{parse replacement="t_unread_dot"}
+									<else />
+										{parse replacement="t_unread"}
+									</if>
+								</a>
+							</if>
+						</td>
+						<td>
+							<div class='right'>
+								<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+									<if test="filerate:|:$data['file_rating'] >= $_rating">{parse replacement="mini_rate_on"}<else />{parse replacement="mini_rate_off"}</if>
+								</foreach>
+							</div>
+							<if test="checkForNexus:|:IPSLib::appIsInstalled('nexus') && $this->settings['bit_nexus_on'] && !$data['file_nexus']">
+								<span class='ipsBadge ipsBadge_green'>
+									<if test="checkForPrice:|:!$data['file_cost']">
+										{$this->lang->words['free']}
+									<else />
+										{parse expression="ipsRegistry::getClass('class_localization')->formatMoney( $data['file_cost'], false )"}
+									</if>
+								</span>
+							</if>
+							<a href='{parse url="app=bitracker&amp;showfile={$data['file_id']}" base="public" template="bitshowfile" seotitle="{$data['file_name_furl']}"}' title='{$this->lang->words['view_file_named_title']} {$data['file_name']}'>{$data['file_name']} <if test="hasversionmod:|:$data['file_version']"><span class='ipsType_small'>{$data['file_version']}</span></if></a>
+						</td>
+						<td class='col_f_views'>
+							<ul>
+								<li>
+									<if test="canviewbitracker:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $data['file_submitter'] ) )"><a href='#' class='view-bitracker' id='view-bitracker-{$data['file_id']}'></if>
+										{parse format_number="$data['file_bitracker']"} <if test="modpanelhiddendllang:|:intval($data['file_bitracker']) == 1">{$this->lang->words['track_singular']}<else />{$this->lang->words['track_plural']}</if>
+									<if test="canviewbitrackerclose:|:$this->settings['bit_logallbitracker'] AND ( $this->memberData['bit_view_bitracker'] OR ( $this->settings['submitter_view_dl'] && $this->memberData['member_id'] == $data['file_submitter'] ) )"></a></if>
+								</li>
+								<li class='views desc'>{parse format_number="$data['file_views']"} {$this->lang->words['catinfo_totalviews']}</li>
+							</ul>
+						</td>
+						<td class='col_f_post'>
+							{parse template="userSmallPhoto" group="global" params="$data"}
+							<ul class='last_post ipsType_small'>
+								<li><if test="catuserid:|:$data['member_id']">{parse template="userHoverCard" group="global" params="$data"}<else />{$this->lang->words['global_guestname']}</if></li>
+								<li>{parse date="$data['file_submitted']" format="long"}</li>
+								<if test="modpanelhiddenupdated:|:$data['file_updated'] > $data['file_submitted']">
+									<li>{$this->lang->words['catdis_updated']}: {parse date="$data['file_updated']" format="long"}</li>
+								</if>
+							</ul>
+						</td>
+						<td class='col_f_mod'>
+							<input type='checkbox' name='selectedfileids[]' class='input_check topic_moderation' id='file_{$data['file_id']}' value='{$data['file_id']}' />
+						</td>
+					</tr>
+				</foreach>
+			</if>
+		</table>
+		
+		<div id='topic_mod' class='moderation_bar rounded with_action clear'>
+			<select name='doaction' id='doaction'>
+				<if test="modpanelnone:|:$type == 'unapproved'">
+					<option value=''>{$this->lang->words['modact_select']}</option>
+					<option value='app'>{$this->lang->words['modact_approve']}</option>
+					<option value='del'>{$this->lang->words['modact_delete']}</option>
+				<else />
+					<option value=''>{$this->lang->words['modact_select']}</option>
+					<option value='rem'>{$this->lang->words['modact_rembroke']}</option>
+					<option value='del'>{$this->lang->words['modact_delete']}</option>
+				</if>
+			</select>&nbsp;
+			<input type="submit" name="gobutton" value="{$this->lang->words['mod_button']}" class="input_submit alt submit_button" id='mod_submit' />
+		</div>
+	</div>
+</form>
+<script type='text/javascript'>
+	$('modform').observe('submit', ipb.bitracker.submitModForm);
+</script>]]></template_content>
+      <template_name>moderatorPanel</template_name>
+      <template_data>$type, $results</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_bitracker_submit">
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<html>
+<body style='background-color: transparent;'>
+	<form id='iframeUploadForm_{$id}' method='post' enctype="multipart/form-data" action=''>
+		<script type='text/javascript'>
+			parent.ipb.uploader._jsonPass( '{$id}', {$JSON} );
+		</script>
+		<input type='file' id='iframeUploadBox_{$id}' style='display: inline' name='FILE_UPLOAD' /> <input type='reset' value='{$this->lang->words['clear_selection']}' style='display: inline' />
+	</form>
+</body>
+</html>]]></template_content>
+      <template_name>filesIframe</template_name>
+      <template_data>$JSON, $id</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<if test="flash:|:$this->memberData['member_uploader'] == 'flash'">
+	<script type='text/javascript' src='{$this->settings['public_dir']}js/3rd_party/swfupload/swfupload.js'></script>
+	<script type='text/javascript' src='{$this->settings['public_dir']}js/3rd_party/swfupload/plugins/swfupload.swfobject.js'></script>
+	<script type='text/javascript' src='{$this->settings['public_dir']}js/3rd_party/swfupload/plugins/swfupload.cookies.js'></script>
+	<script type='text/javascript' src='{$this->settings['public_dir']}js/3rd_party/swfupload/plugins/swfupload.queue.js'></script>
+</if>
+{parse js_module="bitracker"}
+{parse js_module="bitsubmit"}
+<form action='{$this->settings['base_url']}' method='post' id='postingform' enctype='multipart/form-data' name='REPLIER'>
+	<input type='hidden' name='app' value='bitracker' />
+	<input type='hidden' name='section' value='submit' />
+	<input type='hidden' name='module' value='post' />
+	<input type='hidden' name='do' value='{$default['code']}' />
+	<input type='hidden' name='id' value='{$default['file_id']}' />
+	<input type='hidden' name='post_key' value='{$default['file_post_key']}' />
+	<input type='hidden' name='file_cat' value='{$category['cid']}' />
+	<input type='hidden' name='secure_key' value='{$this->member->form_hash}' />
+	<input type='hidden' name='bypass_revision' value='{$this->request['bypass_revision']}' />
+
+	<if test="errormessage:|:$error_message">
+		<input type='hidden' name='error_shown' value='1' />
+		<div class='message error'>{$error_message}</div>
+		<br />
+	</if>
+	<php>
+		$this->templateVars['step'] = 1;
+		$this->fileLinkIndex = 0;
+		$this->ssLinkIndex = 0;
+	</php>
+	
+	<if test="revisionmessage:|:$this->settings['bit_versioning'] AND $type == 'edit' AND ( !$this->memberData['bit_bypass_revision'] OR !$this->request['bypass_revision'] )">
+		<div class='message unspecific'>
+			<h3>{$this->lang->words['new_version_submit_h3']}</h3>
+			<p>{$this->lang->words['new_version_notice']}</p>
+		</div>
+	</if>
+	{parse striping="post_stripe" classes="row1,row2"}
+	
+	<h2 class='maintitle'>{parse expression="sprintf( $this->lang->words['sform_filelang'], $default['header_lang'] )"} {$category['cname']}</h2>
+	<div class='ipsBox' id='submit_file'>
+		
+		<div class='ipsBox_container ipsPad_double' id='change_cat'>
+			<div class='ipsPad'>
+				<if test="changecat:|:$default['file_id']">
+					{$this->lang->words['file_currently_in']} <strong>{$category['cname']}</strong>. <a href='{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;do=edit_cat&amp;id={$default['file_id']}&amp;bypass_revision={$this->request['bypass_revision']}" base="public"}' class='input_submit alt'>{$this->lang->words['change_category']}</a>
+				<else />
+					{$this->lang->words['adding_file_to']} <strong>{$category['cname']}</strong>. <a href='{parse url="app=bitracker&amp;module=post&amp;section=submit&amp;do=add_start" base="public"}' class='input_submit alt'>{$this->lang->words['change_category']}</a>
+				</if>
+			</div>
+		</div>
+		<br />
+		
+		<!-- FILE PANEL -->
+		<div class='ipsBox_container' id='panel_files'>
+			<h3 class='bar altbar'>{parse expression="sprintf( $this->lang->words['step_1'], $this->templateVars['step'] )"} &nbsp;&nbsp;<span class='ipsForm_required ipsType_smaller'><em>{$this->lang->words['required']}</em></span></h3>
+			<if test="showLinkedFileList:|:($this->settings['bit_allow_urls'] AND $default['can_post_links']) || ($this->settings['bit_allow_path'] AND $default['can_post_paths'])">
+				<ul id='files_linked' class='file_listing'>
+					<!-- Add any existing links -->
+					<if test="defaultlinks:|:count($links['files'])">
+						<foreach loop="linkloop:$links['files'] as $link">
+							<li class='complete'>
+								<php>
+									$index	= intval($this->fileLinkIndex);
+									$this->fileLinkIndex = intval($this->fileLinkIndex) + 1;
+								</php>
+								<span class='f_icon img_holder'>
+									<img src='{$this->settings['img_url']}/bitracker/link_icon.png' />
+								</span>
+								<span class='f_textentry'>
+									<input type='text' class='input_text' name='file_url[{$index}]' id='file_url_{$index}' size='35' value='{$link[0]}' /> &nbsp;
+									<if test="linktypes:|:count($this->settings['bit_linked_types'])">
+										<select name='file_url_type[{$index}]' id='file_url_type_{$index}'>
+											<foreach loop="linktypesloop:$this->settings['bit_linked_types'] as $type">
+												<option value='{$type}'<if test="defaultlinkdd:|:$type==$link[1]"> selected='selected'</if>>{$type}</option>
+											</foreach>
+										</select>
+									</if>
+								</span>
+								<span class='links'>
+									<a href='#' class='desc delete remove_external'>{$this->lang->words['attach_delete']}</a>
+								</span>
+							</li>
+						</foreach>
+					<else />
+						<li style='display: none'></li>
+					</if>
+				</ul>
+			</if>
+			<ul id='files_list' class='file_listing'>
+				<li style='display: none'></li>
+			</ul>
+			<div class='pad'>
+				<div id='files_error_box' class='message error' style='display:none'></div>		
+				<span id='files_buttonPlaceholder'></span>
+				<input type='button' id='add_files_files' class='input_submit' value='{$this->lang->words['attach_selected']}' style='display: none;' />
+				<if test="uploadurl:|:$this->settings['bit_allow_urls'] AND $default['can_post_links']">
+					&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' id='add_file_link' style='text-decoration: none'>{$this->lang->words['file_link']}</a>
+				</if>
+				<if test="togglefilepane:|:$this->settings['bit_allow_path'] AND $default['can_post_paths']">
+					&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' id='add_file_path' style='text-decoration: none'>{$this->lang->words['file_path']}</a>
+				</if>
+				<p class='desc right' style='margin-top: 7px;'>
+					{$this->lang->words['max_file_size_is']} {IPSLib::sizeFormat( ( $category['coptions']['opt_maxfile'] ? $category['coptions']['opt_maxfile'] : $this->settings['bit_default_maxsize'] ) * 1024)}.
+					<a href='#' id='file_allowed_types'>{$this->lang->words['what_can_i_upload']}</a> 
+				</p>
+				<p class='desc lighter ipsType_smaller' style='margin-top: 10px;'>
+					<if test="flashuploadhelp:|:$this->memberData['member_uploader'] == 'flash'">
+						 {$this->lang->words['trouble_uploading']} <a href='#' data-switch='default' title='{$this->lang->words['switch']}'>{$this->lang->words['switch_to_basic']}</a>
+					<else />
+						<a href='#' data-switch='flash' title='{$this->lang->words['switch']}' tabindex='-1'>{$this->lang->words['switch_to_advanced']}</a>
+					</if>
+				</p>
+			</div>
+		</div>
+		<br />
+		<if test="afterFileStep:|:$this->templateVars['step']++"></if>
+		
+		<!-- SCREENSHOT PANEL -->
+		<if test="uploadallowss:|:$category['coptions']['opt_allowss']">
+			<div class='ipsBox_container' id='panel_screenshots'>
+				<h3 class='bar altbar'>{parse expression="sprintf( $this->lang->words['step_2'], $this->templateVars['step'] )"} <if test="uploadssurlreq:|:$category['coptions']['opt_reqss']">&nbsp;&nbsp;<span class='ipsForm_required ipsType_smaller'><em>{$this->lang->words['required']}</em></span></if></h3>
+				<if test="showLinkedSsList:|:($this->settings['bit_allow_urls'] AND $default['can_post_links']) || ($this->settings['bit_allow_path'] AND $default['can_post_paths'])">
+					<ul id='ss_linked' class='file_listing clearfix'>
+						<!-- Add any existing links -->
+						<if test="defaultsslinks:|:count($links['ss'])">
+							<foreach loop="linkssloop:$links['ss'] as $link">
+								<li class='complete'>
+									<php>
+										$index	= intval($this->ssLinkIndex);
+										$this->ssLinkIndex = intval($this->ssLinkIndex) + 1;
+									</php>
+									<span class='f_icon img_holder'>
+										<img src='{$this->settings['img_url']}/bitracker/link_icon.png' />
+									</span>
+									<span class='f_textentry'>
+										<input type='text' class='input_text' name='file_ssurl[{$index}]' id='file_ssurl_{$index}' size='50' value='{$link[0]}' />
+									</span>
+									<input type='radio' name='primary[l_{$index}]' class='primary_radio' value='1' <if test="cheekycheckcheck:|:$link[1]">checked='checked'</if> />	{$this->lang->words['main_screenshot']} 
+									<span class='links'><a href='#' class='desc delete remove_external'>{$this->lang->words['attach_delete']}</a></span>
+								</li>
+							</foreach>
+						<else />
+							<li style='display: none'></li>
+						</if>
+					</ul>
+				</if>
+				<ul id='ss_list' class='file_listing clearfix'>
+					<li style='display: none'></li>
+				</ul>
+				<div class='pad'>
+					<div id='ss_error_box' class='message error' style='display:none'></div>
+					<span id='ss_buttonPlaceholder'></span>
+					<input type='button' id='add_files_ss' class='input_submit' value='{$this->lang->words['attach_selected']}' style='display: none;' />
+					<if test="uploadssurl:|:$this->settings['bit_allow_urls'] AND $default['can_post_links']">
+						&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' style='text-decoration: none' id='add_ss_link'>{$this->lang->words['image_link']}</a>
+					</if>
+					<if test="togglefilepane2:|:$this->settings['bit_allow_path'] AND $default['can_post_paths']">
+						&nbsp;&nbsp;&nbsp;&nbsp;<a href='#' id='add_ss_path' style='text-decoration: none'>{$this->lang->words['image_path']}</a>
+					</if>
+					<p class='desc right' style='margin-top: 7px'>
+						{$this->lang->words['max_file_size_is']} {IPSLib::sizeFormat( ( $category['coptions']['opt_maxss'] ? $category['coptions']['opt_maxss'] : $this->settings['bit_default_maxsize'] ) * 1024)}.
+						<a href='#' id='ss_allowed_types'>{$this->lang->words['what_can_i_upload']}</a>
+					</p>
+					<p class='desc lighter ipsType_smaller' style='margin-top: 10px;'>
+						<if test="flashuploadhelp2:|:$this->memberData['member_uploader'] == 'flash'">
+							 {$this->lang->words['trouble_uploading']} <a href='#' data-switch='default' title='{$this->lang->words['switch']}'>{$this->lang->words['switch_to_basic']}</a>
+						<else />
+							<a href='#' data-switch='flash' title='{$this->lang->words['switch']}' tabindex='-1'>{$this->lang->words['switch_to_advanced']}</a>
+						</if>
+					</p>
+				</div>
+			</div>
+			<br />
+			<if test="afterScreenshotStep:|:$this->templateVars['step']++"></if>
+		</if>
+		
+		<!-- FILE INFO PANEL -->
+		<div class='ipsBox_container' id='panel_file_info'>
+			<h3 class='bar altbar'>{parse expression="sprintf( $this->lang->words['step_3'], $this->templateVars['step'] )"} &nbsp;&nbsp;<span class='ipsForm_required ipsType_smaller'><em>{$this->lang->words['required']}</em></span></h3>
+			<div class='ipsForm ipsPad'>
+				<ul class='ipsForm_horizontal ipsPad'>
+					<li class='ipsField clear'>
+						<div class='ipsField_content ipsForm_required ipsType_smaller'>* {$this->lang->words['required_fields']}</div>
+					</li>
+					<li class='ipsField clear'>
+						<label for='file_name' class='ipsField_title'>{$this->lang->words['sform_filename']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'><input name='file_name' id='file_name' class='input_text' type='text' size='50' value='{$default['file_name']}' /></div>
+					</li>
+					<li class='ipsField clear'>
+						<label for='file_version' class='ipsField_title'>{$this->lang->words['sform_fileversion']}</label>
+						<div class='ipsField_content'><input name='file_version' id='file_version' class='input_text' type='text' size='50' value='{$default['file_version']}' /></div>
+					</li>
+					<if test="hasTags:|:$default['_tagBox']">
+						<li class='ipsField'>
+							<label class='ipsField_title'>{$this->lang->words['sform_tags']}</label>
+							<div class='ipsField_content'>
+								{$default['_tagBox']}
+							</div>
+						</li>
+					</if>
+					<li class='ipsField clear'>
+						<label for='file_changelog' class='ipsField_title'>{$this->lang->words['sform_filechanges']}</label>
+						<div class='ipsField_content'><textarea name='file_changelog' id='file_changelog' class='input_text' cols='50' rows='6' />{$default['file_changelog']}</textarea></div>
+					</li>
+					<li class='ipsField ipsField_editor clear'>
+						<label for='description' class='ipsField_title'>{$this->lang->words['file_description']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'>{$default['_editor']}</div>
+					</li>
+											
+					<if test="nexusTest:|:IPSLib::appIsInstalled('nexus') AND $this->settings['bit_nexus_on'] AND $this->memberData['bit_add_paid']">
+						<li class='ipsField clear'>
+							<label for='file_cost_type' class='ipsField_title'>{$this->lang->words['file_nexus_type']}</label>
+							<div class='ipsField_content'>
+								<input type='radio' name='file_cost_type' value='free' onclick="nexusSelect('free')" <if test="nexusFree:|:$default['nexus'] == 'free' || empty($default['nexus'])">checked='checked'</if> /> {$this->lang->words['file_free']}<br />
+								<input type='radio' name='file_cost_type' value='cost' onclick="nexusSelect('paid')" <if test="nexusPaid:|:$default['nexus'] == 'paid'">checked='checked'</if> /> {$this->lang->words['file_paid']}
+								<if test="isAdmin:|:$this->memberData['g_access_cp']">
+									<br />
+									<input type='radio' name='file_cost_type' value='package' onclick="nexusSelect('package')" <if test="nexusPackage:|:$default['nexus'] == 'package'">checked='checked'</if> /> {$this->lang->words['file_nexus']}
+								</if>
+							</div>
+						</li>
+						<li class='ipsField clear' id='paid' style='display:none;'>
+							<label for='file_cost' class='ipsField_title'>{$this->lang->words['file_cost']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+							<div class='ipsField_content'>
+								<input name='file_cost' id='file_cost' class='input_text' type='text' size='7' value='{$default['file_cost']}' /> {$this->settings['nexus_currency']}
+								<div class='desc'>{$paid_file_message}</div>
+							</div>
+						</li>
+						<if test="fileId:|:!$default['file_id']">
+							<span id='renewal-terms' style='display:none'>
+								<li class='ipsField clear'>
+									<label for='renewal_terms' class='ipsField_title'>{$this->lang->words['submit_renewals']}</label>
+									<div class='ipsField_content'>
+										<input type='radio' name='renewals' id='renewal_terms_off' value='1' onclick="$('renewal-details').style.display = 'none';" <if test="norenew:|:!$default['renewals'] OR $default['renewals'] == 1">checked='checked'</if> /> {$this->lang->words['renews_off']}<br />
+										<input type='radio' name='renewals' id='renewal_terms_on' value='2' onclick="$('renewal-details').style.display = '';" <if test="isrenew:|:$default['renewals'] == 2">checked='checked'</if> /> {$this->lang->words['renews_on']}<br />
+									</div>
+								</li>
+								<span id='renewal-details' style='display:none'>
+									<li class='ipsField clear'>
+										<label class='ipsField_title'>{$this->lang->words['renews_term']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+										<div class='ipsField_content'>
+											{$this->lang->words['renewals_submit_every']} <input name='renewal_term' size='2' value='{$default['renewal_term']}' /> <select name='renewal_units'><option value='d'<if test="renewd:|:$default['renewal_units'] == 'd'"> selected='selected'</if>>{$this->lang->words['renew_term_days']}</option><option value='w'<if test="reneww:|:$default['renewal_units'] == 'w'"> selected='selected'</if>>{$this->lang->words['renew_term_weeks']}</option><option value='m' <if test="renewm:|:!$default['renewal_units'] OR $default['renewal_units'] == 'm'"> selected='selected'</if>>{$this->lang->words['renew_term_months']}</option><option value='y'<if test="renewy:|:$default['renewal_units'] == 'y'"> selected='selected'</if>>{$this->lang->words['renew_term_years']}</option></select>
+										</div>
+									</li>
+									<li class='ipsField clear'>
+										<label class='ipsField_title'>{$this->lang->words['renews_cost']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+										<div class='ipsField_content'>
+											<input name='renewal_price' class='input_text' type='text' size='7' value='{$default['renewal_price']}' /> {$this->settings['nexus_currency']}
+											<div class='desc'>{$paid_file_message}</div>
+										</div>
+									</li>
+									<li class='ipsField clear'>
+										<div class='ipsField_content ipsForm_required'>
+											{$this->lang->words['renews_warning']}
+										</div>
+									</li>
+								</span>
+							</span>
+						</if>
+						<if test="isAdmin2:|:$this->memberData['g_access_cp']">
+							<li class='ipsField ipsField_select clear' id='package' style='display:none'>
+								<label for='file_package' class='ipsField_title'>{$this->lang->words['file_package']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+								<div class='ipsField_content'>
+									<select name='file_package[]' size='6' multiple='multiple'>{$packageList}</select>
+								</div>
+							</li>
+						</if>
+					</if>
+					<if test="customfields:|:$category['ccfields'] AND count($bit_customFields->out_fields)">
+						<foreach loop="cfields:$bit_customFields->out_fields as $id => $data">
+							<li class='ipsField clear'>
+								<label for='field_{$id}' class='ipsField_title'>
+									{$bit_customFields->field_names[ $id ]}
+									<if test="cfieldrequired:|:$bit_customFields->cache_data[ $id ]['cf_not_null']">
+										<span class='ipsForm_required ipsType_smaller'>*</span>
+									</if>
+								</label>
+								<div class='ipsField_content'>
+									{$data}
+									<div class='desc'>{$bit_customFields->field_desc[ $id ]}</div>
+								</div>
+							</li>
+						</foreach>
+					</if>
+				</ul>
+			</div>
+			<if test="afterInfoStep:|:$this->templateVars['step']++"></if>
+		</div>
+	</div>
+	<p class='submit'>
+		<input type="submit" name="dosubmit" value="{$default['button']}" class="input_submit" accesskey="s" />
+	</p>
+</form>
+<div id='view_filetypes' style='display: none'>
+	<div class='ipsPad_double'><strong>{$this->lang->words['sform_allowed']}</strong>: {$default['allowed_file']}</div>
+</div>
+<div id='view_sstypes' style='display: none'>
+	<div class='ipsPad_double'><strong>{$this->lang->words['sform_allowed']}</strong>: {$default['allowed_ss']}</div>
+</div>
+<script type='text/javascript'>
+	ipb.lang['swf_attach_selectedfiles']	= "{$this->lang->words['swf_attach_selectedfiles']}";
+	ipb.lang['swf_attach_selectedss']		= "{$this->lang->words['swf_attach_selectedss']}";
+	ipb.lang['nofiles_uploaded']			= "{$this->lang->words['you_did_not_upload']}";
+	
+	document.observe("dom:loaded", function(){
+		//-----------------------------------------
+		// Templates
+		//-----------------------------------------
+		
+		ipb.templates['new_file_link']	=	new Template("<li class='complete'><span class='f_icon img_holder'><img src='{$this->settings['img_url']}/bitracker/link_icon.png' /></span>" +
+												"<span class='f_textentry'><input type='text' class='input_text' name='file_url[#{id}]' id='file_url_#{id}' size='35' value='' /> &nbsp; " + 
+													<if test="linktypes:|:count($this->settings['bit_linked_types'])">
+														"<select name='file_url_type[#{id}]' id='file_url_type_#{id}'>" +
+														<foreach loop="linktypesloop2:$this->settings['bit_linked_types'] as $type">
+															"<option value='{$type}'>{$type}</option>" + 
+														</foreach>
+														"</select></span><span class='links'><a href='#' class='desc delete remove_external'>{$this->lang->words['attach_delete']}</a></span>" + 
+													</if>
+												"</li>");
+												
+		ipb.templates['new_file_path']	=	new Template("<li class='complete' id='file_path'><span class='f_icon img_holder'><img src='{$this->settings['img_url']}/bitracker/path_icon.png' /></span>" +
+												"<span class='f_textentry'><input type='text' class='input_text' name='file_path' size='35' value='' /></span><span class='links'><a href='#' class='desc delete remove_external'>{$this->lang->words['attach_delete']}</a></span>" + 
+												"</li>");
+		ipb.templates['new_ss_link']	=	new Template("<li class='complete'><span class='f_icon img_holder'><img src='{$this->settings['img_url']}/bitracker/link_icon.png' /></span>" +
+												"<span class='f_textentry'><input type='text' class='input_text' name='file_ssurl[#{id}]' id='file_ssurl_#{id}' size='50' value='' />" + 
+												"</span><input type='radio' name='primary[l_#{id}]' class='primary_radio' value='1' />	{$this->lang->words['main_screenshot']} <span class='links'><a href='#' class='desc delete remove_external'>{$this->lang->words['attach_delete']}</a></span></li>");
+												
+		ipb.templates['new_ss_path']	=	new Template("<li class='complete' id='ss_path'><span class='f_icon img_holder'><img src='{$this->settings['img_url']}/bitracker/path_icon.png' /></span>" +
+												"<span class='f_textentry'><input type='text' class='input_text' name='file_sspath' size='35' value='' /></span><input type='radio' name='primary[p_#{id}]' class='primary_radio' value='1' /> {$this->lang->words['main_screenshot']} <span class='links'><a href='#' class='desc delete remove_external'>{$this->lang->words['attach_delete']}</a></span>" + 
+												"</li>");
+		ipb.bitracker.lastFileId		= parseInt("{$this->fileLinkIndex}");
+		ipb.bitracker.lastScreenshotId	= parseInt("{$this->ssLinkIndex}");
+		
+		ipb.bitracker.initSubmitForm();
+		//-----------------------------------------
+		// Uploader handler for files
+		//-----------------------------------------
+		
+		$('add_files_files').show();
+		
+		if( $('add_files_ss') )
+		{
+			$('add_files_ss').show();
+		}
+		
+		var useType		= 'simple';
+		var uploadURL	= ipb.vars['base_url'] + "app=bitracker&module=post&section=files&do=iframe&category={$category['cid']}&post_key={$default['file_post_key']}&type=files&fetch_all=1";
+		var ssURL		= ipb.vars['base_url'] + "app=bitracker&module=post&section=files&do=iframe&category={$category['cid']}&post_key={$default['file_post_key']}&type=ss&fetch_all=1";
+	
+		if( jimAuld.utils.flashsniffer.meetsMinVersion(9) && ( ipb.vars['swfupload_enabled'] && ipb.vars['use_swf_upload'] ) )
+		{
+			useType		= 'swf';
+			uploadURL	= "{parse url="app=bitracker&module=post&section=files&do=swfUpload&category={$category['cid']}&post_key={$default['file_post_key']}&type=files" base="public"}";
+			ssURL		= "{parse url="app=bitracker&module=post&section=files&do=swfUpload&category={$category['cid']}&post_key={$default['file_post_key']}&type=ss" base="public"}";
+			
+			$('add_files_files').observe('mouseover', function(e){  } );
+			
+			if( $('add_files_ss') )
+			{
+				$('add_files_ss').observe('mouseover', function(e){  } );
+			}
+		}
+		
+		/* Overwrite the lang bit here */
+		ipb.lang['upload_done'] = "[total]";
+		ipb.lang['upload_progress'] = "";
+		
+		ipb.uploader.fileTemplate = "<li id='ali_[id]' class='attach_row'><span class='f_icon img_holder'></span><span class='f_name'>[name]</span><span class='f_size info'>[info]</span><span class='links'><a href='#' class='desc delete'>{$this->lang->words['attach_delete']}</a></span><span class='progress_bar'><span></span></span></li>";
+		
+		ipb.uploader.ssTemplate = "<li id='ali_[id]' class='attach_row screenshot_row' title='{$this->lang->words['click_to_set_main']}'><span class='f_icon img_holder'></span><span class='f_name'>[name]</span><span class='f_size info'>[info]</span><span class='links'><a href='#' class='desc delete'>{$this->lang->words['attach_delete']}</a></span><span class='progress_bar' style='width: 0%'><span></span></span><input type='radio' name='primary[[id]]' style='display: none' id='set_primary_[id]' class='primary_radio' /></li>";
+	
+		ipb.uploader.registerUploader( 'files', useType, 'files_list', {
+			'upload_url'		: uploadURL,
+			'post_key'			: "{$default['file_post_key']}",
+			'category'			: "{$category['cid']}",
+			'file_size_limit'	: "<if test="catmaxlimit:|:$category['coptions']['opt_maxfile']">{$category['coptions']['opt_maxfile']}<else />{$this->settings['bit_default_maxsize']}</if>"
+		}, ipb.uploader.fileTemplate );
+		
+		ipb.uploader.registerUploader( 'ss', useType, 'ss_list', {
+			'upload_url'		: ssURL,
+			'post_key'			: "{$default['file_post_key']}",
+			'category'			: "{$category['cid']}",
+			'file_size_limit'	: "<if test="catmaxlimit:|:$category['coptions']['opt_maxss']">{$category['coptions']['opt_maxss']}<else />{$this->settings['bit_default_maxsize']}</if>"
+		}, ipb.uploader.ssTemplate );
+		
+		nexusSelect( '{$default['nexus']}');
+	});
+	
+	function nexusSelect( option )
+	{
+		switch ( option )
+		{
+			case 'free':
+				$('paid').hide();
+				$('renewal-terms').hide();
+				if ($('package'))
+				{
+					$('package').hide();
+				}
+				break;
+			
+			case 'paid':
+				if ($('package'))
+				{
+					$('package').hide();
+				}
+				
+				$('paid').show();
+				$('renewal-terms').show();
+				
+				if( $('renewal_terms_on').checked )
+				{
+					$('renewal-details').show();
+				}
+				else
+				{
+					$('renewal-details').hide();
+				}
+				break;
+				
+			case 'package':
+				$('paid').hide();
+				$('package').show();
+				$('renewal-terms').hide();
+				break;
+		}
+	}
+</script>]]></template_content>
+      <template_name>mainSubmitForm</template_name>
+      <template_data><![CDATA[$type='new', $default=array(), $links=array(), $category=array(), $error_message='', $bit_customFields='', $paid_file_message='', $packageList='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<form action='{parse url="app=bitracker&amp;module=moderate&amp;section=moderate" base="public"}' method='post'>
+	<input type='hidden' name='do' value='multimod' />
+	<input type='hidden' name='type' value='{$this->request['type']}' />
+	<input type='hidden' name='catid' value='{$this->request['catid']}' />
+	<input type="hidden" value="{$this->request['selectedfileids']}" name="selectedfileids" />
+	<input type='hidden' name='doaction' value='move' />
+	<input type='hidden' name='secure_key' value='{$this->member->form_hash}' />
+	<h2 class='maintitle'>{$this->lang->words['select_cats_to_moveto']}</h2>
+	<div class='ipsBox'>
+		<div class='ipsBox_container'>
+			<h3 class='bar'>{$this->lang->words['select_cats_to_moveto']}</h3>
+			<br />
+			<ul class='ipsForm_horizontal'>
+				<li class='ipsField ipsField_select'>
+					<label for='moveto' class='ipsField_title'>{$this->lang->words['multimod_cat']}</label>
+					<div class='ipsField_content'>
+						<select name='moveto' id='moveto' class='input_select' tabindex='1'>{$categories}</select>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<p class='submit'>
+		<input type="submit" name="dosubmit" value="{$this->lang->words['multimod_submit']}" tabindex="2" class="input_submit" accesskey="s" />
+		{$this->lang->words['or']} 
+		<a href='{parse url="app=bitracker" base="public" seotitle="false" template="app=bitracker"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</p>
+</form>]]></template_content>
+      <template_name>moderateSelectCategory</template_name>
+      <template_data>$categories</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<if test="hasError:|:$error">
+	<div class='message error'>{$error}</div>
+	<br />
+</if>
+{parse striping="post_stripe" classes="row1,row2"}
+<form action='{parse url="app=bitracker" base="public"}' method='post'>
+	<input type='hidden' name='module' value='post' />
+	<input type='hidden' name='section' value='submit' />
+	<input type='hidden' name='do' value='{$default['code']}' />
+	<input type='hidden' name='id' value='{$default['file_id']}' />
+	<if test="bypassRevs:|:$this->request['bypass_revision']">
+		<input type='hidden' name='bypass_revision' value='1' />
+	</if>
+	
+	<h2 class='maintitle'>{$this->lang->words['file_submit_start_form']}</h2>
+	<div class='ipsBox'>
+		<div class='ipsBox_container ipsPad'>
+			<br />
+			<ul class='ipsForm_horizontal'>
+				<li class='ipsField ipsField_select'>
+					<label for='file_cat' class='ipsField_title'>{$this->lang->words['file_submit_nav_header']}</label>
+					<div class='ipsField_content'>
+						<select name='file_cat' id='file_cat' tabindex='1' class='input_select'>
+							<option value='0'>{$this->lang->words['bit_cat_selectcat']}</option>
+							<foreach loop="categories:$default['categories'] as $category">
+								<option value='{$category[0]}'<if test="catselected:|:$category[0]==$default['default_category']"> selected='selected'</if>{$category[2]}>{$category[1]}</option>
+							</foreach>
+						</select>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<fieldset class='submit'>
+		<input type="submit" name="dosubmit" value="{$this->lang->words['continue_button']}" tabindex="2" class="input_submit" accesskey="s" />
+		{$this->lang->words['or']} 
+		<a href='<if test="fileId:|:$default['file_id']">{parse url="app=bitracker&amp;showfile={$default['file_id']}" base="public" template="bitshowfile" seotitle="{$default['file_name_furl']}"}<else />{parse url="app=bitracker" base="public" seotitle="false" template="app=bitracker"}</if>' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</fieldset>
+</form>]]></template_content>
+      <template_name>submissionStart</template_name>
+      <template_data><![CDATA[$default=array(), $error='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[{parse striping="post_stripe" classes="row1,row2"}
+<h1 class='ipsType_pagetitle'>{$this->lang->words['file_report_name']}: {$file['file_name']} <if test="hasversionbrk:|:$file['file_version']"><span class='ipsType_small'>{$file['file_version']}</span></if></h1>
+<br />
+<form action='{parse url="app=bitracker" base="public"}' method='post'>
+	<input type='hidden' name='app' value='bitracker' />
+	<input type='hidden' name='id' value='{$file['file_id']}' />
+	<input type='hidden' name='module' value='moderate' />
+	<input type='hidden' name='section' value='moderate' />
+	<input type='hidden' name='do' value='broken' />
+	<input type='hidden' name='do_broken' value='1' />
+	<input type='hidden' name='secure_key' value='{$this->member->form_hash}' />
+	<h2 class='maintitle'>{$this->lang->words['broken_reason']}</h2>
+	<div class='ipsBox'>
+		<div class='ipsBox_container'>
+			<ul class='ipsForm ipsForm_vertical ipsPad'>
+				<li class='ipsField ipsField_editor'>
+					<p class='ipsField_content'>{$editor}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<fieldset class='submit'>
+		<input type='submit' name='dosubmit' value="{$this->lang->words['broken_confirm']}" tabindex='2' class='input_submit' accesskey='s' />
+		{$this->lang->words['or']} 
+		<a href='{parse url="app=bitracker&amp;showfile={$file['file_id']}" base="public" seotitle="{$file['file_name_furl']}" template="bitshowfile"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</fieldset>
+</form>]]></template_content>
+      <template_name>submitBrokenFile</template_name>
+      <template_data><![CDATA[$file=array(), $editor='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+  </templategroup>
+</templates>

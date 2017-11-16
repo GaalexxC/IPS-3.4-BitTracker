@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>devCU biTracker Categories</grouptitle>
+		<grouplang>bit_categories</grouplang>
+		<items>
+			<item>
+				<key>bit_cat_manage</key>
+				<string>Can add/edit categories?</string>
+			</item>
+			<item>
+				<key>bit_cat_delete</key>
+				<string>Can delete categories?</string>
+			</item>
+			<item>
+				<key>bit_cat_empty</key>
+				<string>Can empty categories?</string>
+			</item>			
+			<item>
+				<key>bit_cat_mods</key>
+				<string>Can manage category moderators?</string>
+			</item>
+		</items>
+	</group>	
+</permissions>

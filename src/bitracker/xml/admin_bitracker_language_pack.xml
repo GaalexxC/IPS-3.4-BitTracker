@@ -1,0 +1,3329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_title</word_key>
+      <word_default>Tools</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_topcreated</word_key>
+      <word_default>%s topics created so far...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>warning_no_screenies</word_key>
+      <word_default><![CDATA[You must define a screenshot URL in the IP.bitracker settings or add 'php' to your allowed postable image extensions.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_thumbsfixed</word_key>
+      <word_default>%s thumbnails fixed so far...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_numorph</word_key>
+      <word_default>%s orphaned files, screenshots, or thumbnails have been removed.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_recounted</word_key>
+      <word_default>All file download counts have been recounted.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_ss</word_key>
+      <word_default>Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_thumb</word_key>
+      <word_default>Thumbnail</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_numfixed</word_key>
+      <word_default>%s broken files, screenshots, or thumbnails have been fixed.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_noftp</word_key>
+      <word_default>This tool is not available if you are using FTP to store your files.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_nofiles</word_key>
+      <word_default>You did not select any files. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_noaction</word_key>
+      <word_default>You did not select any action to apply to the files.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_noaction_img</word_key>
+      <word_default>You did not select any action to apply to the images.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_logall</word_key>
+      <word_default><![CDATA[You must have the setting 'Log All bitracker' enabled if you wish to use this tool.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_file</word_key>
+      <word_default>File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_id</word_key>
+      <word_default>ID</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_latest</word_key>
+      <word_default>The latest file submission information for all categories has been updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_running</word_key>
+      <word_default>Running file report for file: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_createdlog</word_key>
+      <word_default>%s IP.bitracker auto-created topics created</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>t_allthumbs</word_key>
+      <word_default>All thumbnails have been re-generated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_time</word_key>
+      <word_default>Date Period</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_runningnot</word_key>
+      <word_default>No file or member found to run report against. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_runningmem</word_key>
+      <word_default>Running member report for member: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_ip</word_key>
+      <word_default>IP Address</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_mem404</word_key>
+      <word_default>The member could not be found. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_memreport</word_key>
+      <word_default>Member Report for %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_onthedl</word_key>
+      <word_default>download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_os</word_key>
+      <word_default>Operating System</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_filereport</word_key>
+      <word_default>File Report for %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_filereport_bad</word_key>
+      <word_default>The file could not be found.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_fid</word_key>
+      <word_default>File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_deleted</word_key>
+      <word_default><![CDATA[[This file was deleted]]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_bwusage</word_key>
+      <word_default>Bandwidth Usage</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_bw</word_key>
+      <word_default>Bandwidth</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_browsers</word_key>
+      <word_default>Browser</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>s_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>rebuild_bit_files</word_key>
+      <word_default>IP.bitracker: Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_view</word_key>
+      <word_default>View Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>piechart_title</word_key>
+      <word_default>%s by %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>postform_badmd5</word_key>
+      <word_default>Bad key supplied</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>rebuild_bit_comms</word_key>
+      <word_default>IP.bitracker: Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_show</word_key>
+      <word_default>Show Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_track</word_key>
+      <word_default>download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>nexus_additem</word_key>
+      <word_default>Add Item</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>nexus_filename</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>no_paid_files_acp</word_key>
+      <word_default>There are no paid files.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>ov_phpmaxpostsize</word_key>
+      <word_default>Maximum PHP post size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>ov_phpmaxtimelimit</word_key>
+      <word_default>PHP time limit</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>ov_phpmaxuploadsize</word_key>
+      <word_default>Maximum PHP upload size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>ov_stat_seconds</word_key>
+      <word_default>seconds</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>ov_stat_unknown</word_key>
+      <word_default><![CDATA[<em>Could not determine</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>o_guest</word_key>
+      <word_default>Guest</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>o_nofiles</word_key>
+      <word_default><![CDATA[<em>No files found</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>o_notavail</word_key>
+      <word_default><![CDATA[<em>Not Available</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_add</word_key>
+      <word_default>Add Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_auto</word_key>
+      <word_default>Bypass Moderation</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_comment</word_key>
+      <word_default>Add Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>perm_bitracker_rate</word_key>
+      <word_default>Rate Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_title</word_key>
+      <word_default>Mime-Type Mask Configuration</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_trackxml</word_key>
+      <word_default>Mime-Type XML file import completed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_uploadfail</word_key>
+      <word_default>Upload failed, bit_mimetypes.xml was either missing or empty.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>nexus_addfile</word_key>
+      <word_default>Add File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_none</word_key>
+      <word_default><![CDATA[<em>None</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_noid</word_key>
+      <word_default>No ID was passed or the ID was not valid. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_mustenter</word_key>
+      <word_default>You must enter at least an extension and mime-type before continuing</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_newmaskadded</word_key>
+      <word_default>New Mime-Type Mask added</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_newmaskdeleted</word_key>
+      <word_default>Mime-Type Mask deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_edited</word_key>
+      <word_default>Mime-Type edited</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_entername</word_key>
+      <word_default>You must enter a name for this Mime-Type Mask</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_mimename</word_key>
+      <word_default>Mime-Type mask: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_baseon</word_key>
+      <word_default>Base the new mime-type mask on:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_bitrackerreport</word_key>
+      <word_default>View IP.bitracker Member Report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_delete</word_key>
+      <word_default>Delete Mask</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_deleted</word_key>
+      <word_default>Mime-Type deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>m_added</word_key>
+      <word_default>Mime-Type added</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>mod_success_delete</word_key>
+      <word_default>The moderator was successfully deleted!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>mem_updated_success</word_key>
+      <word_default>The member submission restrictions have been updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_waitperiod</word_key>
+      <word_default>Wait period</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_paid_add</word_key>
+      <word_default>Can submit paid files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_paid_bypass</word_key>
+      <word_default>Can download paid files without paying?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>g_d_bypass_rev_desc</word_key>
+      <word_default>Allows members to edit files without saving a new revision</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>g_d_viewdls_desc</word_key>
+      <word_default><![CDATA[If allowed, the user will be able to view who has tracked files.<br /><strong>NOTE:</strong> Requires the setting 'Log all bitracker' to be enabled.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_viewdls</word_key>
+      <word_default>Can view trackers?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_throttling</word_key>
+      <word_default>Speed throttling (in kB)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_poststodl</word_key>
+      <word_default>How many posts required to download?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_reports</word_key>
+      <word_default>Can Report Files Broken?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxdld</word_key>
+      <word_default>Maximum bitracker per day?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxdlm</word_key>
+      <word_default>Maximum bitracker per month?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxdlw</word_key>
+      <word_default>Maximum bitracker per week?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxstim</word_key>
+      <word_default>Maximum Simultaneous bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_postsperdl</word_key>
+      <word_default>How many posts per download?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxbwm</word_key>
+      <word_default>Maximum bandwidth usage per month (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxbww</word_key>
+      <word_default>Maximum bandwidth usage per week (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_maxbwd</word_key>
+      <word_default>Maximum bandwidth usage per day (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_d_enabler</word_key>
+      <word_default>Enable Restrictions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>gf_bypass_revisions</word_key>
+      <word_default>Can bypass revisions?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>field_complete_edit</word_key>
+      <word_default>Complete Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_zipindir</word_key>
+      <word_default>Listing zip files in directory:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>fc_group_prefix</word_key>
+      <word_default>Group: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>field_add_field</word_key>
+      <word_default>Add Field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_yes</word_key>
+      <word_default>Yes</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_waitperiod_info</word_key>
+      <word_default>Number of seconds a user must wait before being allowed to download a file.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_viewreport</word_key>
+      <word_default>View file report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_viewreportm</word_key>
+      <word_default>View member report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_usecomment</word_key>
+      <word_default>Use built-in commenting system?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_view</word_key>
+      <word_default>View</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_usersubmission</word_key>
+      <word_default>User Submissions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_userfavorites</word_key>
+      <word_default>User Favorites</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_userbitracker</word_key>
+      <word_default>User bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_useincats</word_key>
+      <word_default>Use in Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_usedbycats</word_key>
+      <word_default>Used by Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_usageoverview</word_key>
+      <word_default>IP.bitracker Usage Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_uploadtypes</word_key>
+      <word_default>Upload XML Mime-Types List</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_upload</word_key>
+      <word_default>Upload</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_uploadafile</word_key>
+      <word_default>Upload a file</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_uploadedby</word_key>
+      <word_default>Uploaded by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totaldiskaaaa</word_key>
+      <word_default>Total diskspace for</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totaldls</word_key>
+      <word_default>Total bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totaldown</word_key>
+      <word_default>Total bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totalfiles</word_key>
+      <word_default>Total Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totaltransfer</word_key>
+      <word_default>Total Transfer for</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totaluploads</word_key>
+      <word_default>Total uploads for</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totalviews</word_key>
+      <word_default>Total Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_trackedon</word_key>
+      <word_default>tracked On</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_transferpercent</word_key>
+      <word_default>User Transfer %</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_types</word_key>
+      <word_default>Mime-Types</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_topiclinked</word_key>
+      <word_default>Files that have a topic linked, but it is invalid</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_updateallcats</word_key>
+      <word_default>Update All Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_update</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totaldisk</word_key>
+      <word_default>Total Diskspace</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_totalbw</word_key>
+      <word_default>Total Bandwidth Used</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_topic_info</word_key>
+      <word_default>You can use this tool to check for missing topics or files that do not have topics</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_topicgeneration</word_key>
+      <word_default>Topic Generation</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_topic</word_key>
+      <word_default>Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_topiccheck</word_key>
+      <word_default>Topic Checker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_top10viewed</word_key>
+      <word_default>Top 10 Viewed Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_top10tracked</word_key>
+      <word_default>Top 10 tracked Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_thumbwidth</word_key>
+      <word_default>Thumbnail Dimension:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_timesfav</word_key>
+      <word_default>Number of times saved as favorite</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_toohightimeout</word_key>
+      <word_default>Setting this too high can cause the process to timeout</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_top10submitters</word_key>
+      <word_default>Top 10 Submitters</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_top10track</word_key>
+      <word_default>Top 10 trackers</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_suboverview</word_key>
+      <word_default>Submissions Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_suffix</word_key>
+      <word_default>Topic suffix</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_surefield</word_key>
+      <word_default>Are you sure you wish to delete this custom field?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_sysonline</word_key>
+      <word_default>System Online?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_tagging_title</word_key>
+      <word_default>Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_tag_predefined_desc</word_key>
+      <word_default>Separate with a comma.  Will override the global pre-defined tags in this category.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_thumbs_info</word_key>
+      <word_default>This tool will rebuild all of your file thumbnails 20 at a time, using the current watermark, copyright-stamping, and thumbnail dimension settings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_thumbs_button</word_key>
+      <word_default>Rebuild All Thumbnails</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_thumbs</word_key>
+      <word_default>Rebuild All Thumbnails</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_throttling_info</word_key>
+      <word_default><![CDATA[This setting can be used to restrict the speed at which files are served to users.  If you set this field to 5, for example, the user will be served the file no faster than 5kB/second.  This is useful if you wish to provide faster bitracker to premium groups. <strong>This restriction does not apply to remotely linked files.</strong><br /><strong>WARNING:</strong> Setting this very low can cause files to take a very long time to download, potentially exceeding timeouts specified by your webhost.]]></word_default>
+    </lang>
+	    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_nfo</word_key>
+      <word_default>NFO</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_screenshot</word_key>
+      <word_default>Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_selectcat</word_key>
+      <word_default>Select a category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_selectcat_info</word_key>
+      <word_default>All of the files will be imported into the selected category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_submitted</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_submittedon</word_key>
+      <word_default>Submitted On</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_submit</word_key>
+      <word_default>Submit</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_subcats_for</word_key>
+      <word_default>%s subcategories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_submissions</word_key>
+      <word_default>Submissions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_statistics</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_strongmaskname</word_key>
+      <word_default>Mime Mask Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_subcats</word_key>
+      <word_default>Subcategories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_ssrecord</word_key>
+      <word_default>Screenshot/Thumbnail records where the actual file could not be found</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_sortorder</word_key>
+      <word_default>Default sort order</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_size</word_key>
+      <word_default>Size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_sortbyorder</word_key>
+      <word_default>Default sort-by order</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_showstats</word_key>
+      <word_default>Show %s stats, grouping results by %s and limiting results to top %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_showfile</word_key>
+      <word_default>Allow direct submissions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_showfile_info</word_key>
+      <word_default><![CDATA[Set this to 'no' if this is a parent category holding subcategories, and you do not allow submissions to this parent category.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_selectfile</word_key>
+      <word_default>Select the file</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_runreports</word_key>
+      <word_default>Run Reports</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_safemode</word_key>
+      <word_default><![CDATA[<b>SAFE MODE ON:</b> The upload functions will not operate as you are running PHP in safe mode.  You will need to upload your zip files via FTP to the following directory:]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_prefix_info</word_key>
+      <word_default>Use {catname} for the category name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_remove</word_key>
+      <word_default>Remove</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_removeconf</word_key>
+      <word_default>Removal Confirmation</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_removeimgs</word_key>
+      <word_default>Remove Images from File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_removequest</word_key>
+      <word_default>Remove?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_removeselected</word_key>
+      <word_default>Remove Selected</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_rename</word_key>
+      <word_default>Rename</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_renamemask</word_key>
+      <word_default>Rename Mime-Mask</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_reportbroke</word_key>
+      <word_default>Files Reported Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_reports_desc</word_key>
+      <word_default>Allow members of this group to report files as broken?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_requiress</word_key>
+      <word_default>Require screenshots in this category?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_results</word_key>
+      <word_default>Results</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_resynchcat</word_key>
+      <word_default>Resynchronize Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_runbutton</word_key>
+      <word_default>Run Report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_poststodl_info</word_key>
+      <word_default>Minimum number of posts members in this group must have before being allowed to download files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_postinwhich</word_key>
+      <word_default>Post topics in which forum</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_postsperdl_info</word_key>
+      <word_default>Number of posts members in this group must make between bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_prefix</word_key>
+      <word_default>Topic prefix</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_predefined_tags</word_key>
+      <word_default>Pre-defined Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_permissions</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_piechart</word_key>
+      <word_default>Pie Chart</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_percentupload</word_key>
+      <word_default>Percent of all uploads</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_percentofdown</word_key>
+      <word_default>% of bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_percenttransfer</word_key>
+      <word_default>Percent of all transfers</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_percentdisk</word_key>
+      <word_default>Percent of diskspace used</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_percentdown</word_key>
+      <word_default>Percent of all bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_pendapprove</word_key>
+      <word_default>Files Pending Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_orphlist_info</word_key>
+      <word_default>If you run this tool, and there are still files on this page afterwards, you will need to manually delete them from your site using an FTP program</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_os</word_key>
+      <word_default>OS</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_overview</word_key>
+      <word_default>Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_parentcat</word_key>
+      <word_default>Parent category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_parentcat_info</word_key>
+      <word_default><![CDATA[Set to 'Root' to make this a root category]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_or</word_key>
+      <word_default><![CDATA[<em>or</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_orphlist</word_key>
+      <word_default>Files found that do not have a corresponding record in the database</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_nonefound</word_key>
+      <word_default><![CDATA[<strong>NONE FOUND</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_norecord</word_key>
+      <word_default>File records where the actual file could not be found</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_noresults</word_key>
+      <word_default>No results found, please try to broaden your search</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_optcontent_info</word_key>
+      <word_default><![CDATA[In sets, one set per line. Example for 'Software Version' field:<br />10=1.0<br />20=2.0<br />na=Not Applicable<br /><br />Will produce: <select name='version'><option value='10'>1.0</option><option value='20'>2.0</option><option value='na'>Not Applicable</option></select><br />10,20, or na stored in database. When showing field on download page, will use value from pair (20=2.0, shows '2.0')]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_optcontent</word_key>
+      <word_default>Option Content (for drop downs and radio buttons)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_numrating</word_key>
+      <word_default>Number of Ratings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_nowillmove</word_key>
+      <word_default><![CDATA[Selecting &#39;no&#39; will copy the files instead of moving them]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_notopiclinked</word_key>
+      <word_default>Files that have no topic linked, but category calls for topic to be generated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mustcomplete</word_key>
+      <word_default>Field MUST be completed and not left empty?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_na</word_key>
+      <word_default><![CDATA[<i>N/A</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_newcat</word_key>
+      <word_default>New Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_newmask</word_key>
+      <word_default>New Mask Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_no</word_key>
+      <word_default>No</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_nocats</word_key>
+      <word_default><![CDATA[You have not created any categories yet. Click the 'Add New Category' button to begin.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_nofields</word_key>
+      <word_default>No custom fields found</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mostviewed</word_key>
+      <word_default>Most Viewed File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_modtype_info</word_key>
+      <word_default>Member-specific privileges are honored over group-inherited privileges</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mostdl</word_key>
+      <word_default>Most tracked File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_modtype</word_key>
+      <word_default>Moderator Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_modsett</word_key>
+      <word_default>Moderator Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_moderators</word_key>
+      <word_default>Moderators</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mimetype</word_key>
+      <word_default>Mime-Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mimetype_info</word_key>
+      <word_default><![CDATA[Unsure what the correct mime-type is?. <a href='http://www.utoronto.ca/webdocs/HTMLdocs/Book/Book-3ed/appb/mimetype.html' target='_blank'>Try looking here</a>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mimemask</word_key>
+      <word_default>Mime-Type Masks</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mimemask_info</word_key>
+      <word_default><![CDATA[Controls the file-types allowed in this category.  Configurable under 'Customization'.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_memsubscribed</word_key>
+      <word_default>Number of members subscribed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_mimeimg</word_key>
+      <word_default>Mime-Type Mini-Image</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_memreport</word_key>
+      <word_default>Member Report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_memreport_info</word_key>
+      <word_default>Type in a member (display) name to run a report on the member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_membername</word_key>
+      <word_default>Member Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxsssize</word_key>
+      <word_default>Maximum screenshot file sizes allowed (in kB)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxstim_info</word_key>
+      <word_default><![CDATA[Number of files a particular user can download at the same time. <strong>This restriction does not apply to remotely linked files.</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxsize_info</word_key>
+      <word_default>Leave blank to use default.  Your host has limited the maximum file upload size to</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxsize</word_key>
+      <word_default>Maximum file sizes allowed (in kB)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxinput</word_key>
+      <word_default>Maximum Input</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxinput_info</word_key>
+      <word_default>For text input and text areas (in characters)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxdlw_info</word_key>
+      <word_default>Maximum number of files each member in this group may download in one week</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxdlm_info</word_key>
+      <word_default>Maximum number of files each member in this group may download in one month</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxdld_info</word_key>
+      <word_default>Maximum number of files each member in this group may download in one day</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxchar</word_key>
+      <word_default>Max Characters:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_latest_info</word_key>
+      <word_default>You can use this tool to update all of the latest file submission information for all categories.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxbww_info</word_key>
+      <word_default>Maximum amount of bandwidth each member in this group may consume in one week</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxbwm_info</word_key>
+      <word_default>Maximum amount of bandwidth each member in this group may consume in one month</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maxbwd_info</word_key>
+      <word_default>Maximum amount of bandwidth each member in this group may consume in one day</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_local</word_key>
+      <word_default>Local</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_maskname</word_key>
+      <word_default>Mask Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_listingfiles</word_key>
+      <word_default>Listing files in zip:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_lastupdated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_latestfile</word_key>
+      <word_default>Category Latest File Information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_lasttrack</word_key>
+      <word_default>Last download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_lastactivity</word_key>
+      <word_default>Last Activity</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_lastsubmit</word_key>
+      <word_default>Last Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_last5</word_key>
+      <word_default>Last 5 Files Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_largest</word_key>
+      <word_default>Largest File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_inheritmask</word_key>
+      <word_default>Inherit mask settings from...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_inline</word_key>
+      <word_default>Inline</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_incategory</word_key>
+      <word_default>In category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_includess</word_key>
+      <word_default>Include screenshot with topic?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_includess_info</word_key>
+      <word_default>You must add php as an allowed file type, in order for this to work correctly.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_information</word_key>
+      <word_default>Information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_imported</word_key>
+      <word_default>Imported?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_imported2cat</word_key>
+      <word_default>All of the files will be imported into the selected category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_geninfo</word_key>
+      <word_default>General Information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_importtypes</word_key>
+      <word_default>Import Mime-Types List</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_importoptions</word_key>
+      <word_default>Import Options</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_importfiles</word_key>
+      <word_default>Import Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_img</word_key>
+      <word_default>Img</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_import</word_key>
+      <word_default>Import</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_importable</word_key>
+      <word_default>Importable</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_importablefiles</word_key>
+      <word_default>Importable Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_howmanyfiles</word_key>
+      <word_default>How many files per cycle?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_hidefiles</word_key>
+      <word_default>Hide (Unapprove) Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_groupormem</word_key>
+      <word_default>Group or Member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_goupdir</word_key>
+      <word_default>Go up a directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_goright</word_key>
+      <word_default><![CDATA[Go &raquo;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_ftype</word_key>
+      <word_default>File Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fromzip</word_key>
+      <word_default>From Zip File...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fsize</word_key>
+      <word_default>File Size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fsubmitted</word_key>
+      <word_default>File Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fname</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fowner</word_key>
+      <word_default>File Owner</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fowner_info</word_key>
+      <word_default>All of the files will be owned by the selected member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fromdir</word_key>
+      <word_default>From Directory...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixorph_info</word_key>
+      <word_default><![CDATA[This tool will search for orphaned files (files that exist but do not have any record in the database to match the file) and allow you to remove them if you wish.  This tool only works for files stored locally or in the database (it does not work for FTP).<br /><br /><b>WARNING:</b> This is moderately resource intensive]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixorph</word_key>
+      <word_default>Fix Orphaned Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixorph_button</word_key>
+      <word_default>Find Orphaned Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixbrok_info</word_key>
+      <word_default><![CDATA[This tool will search for files in your database that cannot be found on disk (or stored in the database).  You can only use this tool if you are using local storage of files, or database storage of files.  You will be presented with the option to edit, hide, or delete files, and edit, hide, delete, or remove screenshot/thumbnail value for broken screenshots or thumbnails.<br /><br /><b>WARNING:</b> This is relatively resource intensive, depending upon your server and how many files you have]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixbrok_button</word_key>
+      <word_default><![CDATA[Find Broken Files &amp; Images]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixbrok</word_key>
+      <word_default>Fix Broken Files, Thumbnails, and Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fixalltopic</word_key>
+      <word_default>Fix All Topics</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filescanbe</word_key>
+      <word_default>Files can be imported from this directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filescannotbe</word_key>
+      <word_default>Cannot import because the directory/file permissions are wrong</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filesownedby</word_key>
+      <word_default>All of the files will be owned by the selected member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filesfound</word_key>
+      <word_default>The following files were found in the zip</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_files</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filereport_info</word_key>
+      <word_default>Type in a file name or part of a file name to run a report on the file</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filereport</word_key>
+      <word_default>File Report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fileinline_info</word_key>
+      <word_default>Useful if you want images or pdf files to display in the browser instead of tracking</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_filemanage</word_key>
+      <word_default>File Management and Maintenance</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fileoverview</word_key>
+      <word_default>File Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fileinline</word_key>
+      <word_default>Show file inline?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fileex</word_key>
+      <word_default>File Extension</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fileext_info</word_key>
+      <word_default><![CDATA[This is the (usually) three character filename suffix.<br />You don't need to add the '.' before the extension]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_file</word_key>
+      <word_default>File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldtype</word_key>
+      <word_default>Field Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldtorem</word_key>
+      <word_default>Custom field to remove</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldtitle</word_key>
+      <word_default>Field Title</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldset</word_key>
+      <word_default>Field Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldauto</word_key>
+      <word_default>Include field in auto-generated topics?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldformat</word_key>
+      <word_default>Field Formatting</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldformat_desc</word_key>
+      <word_default>You can use this option to control how to format the field when displaying it on the file record page.  Use {value} for the field value.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldmanage</word_key>
+      <word_default>Custom download Field Management</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fieldsearch</word_key>
+      <word_default>Allow users to search in this field?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_featureunfeature</word_key>
+      <word_default>Can feature and unfeature files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fcount</word_key>
+      <word_default>File Count</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fbitracker</word_key>
+      <word_default>File bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_fauthor</word_key>
+      <word_default>File Author</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_export</word_key>
+      <word_default>Export Mime-Types</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_extension</word_key>
+      <word_default>Extension</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_expectedin</word_key>
+      <word_default>Expected Input Format</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_expectedin_info</word_key>
+      <word_default><![CDATA[Use: <b>a</b> for alpha characters<br />Use: <b>n</b> for numerics.<br />Example, for credit card numbers: nnnn-nnnn-nnnn-nnnn<br />Example, Date of Birth: nn-nn-nnnn<br />Leave blank to accept any input]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_enabler_info</word_key>
+      <word_default>You must set this to yes to enable any restrictions on this group.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_editmask</word_key>
+      <word_default>Edit Mask</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_editsettings</word_key>
+      <word_default>Edit Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_edittype</word_key>
+      <word_default>Edit Mime-Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_emptycat</word_key>
+      <word_default>Empty Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_editfile</word_key>
+      <word_default>Edit File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_edit</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_editfield</word_key>
+      <word_default>Edit Field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_doremovefiles</word_key>
+      <word_default>Do you wish to remove the files after?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_dlcount_info</word_key>
+      <word_default><![CDATA[This tool will count the number of logged bitracker for each file and update the file download counts appropriately.<br /><br /><b>WARNING:</b> If you have not had the advanced download logging enabled, or if you disabled it, this will almost certainly reset the download counts for your files.  THERE IS NO UNDOING THIS.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_dlcountbutton</word_key>
+      <word_default>Recount the download Counts</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_dlcount</word_key>
+      <word_default>Recount download Counts</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_displaythumb2</word_key>
+      <word_default>Display screenshot thumbnails when viewing files in this category?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_displaythumb</word_key>
+      <word_default>Display screenshot thumbnails when viewing this category?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_disclaim_info</word_key>
+      <word_default>Leave blank to disable.  Will force users to agree to this disclaimer before being allowed to download.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_disclaim</word_key>
+      <word_default>download disclaimer</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_disable_tagging</word_key>
+      <word_default>Disable Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_disable_prefixes_desc</word_key>
+      <word_default>If disabled, prefixes will not be allowed in this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_disable_prefixes</word_key>
+      <word_default>Disable Prefixes</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_dirfrom</word_key>
+      <word_default>Directory to import from</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_directory</word_key>
+      <word_default>Directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_date</word_key>
+      <word_default>Date</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_deletecat</word_key>
+      <word_default>Delete Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_deletefield</word_key>
+      <word_default>Delete Field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_deletefiles</word_key>
+      <word_default>Delete Files</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_deletetype</word_key>
+      <word_default>Delete Mime-Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_deletezip</word_key>
+      <word_default>Delete Zip File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_delfield</word_key>
+      <word_default>Delete this custom field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_curdir</word_key>
+      <word_default>Current directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_currentbw</word_key>
+      <word_default>Current Month Bandwidth Used</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_customerrors</word_key>
+      <word_default>Custom Errors</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_customfields</word_key>
+      <word_default>Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_createtopics</word_key>
+      <word_default>Create topics for selected files %s at a time</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_createmask</word_key>
+      <word_default>Create a new mime-type mask</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_createtopic</word_key>
+      <word_default>Create new topic when file is submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_create</word_key>
+      <word_default>Create</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_comment</word_key>
+      <word_default>Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_clickparent</word_key>
+      <word_default>Click here to look in the parent directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_click2view</word_key>
+      <word_default>Click here to view the importable files in this directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_click2import</word_key>
+      <word_default>Click here to import files from this directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_checkuncheck</word_key>
+      <word_default>Check/Uncheck all</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_cfield_area</word_key>
+      <word_default>Text Area</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_cfield_drop</word_key>
+      <word_default>Drop Down Box</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_cfield_text</word_key>
+      <word_default>Text Input</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_changecansubmit</word_key>
+      <word_default>Block or enable submissions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_changefowner</word_key>
+      <word_default>Change File Owner</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_changeowner</word_key>
+      <word_default>Change owner</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_changesubmitstat</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_changeto</word_key>
+      <word_default>Change file owner to...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_check2import</word_key>
+      <word_default>Checked files will be imported</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_checktopic</word_key>
+      <word_default>Check Topics</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_catoptions</word_key>
+      <word_default>Category Options</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_catopen_info</word_key>
+      <word_default>Admins can see all categories regardless of this setting</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_catopen</word_key>
+      <word_default>Category open</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_catname</word_key>
+      <word_default>Category name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_canmanagecom</word_key>
+      <word_default>Can manage comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_cannotaddmsg</word_key>
+      <word_default>Cannot Add Message</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_cannotdlmsg</word_key>
+      <word_default>Cannot download Message</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_cannotviewmsg</word_key>
+      <word_default>Cannot View Message</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_canpinunpin</word_key>
+      <word_default>Can pin and unpin files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_catdesc</word_key>
+      <word_default>Category description</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_catdesc_info</word_key>
+      <word_default>HTML Allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_candelete</word_key>
+      <word_default>Can delete files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_canmanagebrok</word_key>
+      <word_default>Can manage broken files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_canedit</word_key>
+      <word_default>Can edit files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_canchangeauthor</word_key>
+      <word_default>Can change file author?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_canapprove</word_key>
+      <word_default>Can approve/unapprove files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bymember</word_key>
+      <word_default>...by member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bysender</word_key>
+      <word_default>...by sender name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_byfile</word_key>
+      <word_default>...by file</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bulk_info</word_key>
+      <word_default>Bulk import files into your bitracker manager</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_broken</word_key>
+      <word_default>Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bulkimport</word_key>
+      <word_default>Bulk Import</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bndover</word_key>
+      <word_default>Bandwidth and bitracker Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_blankthumb</word_key>
+      <word_default>Leave blank to use defaults</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_autodelete</word_key>
+      <word_default>Automatically delete topics when files are deleted?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_averagesize</word_key>
+      <word_default>Average fileize for</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_averagesizeuser</word_key>
+      <word_default>Average filesize of all users</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bitsettings</word_key>
+      <word_default>download Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_bitrestrictions</word_key>
+      <word_default>download Restrictions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_basics</word_key>
+      <word_default>Basic</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_banoverview</word_key>
+      <word_default>Bandwidth Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_archivesize</word_key>
+      <word_default>Archive Size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_allowscreens</word_key>
+      <word_default>Allow screenshots in this category?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_allowss</word_key>
+      <word_default>Allow this Mime-Type for screenshots?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_allow_submissions</word_key>
+      <word_default>Allow file submissions?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_approved</word_key>
+      <word_default>Approved</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_approvedby</word_key>
+      <word_default>Approved by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_approvequest</word_key>
+      <word_default>Approve?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_archivename</word_key>
+      <word_default>Archive Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_allowbbcode</word_key>
+      <word_default>Allow BBCode?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_allowhtml</word_key>
+      <word_default>Allow HTML?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_allowmime</word_key>
+      <word_default>Allow this Mime-Type for files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_title</word_key>
+      <word_default>download Categories Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_title_mod</word_key>
+      <word_default>Moderator Panel</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_views</word_key>
+      <word_default>File Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_whatmod</word_key>
+      <word_default>We could not find the moderator you tried to edit.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>default_root_category</word_key>
+      <word_default>(Root Category)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_0results</word_key>
+      <word_default>0 Results</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_addmod</word_key>
+      <word_default>Add Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_addnewcat</word_key>
+      <word_default>Add New Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_addnewfield</word_key>
+      <word_default>Add New Custom Field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>d_addnewtype</word_key>
+      <word_default>Add New Mime-Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_subdate</word_key>
+      <word_default>File Submission Date</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_noroot</word_key>
+      <word_default>You cannot specify a root category as the forum for topic generation.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_phpini</word_key>
+      <word_default><![CDATA[<em>Cannot read php.ini</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_probdel</word_key>
+      <word_default>There was a problem attempting to delete this moderator.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_probmod</word_key>
+      <word_default>There was a problem attempting to edit this moderator.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_rating</word_key>
+      <word_default>File Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_selectforum</word_key>
+      <word_default>If you enable topic generation, you must specify a forum.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nomember</word_key>
+      <word_default><![CDATA[You selected 'Member' for the moderator type, but did not enter a member name.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_noredirect</word_key>
+      <word_default>You cannot specify a redirect forum as the forum for topic generation.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nogroup</word_key>
+      <word_default><![CDATA[You selected 'Group' for the moderator type, but did not select the group.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nocat_empty</word_key>
+      <word_default>You did not select a category to empty!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nocatsmod</word_key>
+      <word_default>You did not select any categories for this moderator to moderate.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nocat_del</word_key>
+      <word_default>You did not select a category to delete!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nocatid</word_key>
+      <word_default>Could not retrieve the category data based on ID %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_newcat</word_key>
+      <word_default>New Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_nocat</word_key>
+      <word_default><![CDATA[You didn't choose a category to edit!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_msg_cat</word_key>
+      <word_default>This section allows you to manage a category.  You can add/edit the category from here, as well as control the custom fields used by this category, and the category permissions.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_modsaved</word_key>
+      <word_default>The moderator settings were successfully saved.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_member</word_key>
+      <word_default>Member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_invparent</word_key>
+      <word_default>You have specified an invalid parent category.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_lastupdate</word_key>
+      <word_default>File Last Update</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_invname</word_key>
+      <word_default>The member name you selected appears to be invalid.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_invgroup</word_key>
+      <word_default>The group you selected appears to be invalid.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_editedlog</word_key>
+      <word_default><![CDATA[Category '%s' edited]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_edittitle</word_key>
+      <word_default>Editing Category: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_emptydel</word_key>
+      <word_default>%s emptied (%s files deleted)!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_entername</word_key>
+      <word_default>You must enter a category name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_filetitle</word_key>
+      <word_default>File Title</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_forum404</word_key>
+      <word_default>We could not find the selected forum for topic generation.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_group</word_key>
+      <word_default>Group</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_editbutton</word_key>
+      <word_default>Edit Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_dsc</word_key>
+      <word_default>Descending (Z - A, 10 - 0)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_delrem</word_key>
+      <word_default>%s deleted (%s files removed)!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_comments</word_key>
+      <word_default>Comment Count</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_createdlog</word_key>
+      <word_default><![CDATA[Category '%s' created]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_asc</word_key>
+      <word_default>Ascending (A - Z, 0 - 10)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_addtitle</word_key>
+      <word_default>Add a category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_addbutton</word_key>
+      <word_default>Add Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_addmodcat</word_key>
+      <word_default>You must create categories before you can assign moderators to those categories.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_entertitle</word_key>
+      <word_default>You must enter a field title.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_noid</word_key>
+      <word_default>Could not resolve the custom field ID. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_none</word_key>
+      <word_default><![CDATA[<em>None</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_title</word_key>
+      <word_default>Custom download Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_title_del</word_key>
+      <word_default>Deleting a Custom download Field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>couldnot_locatepaid</word_key>
+      <word_default>Could not locate file.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>c_404moddel</word_key>
+      <word_default>We could not find the moderator you tried to delete.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_delete_warning</word_key>
+      <word_default>Please note that there is no way to recover the custom field data if you delete it!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_edited</word_key>
+      <word_default>Custom download Field Edited</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_editing</word_key>
+      <word_default>Editing Custom download Field </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_adding</word_key>
+      <word_default>Adding a new Custom download Field</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_deleted</word_key>
+      <word_default>Custom Field Deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_yes</word_key>
+      <word_default>Yes</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_zipdel</word_key>
+      <word_default>The zip file has been deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_zipimp</word_key>
+      <word_default>Zip Import</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_404</word_key>
+      <word_default>Could not find the field in the database.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>cf_added</word_key>
+      <word_default>Custom download Field Added</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_whereohwhere</word_key>
+      <word_default>We could not find your configured uploads directory.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_verygood</word_key>
+      <word_default>Upload completed successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_uptofiles</word_key>
+      <word_default>Up to %s files imported, moving onto the next batch...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_onlyzip</word_key>
+      <word_default>Only zip files are supported with this tool.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_totalfiles</word_key>
+      <word_default> total files import from directory successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_nomember</word_key>
+      <word_default>There was no member name set to import the files under. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_nomove</word_key>
+      <word_default>We could not move the file to the storage directory. Please double check the directory permissions.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>bf_with_selected</word_key>
+      <word_default>With Selected</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_anothercat</word_key>
+      <word_default><![CDATA[Files are not displayed in this category -> please choose a different category or edit this category to display files.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_nofile</word_key>
+      <word_default>No file was found to upload.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_nofiles</word_key>
+      <word_default>There were no files selected to import. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_nodir</word_key>
+      <word_default>We could not find the directory to import the files from.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_no</word_key>
+      <word_default>No</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_nocat</word_key>
+      <word_default>You did not select a category to import the files into. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_maybe</word_key>
+      <word_default>Maybe</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_moveissue</word_key>
+      <word_default>There was a problem attempting to move the file to: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_listingin</word_key>
+      <word_default><![CDATA[Listing files in '%s']]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_bulkoptions</word_key>
+      <word_default>Bulk Import: Options</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_dir0777</word_key>
+      <word_default>Please CHMOD the directory and the files in it to 0777</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_dir404</word_key>
+      <word_default>The directory you specified does not exist.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_dirbrow</word_key>
+      <word_default>Bulk Import: Directory Browser</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_filesgood</word_key>
+      <word_default> files from the zip have been imported successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_ftpallinfo</word_key>
+      <word_default>You have not entered all of the required FTP storage information.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_ftpnoconnect</word_key>
+      <word_default>Could not connect to the remote FTP server. It may be down or the information may be incorrect.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_ftpnologin</word_key>
+      <word_default>Could not log into the remote FTP server. Please double check the login information.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_bitracker</word_pack>
+      <word_key>b_genericprob</word_key>
+      <word_default>There was a problem attempting to upload the file (it may be too large to upload on your server, for example)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_tools_topics</word_key>
+      <word_default>Can check and fix topics?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_tools_thumbs</word_key>
+      <word_default>Can rebuild thumbnails?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cat_empty</word_key>
+      <word_default>Can empty categories?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cat_manage</word_key>
+      <word_default>Can add/edit categories?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cat_mods</word_key>
+      <word_default>Can manage category moderators?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cfields</word_key>
+      <word_default>download Manager Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cf_delete</word_key>
+      <word_default>Can delete custom fields?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cf_manage</word_key>
+      <word_default>Can add/edit custom fields?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_mimes</word_key>
+      <word_default>download Manager Mime Types</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_mimes_delete</word_key>
+      <word_default>Can delete mime type masks?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_mime_delete</word_key>
+      <word_default>Can delete mime types?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_mime_manage</word_key>
+      <word_default>Can add/edit mime types and mime type masks?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_reports</word_key>
+      <word_default>download Manager Reports</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_rep_file</word_key>
+      <word_default>Can run file reports?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_rep_mem</word_key>
+      <word_default>Can run member reports?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_tools</word_key>
+      <word_default>download Manager Tools</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_tools_orphan</word_key>
+      <word_default>Can check for and remove orphaned files?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_tools_purge</word_key>
+      <word_default>Can purge subscriptions?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_tools_rebuild</word_key>
+      <word_default>Can resynchronize and rebuild caches and stats?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_categories</word_key>
+      <word_default>download Manager Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_cat_delete</word_key>
+      <word_default>Can delete categories?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_bulkimport</word_key>
+      <word_default>download Manager Bulk Import</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__bit_bulk</word_key>
+      <word_default>Can bulk import files from zip files and directory?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_stats</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_tools</word_key>
+      <word_default>Tools</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_bulkdir</word_key>
+      <word_default>Bulk Import from Directory</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_bulkzip</word_key>
+      <word_default>Bulk Import from Zip File</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_cats</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_cfields</word_key>
+      <word_default>Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_mimetypes</word_key>
+      <word_default>Mime Types</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_overview</word_key>
+      <word_default>Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_paidfiles</word_key>
+      <word_default>Paid Files Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__bit_settings</word_key>
+      <word_default>Settings</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

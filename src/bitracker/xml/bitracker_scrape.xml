@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_scrap</conf_title_keyword>
+      <conf_title_title>devCU biTracker Scrape Settings 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker Scrape</conf_title_desc>
+      <conf_title_tab>devCU</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Scrape</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_scrape</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Scrape Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_scrap</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Scrape Interval</conf_title>
+      <conf_description><![CDATA[In minutes the amount of time the tracker will scrape and update stats and user info]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_scrapeint</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_scrap</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

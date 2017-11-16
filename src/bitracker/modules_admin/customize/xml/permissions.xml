@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>devCU biTracker Custom Fields</grouptitle>
+		<grouplang>bit_cfields</grouplang>
+		<items>
+			<item>
+				<key>bit_cf_manage</key>
+				<string>Can add/edit custom fields?</string>
+			</item>
+			<item>
+				<key>bit_cf_delete</key>
+				<string>Can delete custom fields?</string>
+			</item>
+		</items>
+	</group>
+	<group>
+		<grouptitle>devCU biTracker Mime Types</grouptitle>
+		<grouplang>bit_mimes</grouplang>
+		<items>
+			<item>
+				<key>bit_mime_manage</key>
+				<string>Can add/edit mime types and mime type masks?</string>
+			</item>
+			<item>
+				<key>bit_mimes_delete</key>
+				<string>Can delete mime type masks?</string>
+			</item>
+			<item>
+				<key>bit_mime_delete</key>
+				<string>Can delete mime types?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

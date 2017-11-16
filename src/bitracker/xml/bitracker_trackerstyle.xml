@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_title_title>devCU biTracker Tracker Style 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker Tracker Style</conf_title_desc>
+      <conf_title_tab>devCU biTracker</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Tracker Main Index Style</conf_title>
+      <conf_description>Choose your main index style</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>bit_use_index</conf_key>
+      <conf_default>Category</conf_default>
+      <conf_extra>1=Category&#13;
+2=Portal&#13;
+3=Classic</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Style Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Display approver information</conf_title>
+      <conf_description><![CDATA[Display who approved files to the public?<br /><br />*Note: the information will display to moderators regardless of this setting]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_show_approver</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>General Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable RSS feed</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_rss</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $save == 1 )
+{
+ipsRegistry::$settings['bit_rss'] = $value;
+$this->cache->rebuildCache('rss_output_cache', 'global');
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Screenshot popup style</conf_title>
+      <conf_description/>
+      <conf_type>dropdown</conf_type>
+      <conf_key>bit_ss_popup</conf_key>
+      <conf_default>l</conf_default>
+      <conf_extra>l=Lightbox&#13;
+p=New Window</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show active users</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_displayactive</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>44</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of random files to display</conf_title>
+      <conf_description>How many random files would you like to display?  Use 0 to disable the block.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_randomfiles</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>45</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show similar files block</conf_title>
+      <conf_description><![CDATA[Show the 'Other files you may be interested in' block when viewing a file]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_similar_files</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>46</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_styl</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

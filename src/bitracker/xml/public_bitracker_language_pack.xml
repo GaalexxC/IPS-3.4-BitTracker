@@ -1,0 +1,3616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_guest_report</word_key>
+      <word_default>The administrator requires that you login before reporting reviews.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>NO_ID_PASSED</word_key>
+      <word_default>No ID was passed for versioning control</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_permitted_categories</word_key>
+      <word_default>You do not have access to this section of the site.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>older_versions</word_key>
+      <word_default>Saved Versions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ONLY_LOCAL_BACKUP</word_key>
+      <word_default>Versioning control is only supported when locally storing the torrents on the server</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>or_leave_a_review</word_key>
+      <word_default>Or leave a review</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>paid_only</word_key>
+      <word_default>Paid only</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>pin_torrent</word_key>
+      <word_default>Pin torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>portal_no_bitracker</word_key>
+      <word_default>No downloads to show</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>portal_no_users</word_key>
+      <word_default>No users to show</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>previousversion_h3bar</word_key>
+      <word_default>(Previous Version)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>previous_versions</word_key>
+      <word_default>Previous Versions</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>prev_revisions_summary</word_key>
+      <word_default>A list of previous versioned torrents of</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>protorrent_last_x_torrents</word_key>
+      <word_default>Last %s submitted torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>purchase_cancelled</word_key>
+      <word_default>The purchase has been cancelled.  You will still have access to download the torrent until %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>purchase_reactivated_renew</word_key>
+      <word_default>The purchase has been reactivated but is expired and will need to be renewed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>purchase_singular</word_key>
+      <word_default>purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>queued_torrents_sprintf</word_key>
+      <word_default>There are %s unapproved torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>randomtorrent_header</word_key>
+      <word_default>Random torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>random_torrents_table</word_key>
+      <word_default>Displaying random torrents from bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent</word_key>
+      <word_default>Rate torrent:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent_1</word_key>
+      <word_default>Rate torrent 1 star</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent_2</word_key>
+      <word_default>Rate torrent 2 star</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent_3</word_key>
+      <word_default>Rate torrent 3 star</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent_4</word_key>
+      <word_default>Rate torrent 4 star</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent_5</word_key>
+      <word_default>Rate torrent 5 star</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_torrent_blurb</word_key>
+      <word_default>Rating torrents helps other users!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rate_this_torrent</word_key>
+      <word_default>Rate this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>reactivate_confirm</word_key>
+      <word_default>Are you sure you wish to reactivate this purchase?  If it is expired, you will need to renew the purchase before gaining access to download the torrent.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>reason_report_req</word_key>
+      <word_default>You must supply a reason for reporting this torrent broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renewals_submit_every</word_key>
+      <word_default>Every</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renews_cost</word_key>
+      <word_default>Renewal Cost</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renews_off</word_key>
+      <word_default>No renewals - one off payment</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renews_on</word_key>
+      <word_default>I will specify renewal terms</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renews_term</word_key>
+      <word_default>Renewal Term</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renews_warning</word_key>
+      <word_default>Renewal Terms cannot be edited once saved</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_confirm</word_key>
+      <word_default>Are you sure you wish to renew this purchase?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term</word_key>
+      <word_default>Every %d %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_biyearly</word_key>
+      <word_default>Bi-Yearly</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_daily</word_key>
+      <word_default>Daily</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_days</word_key>
+      <word_default>days</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_fortnightly</word_key>
+      <word_default>Fortnightly</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_monthly</word_key>
+      <word_default>Monthly</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_months</word_key>
+      <word_default>months</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_none</word_key>
+      <word_default>No Renewals</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_prefix</word_key>
+      <word_default>Renewals Term: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_weekly</word_key>
+      <word_default>Weekly</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_weeks</word_key>
+      <word_default>weeks</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_yearly</word_key>
+      <word_default>Annually</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>renew_term_years</word_key>
+      <word_default>years</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>reportbroken</word_key>
+      <word_default>Is this torrent broken?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>reports_turned_off</word_key>
+      <word_default>The administrator is not accepting any new reports at this time.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>report_comment_page</word_key>
+      <word_default>Report this comment to a moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>report_no_comment</word_key>
+      <word_default>We could not find the comment you were attempting to report.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>required</word_key>
+      <word_default>(Required)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>required_fields</word_key>
+      <word_default>Required fields</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>resort_button</word_key>
+      <word_default>Sort torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>restoretorrent</word_key>
+      <word_default>Restore Last Version</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>reviews</word_key>
+      <word_default>reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>revision_delete_confirm</word_key>
+      <word_default>Are you sure you want to delete this revision?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rss_disabled</word_key>
+      <word_default>The RSS feed has been disabled</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>rss_error_message</word_key>
+      <word_default>RSS ERROR</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_bad_cat</word_key>
+      <word_default>One of the categories you tried to search in you do not have permission to access</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_bad_time</word_key>
+      <word_default>The date or time you entered was invalid.  Please try again</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_filterby</word_key>
+      <word_default>Show torrent type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_last_ten</word_key>
+      <word_default>torrents Recently Uploaded</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_last_visit</word_key>
+      <word_default>New torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_limitresults</word_key>
+      <word_default>Limit results</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_nolimit</word_key>
+      <word_default>No Limit</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_no_terms</word_key>
+      <word_default>You did not supply any criteria to search by or we could not find any results matching the criteria you supplied</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_posted_by</word_key>
+      <word_default>Posted by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sortby</word_key>
+      <word_default>and sort results by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sortby2</word_key>
+      <word_default>Sort torrents by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sortorder</word_key>
+      <word_default>Sort order</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_relevancy</word_key>
+      <word_default>Relevancy</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_submitted</word_key>
+      <word_default>Submission Date</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_updated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>search_sort_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>see_full_changelog</word_key>
+      <word_default>See full changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>select_all_torrents</word_key>
+      <word_default>Select all torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>select_cats_to_moveto</word_key>
+      <word_default>Select a category to move the torrent(s) to</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>select_cat_to_cont</word_key>
+      <word_default>Select a category before continuing</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>select_several</word_key>
+      <word_default>You can select more than one torrent at a time by holding Ctrl (on Windows) or Command (on Mac) and selecting your torrents.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>set_featured_torrent</word_key>
+      <word_default>Set As Featured</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_addtorrent_header</word_key>
+      <word_default>Add a</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_allowed</word_key>
+      <word_default>Allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_edittorrent_header</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentchanges</word_key>
+      <word_default>Change Log</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentdesc</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentfile</word_key>
+      <word_default>Upload torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentlang</word_key>
+      <word_default>%s torrent in</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentname</word_key>
+      <word_default>torrent Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentpath</word_key>
+      <word_default>Path to torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentsspath</word_key>
+      <word_default>Path to Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentssurl</word_key>
+      <word_default>Link to Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrenturl</word_key>
+      <word_default>Link to torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_torrentversion</word_key>
+      <word_default>torrent Version</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_maxsize</word_key>
+      <word_default>Maximum Size: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_removess</word_key>
+      <word_default>Remove existing screenshot?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_requiress</word_key>
+      <word_default>Screenshot Required</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_screenshot</word_key>
+      <word_default>Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sform_tags</word_key>
+      <word_default>torrent Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sharedmedia_bitracker</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sharedmedia_cat</word_key>
+      <word_default>Category:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sharedmedia_lastupdated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>show_filter_options</word_key>
+      <word_default>Show filter options</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>show_moderation_tools</word_key>
+      <word_default>Show moderation tools</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sidebar_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sidebar_broken</word_key>
+      <word_default>broken torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sidebar_torrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sidebar_pending</word_key>
+      <word_default>pending</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>similartorrents_header</word_key>
+      <word_default>Other torrents you may be interested in ..</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_comments</word_key>
+      <word_default>Reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_submitted</word_key>
+      <word_default>Submission date</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_updated</word_key>
+      <word_default>Date updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sortby_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ss_clickhere</word_key>
+      <word_default>View Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ss_import_disk</word_key>
+      <word_default>Import from disk instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ss_import_note</word_key>
+      <word_default><![CDATA[<b>Note</b>: torrent must be uploaded to your configured screenshots directory]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ss_linkupload</word_key>
+      <word_default>Upload or link to screenshots instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ss_notavail</word_key>
+      <word_default>Not Available</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ss_notavail2</word_key>
+      <word_default>Screenshot Not Available</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>statistics</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>stats_noneyet</word_key>
+      <word_default><![CDATA[<i>N/A</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>stats_th</word_key>
+      <word_default>Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>step_1</word_key>
+      <word_default>Step %s: Select your torrent(s)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>step_2</word_key>
+      <word_default>Step %s: Add screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>step_3</word_key>
+      <word_default>Step %s: Provide torrent information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submission_approve</word_key>
+      <word_default>Your submission was successful!  An administrator must review your submission before it will be available publicly.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submission_live</word_key>
+      <word_default>Your submission was successful!  We are taking you there now.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submittedon</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submitter</word_key>
+      <word_default>Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submit_manage_torrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submit_manage_screenshots</word_key>
+      <word_default>Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submit_post_button</word_key>
+      <word_default>Post</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submit_preview_button</word_key>
+      <word_default>Preview</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>submit_renewals</word_key>
+      <word_default>Renewals</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>subsription_notifications</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#AUTHOR#> has just updated the torrent "<#TITLE#>" to which you are currently subscribed.
+
+You may wish to login to <#BOARD_NAME#> and download the update(s) to this torrent.
+
+The torrent download can be found here:
+<#URL#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>subsription_notifications_new</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#AUTHOR#> has just submitted a torrent "<#TITLE#>" to a category you are currently subscribed to.
+
+The torrent download can be found here:
+<#URL#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>subtotorrent</word_key>
+      <word_default>Watch this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sub_notice_subject</word_key>
+      <word_default><![CDATA[The torrent <a href='%s'>%s</a> has been updated]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>sub_notice_subject_new</word_key>
+      <word_default><![CDATA[The torrent <a href='%s'>%s</a> has just been submitted]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>swf_attach_selectedtorrents</word_key>
+      <word_default>Click to Upload torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>swf_attach_selectedss</word_key>
+      <word_default>Click to Upload Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>switch_to_advanced</word_key>
+      <word_default>Try our advanced uploader which supports multiple torrent uploading (modern browser required)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>switch_to_basic</word_key>
+      <word_default>Try switching to our basic uploader</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>s_bitsearch_desc</word_key>
+      <word_default><![CDATA[These additional filters can be used to find <strong>torrents</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>table_caption_pending</word_key>
+      <word_default>torrents Pending Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>task_bitprune</word_key>
+      <word_default>Old download logs pruned</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>task_bitsessions</word_key>
+      <word_default>%s uncleared IP.bitracker sessions cleared</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>task_bittemprecords</word_key>
+      <word_default>%s temporary download torrents were cleared out</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>task_biturls</word_key>
+      <word_default>%s dynamic download urls cleared</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>task_bitviews</word_key>
+      <word_default>download torrent views updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>thanks_for_voting</word_key>
+      <word_default>Thank you for submitting your rating of this torrent!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>toggle</word_key>
+      <word_default>Toggle</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>toggle_random_torrents</word_key>
+      <word_default>Toggle random torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>topauthors_ttldls</word_key>
+      <word_default>Total torrent Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>top_authors</word_key>
+      <word_default>Top Authors</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>top_bitracker</word_key>
+      <word_default>Top downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>top_dl</word_key>
+      <word_default>Top downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>top_free</word_key>
+      <word_default>Top Free bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>top_paid</word_key>
+      <word_default>Top Paid bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>total_authors</word_key>
+      <word_default>Total Authors</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>total_bitracker</word_key>
+      <word_default>Total bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>total_categories</word_key>
+      <word_default>Total Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>total_torrents</word_key>
+      <word_default>Total torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>trackers_pt</word_key>
+      <word_default>%s trackers</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>track_plural</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>track_singular</word_key>
+      <word_default>download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>trouble_uploading</word_key>
+      <word_default>Trouble uploading?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>t_category</word_key>
+      <word_default>torrent Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>t_clickhere</word_key>
+      <word_default>Click here to download this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>t_torrentauthor</word_key>
+      <word_default>torrent Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>t_torrentname</word_key>
+      <word_default>torrent Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>t_submitted</word_key>
+      <word_default>torrent Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>t_updated</word_key>
+      <word_default>torrent Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_blank_row</word_key>
+      <word_default><![CDATA[We're sorry, but we did not find any torrents that matched your criteria.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_torrentname</word_key>
+      <word_default>torrent Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_manage_bitracker</word_key>
+      <word_default>torrents I tracked</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_notupdated</word_key>
+      <word_default><![CDATA[<i>Never</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_rm_sel</word_key>
+      <word_default>Remove Selected torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_submitted</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_updated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ucp_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>unfeatured_torrent_ok</word_key>
+      <word_default>The torrent has been successfully unfeatured</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>unnapprovetorrent</word_key>
+      <word_default>Unapprove torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>unpin_torrent</word_key>
+      <word_default>Unpin torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>unreportbroken</word_key>
+      <word_default>Complete report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>unset_featured_torrent</word_key>
+      <word_default>Unset As Featured</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>upload_torrent_alt</word_key>
+      <word_default>Upload torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>user_reviews</word_key>
+      <word_default>user reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>version_h3_bar</word_key>
+      <word_default>Version </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>version_hide_succesful</word_key>
+      <word_default>The version was successfully hidden</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>version_remove_succesful</word_key>
+      <word_default>The version was successfully removed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>version_restore_succesful</word_key>
+      <word_default>The version was successfully restored as the most current</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>version_unhide_succesful</word_key>
+      <word_default>The version was successfully unhidden</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>viewmember_other_torrents</word_key>
+      <word_default>View other torrents from this member</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_all</word_key>
+      <word_default>View all</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_all_trackers</word_key>
+      <word_default>View All trackers</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_category</word_key>
+      <word_default>View Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_comments</word_key>
+      <word_default>See reviews of this download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_torrent</word_key>
+      <word_default>View torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_torrent_named_title</word_key>
+      <word_default>View torrent named</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_pending_comments</word_key>
+      <word_default>View pending reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>view_queued</word_key>
+      <word_default>View Unapproved torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>votes_cnt</word_key>
+      <word_default>Votes</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>wait_period_remaining</word_key>
+      <word_default>You must wait %s seconds before you can download this torrent.  Once %s seconds have passed, please refresh this page.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>watchers</word_key>
+      <word_default>watchers</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>whats_new</word_key>
+      <word_default><![CDATA[What's New]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>whats_new_in_v</word_key>
+      <word_default><![CDATA[What's New in Version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>what_can_i_upload</word_key>
+      <word_default>What torrent types can I upload?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>your_comment</word_key>
+      <word_default>Your comment</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>your_subscriptions_summary</word_key>
+      <word_default>A list of torrents you have subscribed to</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>you_did_not_upload</word_key>
+      <word_default>You did not upload any torrents.  You must upload at least one torrent to continue.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>you_voted</word_key>
+      <word_default>You voted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>_by</word_key>
+      <word_default>By</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>purchase_reactivated</word_key>
+      <word_default>The purchase has been reactivated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>purchase_plural</word_key>
+      <word_default>purchases</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>purchase_cancelled_no</word_key>
+      <word_default>The purchase has been cancelled.  You will no longer have access to download the torrent unless you reactivate the purchase.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_torrents_in_category</word_key>
+      <word_default><![CDATA[This category doesn't have any torrents yet]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_direct_torrents</word_key>
+      <word_default><![CDATA[There are no torrents directly in this category. torrents listed below are from this category&#39;s subcategories, or you can click on a subcategory in the menu to narrow your results.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_bitracker_cats_created</word_key>
+      <word_default>There have been no categories created yet</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_bitracker_permissions</word_key>
+      <word_default>Sorry, but you do not have access to any of the functions in our download Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_category_selected</word_key>
+      <word_default>You did not select a category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_addthiscat_permissions</word_key>
+      <word_default>You do not have permission to add torrents to this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_bitracker_categories</word_key>
+      <word_default>There do not appear to be any categories created yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>not_your_torrent</word_key>
+      <word_default>This is not your torrent, thus you cannot edit it</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>noupload_perm_alt</word_key>
+      <word_default>You cannot upload a new torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>no_addtorrent_permissions</word_key>
+      <word_default>We could not find any categories that you have permission to submit to</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__updated_torrent</word_key>
+      <word_default>Notification method to use when a torrent I follow is updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notrackers_yet</word_key>
+      <word_default>No one has tracked this torrent yet</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__short__new_torrent</word_key>
+      <word_default>torrent I am watching is updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__torrent_pending</word_key>
+      <word_default><![CDATA[[Moderators] Notify me when a torrent is submitted and pending approval]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__new_torrent</word_key>
+      <word_default>Notification method to use when a torrent is submitted to a category I follow</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__new_torrentcomment</word_key>
+      <word_default>Notification method to use when a torrent I follow receives a new comment</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__short__torrent_approved</word_key>
+      <word_default>torrent I submitted is approved</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__torrent_broken</word_key>
+      <word_default><![CDATA[[Moderators] Notify me when a torrent is reported broken]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__torrent_mybroken</word_key>
+      <word_default>Notify me when a torrent I submitted is reported broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notify__torrent_approved</word_key>
+      <word_default>Notification method to use when a torrent I submitted is approved or denied</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>noselectedtorrents</word_key>
+      <word_default>You did not select any torrents to moderate.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>noperm_for_feature</word_key>
+      <word_default>You do not have permission to feature or unfeature torrents.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notorrent_for_authchange</word_key>
+      <word_default>We could not find the torrent you were attempting to update.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notorrent_for_feature</word_key>
+      <word_default>We could not find the torrent you were attempting to feature or unfeature.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>new_version_submit_h3</word_key>
+      <word_default>Uploading A New Version</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>noauth_for_torrentchange</word_key>
+      <word_default><![CDATA[We could not find the member you were attempting to set as this torrent's owner.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>nochanges_at_all</word_key>
+      <word_default>No changes have been recorded for this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>nochanges_yet</word_key>
+      <word_default>No changes have been recorded in this version</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notorrents_pending_approval</word_key>
+      <word_default>There are no torrents currently awaiting approval</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>notorrents_pending_broken</word_key>
+      <word_default>There are no torrents currently reported broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_unpinned</word_key>
+      <word_default>The torrent has been successfully unpinned</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderation_alt</word_key>
+      <word_default>Moderation</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mod_button</word_key>
+      <word_default>With selected</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>most_watched</word_key>
+      <word_default>Most Watched</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>multimod_cat</word_key>
+      <word_default>Select Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>multimod_submit</word_key>
+      <word_default>Move torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>newversion</word_key>
+      <word_default>Upload new version</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>new_version_notice</word_key>
+      <word_default><![CDATA[When you save the changes to your torrent below, a new version of your submission will be saved, with the current existing version archived as a previous version.<br /><br />Users will be able to download previous versions when reviewing your torrent listing, and administrators will be able to restore a previous version if need be.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_unapprove</word_key>
+      <word_default>The torrent is now hidden from public view</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_unbroken</word_key>
+      <word_default>The broken torrent flag has been removed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_subjectbroke</word_key>
+      <word_default><![CDATA[Your torrent <a href='%s'>%s</a> was reported broken]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_subject</word_key>
+      <word_default><![CDATA[Your submitted torrent <a href='%s'>%s</a> was %s]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_pend_top</word_key>
+      <word_default>torrents Pending Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_pinned</word_key>
+      <word_default>The torrent has been successfully pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_modsubjectbroke</word_key>
+      <word_default><![CDATA[A torrent <a href='%s'>%s</a> was reported broken]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_nav</word_key>
+      <word_default>Moderation Panel</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_modtorrentbroke</word_key>
+      <word_default><![CDATA[Hello %s,
+
+This message is to notify you that a torrent '%s' has been reported broken.
+This message was automatically generated.  Please visit the Moderator Panel (%s) to review the torrent and update it appropriately.  Thanks!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_torrentdeleted</word_key>
+      <word_default>torrent Successfully Deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_torrentpending</word_key>
+      <word_default><![CDATA[Hello %s,
+
+This message is to notify you that a torrent '%s' has been submitted and is pending approval.
+This message was automatically generated.  Please visit the Moderator Panel (%s) to review the torrent and approve or deny it, as appropriate.  Thanks!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_torrentpendingsub</word_key>
+      <word_default><![CDATA[A new torrent <a href='%s'>%s</a> is pending approval]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_torrentbroke</word_key>
+      <word_default><![CDATA[Hello %s,
+
+This message is to notify you that your torrent '%s' has been reported broken.
+This message was automatically generated.  No action is required on your part at this time.  Our staff will review the report and take action on the torrent appropriately.  Thanks!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_app_lang</word_key>
+      <word_default>approved</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_broken</word_key>
+      <word_default>The torrent has been reported as broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_broke_top</word_key>
+      <word_default>torrents Reported Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_del_lang</word_key>
+      <word_default>deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_dennotify</word_key>
+      <word_default>Hello %s,
+
+This message is to notify you that your torrent %s was deleted.
+This message was automatically generated.  Please contact an admin with any questions.  Thanks!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modcp_tab_brokentorrents</word_key>
+      <word_default>torrents Reported Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modcp_tab_unapprovedtorrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_appnotify</word_key>
+      <word_default>Hello %s,
+
+This message is to notify you that your recently submitted torrent %s has been approved.
+This message was automatically generated.  Please contact an admin with any questions.  Thanks!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>moderate_approve</word_key>
+      <word_default>The torrent is now visible to the public</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modcp_tab_bitcomments</word_key>
+      <word_default>torrent Reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_unapprove</word_key>
+      <word_default>Unapprove</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modcp_mtab_broketorrents</word_key>
+      <word_default>Broken torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_unpintorrent</word_key>
+      <word_default>Unpin</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_pintorrent</word_key>
+      <word_default>Pin</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_rembroke</word_key>
+      <word_default>Remove Broken torrent Flag</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_select</word_key>
+      <word_default>With selected...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_submit</word_key>
+      <word_default>Submit</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_move</word_key>
+      <word_default>Move</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_unpinned</word_key>
+      <word_default>%s torrents unpinned</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_unapp</word_key>
+      <word_default>%s torrents unapproved</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_pinned</word_key>
+      <word_default>%s torrents pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_del</word_key>
+      <word_default>%s torrents deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_huh</word_key>
+      <word_default>You must choose an action to perform on the selected torrents!</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_br</word_key>
+      <word_default>%s torrents removed from broken torrent status</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_message_app</word_key>
+      <word_default>%s torrents approved</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>modact_approve</word_key>
+      <word_default>Approve</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mini_stats_views</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mini_stats_members</word_key>
+      <word_default>active users</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mini_stats_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mini_stats_torrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>max_torrent_size_is</word_key>
+      <word_default>Maximum torrent size is</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mark_bit_as_read</word_key>
+      <word_default>Mark All Categories Read</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>mark_cat_read</word_key>
+      <word_default>Mark this category as read</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>markread_no_id</word_key>
+      <word_default>Could not determine which category you were marking as read.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>manage_torrent_purchases</word_key>
+      <word_default>Manage Purchases</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>main_screenshot</word_key>
+      <word_default>Main screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>listing_pinned</word_key>
+      <word_default>Pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>log_topic_del</word_key>
+      <word_default>Deleted an IP.bitracker Auto-Generated topic</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>list_torrents_summary</word_key>
+      <word_default>A list of torrents in</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>listing_featured</word_key>
+      <word_default>Featured</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>listing_broken</word_key>
+      <word_default>Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like__index</word_key>
+      <word_default>Index</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like__torrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like__cat</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like__torrent</word_key>
+      <word_default>torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_unfollow_torrent</word_key>
+      <word_default>unfollow this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_ucfirst_unfollow_cat</word_key>
+      <word_default>Unfollow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_ucfirst_unfollow_torrent</word_key>
+      <word_default>Unfollow this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_unfollow_cat</word_key>
+      <word_default>unfollow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_ucfirst_follow_torrent</word_key>
+      <word_default>Follow this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_ucfirst_follow_cat</word_key>
+      <word_default>Follow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_totalcount_follow_torrent</word_key>
+      <word_default>%s member(s) follow this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_totalcount_follow_cat</word_key>
+      <word_default>%s member(s) follow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_follow_torrent</word_key>
+      <word_default>follow this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>like_follow_cat</word_key>
+      <word_default>follow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>latest_submitter</word_key>
+      <word_default>Latest Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>latest_torrent_th</word_key>
+      <word_default>Latest torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>latest_torrent</word_key>
+      <word_default>Latest torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>latest_bitracker</word_key>
+      <word_default>Latest torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>lastupdated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>in_bit_torrent_uc</word_key>
+      <word_default>In torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>import_note</word_key>
+      <word_default><![CDATA[<b>Note</b>: torrent must be uploaded to your configured bitracker directory]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>imported_desc</word_key>
+      <word_default>torrent imported by an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>image_path</word_key>
+      <word_default>Specify a path</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>image_link</word_key>
+      <word_default>Link to an image</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>highest_rated</word_key>
+      <word_default>Highest Rated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>free_and_paid</word_key>
+      <word_default><![CDATA[Free &amp; Paid]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>free_only</word_key>
+      <word_default>Free only</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>generic_bitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>gotosubcat</word_key>
+      <word_default>Go to category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>find_bit_paidfree</word_key>
+      <word_default>Show torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>followed_type__categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>followed_type__torrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>free</word_key>
+      <word_default>FREE</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>findallbymem</word_key>
+      <word_default><![CDATA[View member's torrents]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>find_bit_category</word_key>
+      <word_default><![CDATA[Find in <strong>category</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>filter_most_recent</word_key>
+      <word_default>Most Recent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>filter_most_popular</word_key>
+      <word_default>Most Popular</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>filter_most_comments</word_key>
+      <word_default>Most Reviewed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>filter_highest_rated</word_key>
+      <word_default>Highest Rated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_votesnump</word_key>
+      <word_default>with a total of</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_votesnum</word_key>
+      <word_default>votes</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_tracked_by_ajax</word_key>
+      <word_default>tracked By</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_tracked_by</word_key>
+      <word_default><![CDATA[Members who have tracked '%s']]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_topiclang</word_key>
+      <word_default>Support Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_support_tooltip</word_key>
+      <word_default>Get support for this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_support</word_key>
+      <word_default>SUPPORT TOPIC</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_submit_title_header</word_key>
+      <word_default>Add, Edit or Update a torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_submit_start_form</word_key>
+      <word_default>Please select a category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_submit_nav_header</word_key>
+      <word_default>Select a Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_search_button</word_key>
+      <word_default>torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_showtopic</word_key>
+      <word_default>Click here to visit support topic</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_report_name</word_key>
+      <word_default>Reporting torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_renew</word_key>
+      <word_default>(Expired) Renew Purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_path</word_key>
+      <word_default>Specify a path</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_purchid</word_key>
+      <word_default>(expires on %s)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_reactivate</word_key>
+      <word_default>(Cancelled) Reactivate Purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_package</word_key>
+      <word_default>Package</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_paid</word_key>
+      <word_default>Paid</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_no_renewals</word_key>
+      <word_default>The torrent does not have any renewal terms, and subsequently cannot be cancelled, renewed or reactivated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_not_found</word_key>
+      <word_default>We could not find the torrent specified</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_NOT_FOUND</word_key>
+      <word_default>We could not find the requested torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_nexus_type</word_key>
+      <word_default>torrent Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_not_approved</word_key>
+      <word_default>This torrent has not yet been approved.  Only moderators, and the person who submitted the torrent can see it.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_nexus_manage</word_key>
+      <word_default>Manage %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_nexus</word_key>
+      <word_default>Associate with Nexus package</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_mmod_success</word_key>
+      <word_default>The selected action has been taken on the torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_management</word_key>
+      <word_default>torrent Management</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_linkupload</word_key>
+      <word_default>Upload or link to torrents instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_link</word_key>
+      <word_default>Link to a torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_infoheader</word_key>
+      <word_default>torrent Information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_information</word_key>
+      <word_default>torrent Information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_import_disk</word_key>
+      <word_default>Import from disk instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_free</word_key>
+      <word_default>Free</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_torrents_search</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_dl_currate</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_cost_desc_fee</word_key>
+      <word_default>A %s transaction fee will be deducted.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_cost_desc_percent</word_key>
+      <word_default>%s%% commission will be deducted.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_currently_in</word_key>
+      <word_default>Your torrent is currently in</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_changelog</word_key>
+      <word_default>Changes in %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_comments_search</word_key>
+      <word_default>Reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_cost</word_key>
+      <word_default>Price</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_cost_desc_both</word_key>
+      <word_default>%s%% commission, plus a %s transaction fee will be deducted.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_cancelpurchase</word_key>
+      <word_default>(Active) Cancel Purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_approvedon</word_key>
+      <word_default>Approved on</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_broken_text</word_key>
+      <word_default>This torrent has been reported as broken because</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_broken_info</word_key>
+      <word_default>Reported by %s on %s</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrent_approvedby</word_key>
+      <word_default>Approved by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentpurchases</word_key>
+      <word_default>Purchases</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentscreenshot</word_key>
+      <word_default>Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentsize</word_key>
+      <word_default>torrent Size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentsize_unknown</word_key>
+      <word_default><![CDATA[<em>Unknown</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrents_below</word_key>
+      <word_default>Your torrents are available below.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrents_broken_summary</word_key>
+      <word_default>A list of torrents reported broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrents_pending_approval</word_key>
+      <word_default>A list of torrents pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrents_submitted_summary</word_key>
+      <word_default>A list of torrents this member has submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrents_tracked_summary</word_key>
+      <word_default>A list of torrents you have tracked</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrents_you_sub_summary</word_key>
+      <word_default>A list of torrents you have submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrenttype</word_key>
+      <word_default>torrent Type</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentviews</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentname</word_key>
+      <word_default>torrent Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentinfo_name</word_key>
+      <word_default>torrent Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentinfo_son</word_key>
+      <word_default>on</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentinfo_submitted</word_key>
+      <word_default>Submission Information</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentby</word_key>
+      <word_default>by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentcategory</word_key>
+      <word_default>In Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentcomment_notifications</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#AUTHOR#> has just commented on the torrent "<#TITLE#>" to which you are currently subscribed.
+
+You can review the new comment here:
+<#URL#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentinfo_uploaded_by</word_key>
+      <word_default>Uploaded By</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>torrentbitracker</word_key>
+      <word_default>bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>feed_tp_year</word_key>
+      <word_default>Past Year</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>feed_tp_week</word_key>
+      <word_default>Past Week</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>feed_tp_month</word_key>
+      <word_default>Past Month</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>feed_tp_all</word_key>
+      <word_default>All Time</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>err_UNKNOWN</word_key>
+      <word_default>An unknown error occurred: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>featured_torrent_head</word_key>
+      <word_default>Featured download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>featured_torrent_ok</word_key>
+      <word_default>The torrent has been successfully featured</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>error_generic</word_key>
+      <word_default>An internal error occurred. Please contact an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>error_protorrent_no_torrents</word_key>
+      <word_default><![CDATA[This member doesn't have any torrents yet]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dppage_button</word_key>
+      <word_default>Purchase torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dppage_starting</word_key>
+      <word_default>You are about to purchase this torrent. Before continuing, you must agree to the disclaimer below.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>edittorrent</word_key>
+      <word_default>Edit torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>edit_button</word_key>
+      <word_default>Update Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>error_generating_invoice</word_key>
+      <word_default>An error occurred while trying to generate your invoice. Please try again or contact an administrator. (%s)</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_weekly_bw</word_key>
+      <word_default>You have exceeded the maximum amount of bandwidth allotted to you by the administrator for the week.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_weekly_dl</word_key>
+      <word_default>You have exceeded the maximum amount of downloads allotted to you by the administrator for the week.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_button</word_key>
+      <word_default>download torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_button_short</word_key>
+      <word_default>download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_buy</word_key>
+      <word_default>Buy Now</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_buy_another</word_key>
+      <word_default>Buy Another</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_header</word_key>
+      <word_default>tracking torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_header_version</word_key>
+      <word_default>tracking revision of</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dpage_starting</word_key>
+      <word_default>Your torrent is ready for download. Before tracking, you must agree to the disclaimer below.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_sim</word_key>
+      <word_default>You may not download any more torrents until your other downloads are complete</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_posts_p_dl</word_key>
+      <word_default>You have not posted enough times since the last torrent you tracked.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_monthly_dl</word_key>
+      <word_default>You have exceeded the maximum amount of downloads allotted to you by the administrator for the month.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_monthly_bw</word_key>
+      <word_default>You have exceeded the maximum amount of bandwidth allotted to you by the administrator for the month.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_min_posts</word_key>
+      <word_default>You do not have enough posts to download torrents yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_daily_dl</word_key>
+      <word_default>You have exceeded the maximum amount of downloads allotted to you by the administrator for the day.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>dl_restrict_daily_bw</word_key>
+      <word_default>You have exceeded the maximum amount of bandwidth allotted to you by the administrator for the day.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>deletetorrent</word_key>
+      <word_default>Delete torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>continue_button</word_key>
+      <word_default>Continue...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>com_qued</word_key>
+      <word_default>Unapproved reviews:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>COM_comment_button_post</word_key>
+      <word_default>Submit Review</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>click_to_set_main</word_key>
+      <word_default>Set this as the main screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>comment_notice_subject</word_key>
+      <word_default><![CDATA[A new comment has been left on the torrent <a href='%s'>%s</a>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>comment_search_button</word_key>
+      <word_default>Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>clear_selection</word_key>
+      <word_default>Clear Selection</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>change_category</word_key>
+      <word_default>Change category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>change_author_submit</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>change_author_name</word_key>
+      <word_default>Author name: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>change_author</word_key>
+      <word_default>Change author?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>changelog_ucfirst</word_key>
+      <word_default>Changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_totaltorrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_totalviews</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cat_no_info</word_key>
+      <word_default><![CDATA[<i>No Information</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cat_qued</word_key>
+      <word_default>Unapproved torrents:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cat_search_pre</word_key>
+      <word_default>In Category: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cat_sort_custom</word_key>
+      <word_default>Custom</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cfield_drop_selectone</word_key>
+      <word_default>Select One</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cfield_required</word_key>
+      <word_default>This field is required</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>changeauth_perms</word_key>
+      <word_default>You do not have permission to perform that action.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>changelog</word_key>
+      <word_default>Changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>changelog_pt</word_key>
+      <word_default>%s Changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_totalcomments</word_key>
+      <word_default>reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_totalcomment</word_key>
+      <word_default>review</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_totalbitracker</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_subcats</word_key>
+      <word_default>Subcategories: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>category_main_header</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>category_search_button</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cattorrent_author</word_key>
+      <word_default>Submitted by</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cattorrent_date</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cattorrent_date1</word_key>
+      <word_default>Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catinfo_latestinfo</word_key>
+      <word_default>Latest Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_updated</word_key>
+      <word_default>Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_ssnone</word_key>
+      <word_default>No Screenshots Available</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_in</word_key>
+      <word_default>in</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_ssalt</word_key>
+      <word_default>Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_torrentviews</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_torrentsubmitted</word_key>
+      <word_default>Submitted: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_torrentauthor</word_key>
+      <word_default>Submitter: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_torrentdls</word_key>
+      <word_default>downloads: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_torrentname</word_key>
+      <word_default>torrent Name: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>catdis_added</word_key>
+      <word_default>Added</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_toggle</word_key>
+      <word_default>Could not find the torrent to approve or unapprove.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_unreport</word_key>
+      <word_default>We could not find the specified torrent to remove the broken torrent flag</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_rate_torrent</word_key>
+      <word_default>You do not have permission to rate this torrent.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_reactivate_p</word_key>
+      <word_default>You are unable to reactivate this purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_view_bitracker</word_key>
+      <word_default>You cannot view the list of members that have download this torrent.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>captcha_failed</word_key>
+      <word_default>The verification code did not match the one displayed.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_rmsub</word_key>
+      <word_default>Could not find the torrent to unsubscribe you from</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_report</word_key>
+      <word_default>We could not find the specified torrent to report as broken</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_pin</word_key>
+      <word_default>We could not find the torrent you were attempting to pin.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_addsub</word_key>
+      <word_default>We could not find the specified torrent to subscribe you to it</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_to_del</word_key>
+      <word_default>We could not find the specified torrent to delete</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_bitracker</word_key>
+      <word_default>We could not find the torrent you were attempting to view downloads for.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_find_purchase</word_key>
+      <word_default>We could not find the purchase you were attempting to update</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>browse_other_cats_views</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_alt_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_alt_hide</word_key>
+      <word_default>Hide From Members</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_alt_restore</word_key>
+      <word_default>Restore</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_alt_track</word_key>
+      <word_default>download</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_alt_unhide</word_key>
+      <word_default>Show To Members</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_torrentname</word_key>
+      <word_default>torrentname</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_name</word_key>
+      <word_default>Name</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_ops</word_key>
+      <word_default>Operations</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bversion_updated</word_key>
+      <word_default>Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cancel_confirm</word_key>
+      <word_default>Are you sure you wish to cancel this purchase? You will lose access to download the torrent on %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_delete</word_key>
+      <word_default>You do not have permission to delete this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>cannot_do_track</word_key>
+      <word_default>You do not have permission to download this torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_uploaded_of</word_key>
+      <word_default>of</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_uploaded_st</word_key>
+      <word_default>Uploaded</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_upload_progress</word_key>
+      <word_default>Upload Progress...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>broken_confirm</word_key>
+      <word_default>Confirm Report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>broken_reason</word_key>
+      <word_default>Please enter the reason for your report</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>browse_other_cats</word_key>
+      <word_default>Browse Other Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>browse_other_cats_torrents</word_key>
+      <word_default>torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_uploaded_est</word_key>
+      <word_default>Estimated seconds remaining: </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_uploaded_bytes</word_key>
+      <word_default>bytes</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_rss_title</word_key>
+      <word_default>Last 10 Submissions RSS Feed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_suredelete</word_key>
+      <word_default>Are you sure you wish to delete the item(s)?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_uploaded_bps</word_key>
+      <word_default>kB/sec</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_alreadyuploaded</word_key>
+      <word_default>Existing torrent present.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_cat_selectcat</word_key>
+      <word_default>Select Category...</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_find_in_cat</word_key>
+      <word_default><![CDATA[Find in <strong>bitracker category</strong>:]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_loc_cat</word_key>
+      <word_default>Viewing download Category:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_loc_torrent</word_key>
+      <word_default>Viewing download:</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_loc_idx</word_key>
+      <word_default>Viewing download Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_offline_msg</word_key>
+      <word_default>download Manager Offline</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_portal_random</word_key>
+      <word_default>Random torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_reuploadtorrent</word_key>
+      <word_default>Upload a new torrent to replace existing one?</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bit_rss_desc</word_key>
+      <word_default>This is the RSS feed of the last ten torrent submissions accepted into our database.  This RSS feed is always up to date as it is dynamically updated.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bitracker_table_summary</word_key>
+      <word_default>Categories in bitracker</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bitracker_member_restricted</word_key>
+      <word_default>You are not permitted to download torrents at this time.  Please try again later.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>bitjs_wait_str</word_key>
+      <word_default>download starts in %s seconds</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>author_changed</word_key>
+      <word_default>The owner of this torrent has been updated</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>attach_selectedss</word_key>
+      <word_default>Attach Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>attach_selected</word_key>
+      <word_default>Attach torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>attach_torrents_help</word_key>
+      <word_default>Help with attaching torrents</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>attach_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>anon_users</word_key>
+      <word_default>Anonymous Users</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>approvetorrent</word_key>
+      <word_default>Approve torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>already_voted</word_key>
+      <word_default>You rated this torrent %s out of 5</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>already_subscribed</word_key>
+      <word_default>Stop watching torrent</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>all_bitracker_by</word_key>
+      <word_default>torrents </word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>ajax_rate_error</word_key>
+      <word_default>There was an error processing the request</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>agree_and_dl</word_key>
+      <word_default><![CDATA[Agree &amp; download]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error6</word_key>
+      <word_default>Screenshots are required, however you did not submit one</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error7</word_key>
+      <word_default>You submitted an invalid torrent type for your screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error8</word_key>
+      <word_default>The screenshot you attempted to upload was too large</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error9</word_key>
+      <word_default>The website you linked to is not allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error_changelog</word_key>
+      <word_default>You must provide a torrent version too if you enter a change log</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_mainerror</word_key>
+      <word_default>We could not upload the torrent. Please contact an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>adding_torrent_to</word_key>
+      <word_default>Adding your torrent to</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>add_another_torrentlink</word_key>
+      <word_default>Add another link</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>add_another_sslink</word_key>
+      <word_default>Add another screenshot link</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>add_button</word_key>
+      <word_default>Add Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error4</word_key>
+      <word_default>There was an error attempting to move the torrent to its storage directory. Please contact an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error5</word_key>
+      <word_default>We could not validate the image you attempted to upload. Please contact an administrator or try a different image</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_ftp_error2</word_key>
+      <word_default>The uploaded torrents cannot be stored in the location specified by the administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_noupload_error1</word_key>
+      <word_default>You did not submit any torrents with your download record.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error1</word_key>
+      <word_default><![CDATA[There was an error processing the torrent. Make sure that after selecting your torrent that you click the 'Attach torrent' button before submitting.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error2</word_key>
+      <word_default>The torrenttype you tried to upload is not in the list of approved torrent types</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_upload_error3</word_key>
+      <word_default>The torrent you uploaded was too big. Please review the size of the torrent you attempted to upload and the allowed maximum torrent size</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_screenshot</word_key>
+      <word_default>Screenshots are required in this category</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_ftp_error1</word_key>
+      <word_default>The uploaded torrents cannot be stored in the location specified by the administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_nexus_fee</word_key>
+      <word_default>%s Your price is too low for any payment to be received. To continue anyway, press the submit button again.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_nexus</word_key>
+      <word_default>You did not select an associated package.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_torrentname</word_key>
+      <word_default>A torrentname is required</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_torrentdesc</word_key>
+      <word_default>A torrent description is required</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_torrent</word_key>
+      <word_default>You did not choose any torrent to upload</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_cfield2</word_key>
+      <word_default>One of the fields you completed is in an invalid format.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_cfield1</word_key>
+      <word_default>One of the fields you completed had more data than is allowed.</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>addtorrent_error_cfield</word_key>
+      <word_default>You left a required field blank</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>active_users_guests</word_key>
+      <word_default>guests</word_default>
+    </lang>
+    <lang>
+      <word_app>bitracker</word_app>
+      <word_pack>public_bitracker</word_pack>
+      <word_key>active_users_header</word_key>
+      <word_default>%s user(s) are online (in the past %s minutes)</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

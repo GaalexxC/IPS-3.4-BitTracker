@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>devCU biTracker</name>
+    <public_name>biTracker</public_name>
+    <hide_tab>0</hide_tab>
+    <author>devCU Software Development</author>
+    <description>A full featured BitTorrent Tracker for IPB 3.4.x</description>
+    <disabledatinstall>0</disabledatinstall>
+    <website>http://www.devcu.com</website>
+    <global_caches/>
+    <update_check/>
+    <templategroups>
+        <template match="contains">skin_bitracker</template>
+    </templategroups>
+  </data>
+</information>

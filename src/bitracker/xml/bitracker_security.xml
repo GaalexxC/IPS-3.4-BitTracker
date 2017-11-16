@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_title_title>devCU biTracker Security Settings 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker Security</conf_title_desc>
+      <conf_title_tab>devCU</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable anti-leech</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_antileech</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Security</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Copyright-stamp screenshots</conf_title>
+      <conf_description>Write a copyright onto the screenshot</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_addcopyright</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Copyright-stamp text</conf_title>
+      <conf_description><![CDATA[<b>Note</b>: You can add one instance of %s which will be replaced with the current year.]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_copyrighttext</conf_key>
+      <conf_default>Copyright %s</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Watermark-stamp screenshots</conf_title>
+      <conf_description>If this is enabled, it overrides the copyright-stamp setting above.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_addwatermark</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Watermark-stamp image</conf_title>
+      <conf_description>Enter the path to your image here</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_watermarkpath</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Domain Blacklist</conf_title>
+      <conf_description>Use this setting to disallow linked files (if allowed) from specific websites.  One per line.</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bit_link_blacklist</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group>Tracker Security and Access</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_sec</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

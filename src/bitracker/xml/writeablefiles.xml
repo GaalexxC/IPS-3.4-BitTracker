@@ -1,0 +1,14 @@
+<installdata>
+		<file>
+		<path>btracker/torrents</path>
+		<dir>1</dir>
+	</file>
+		<file>
+		<path>btracker/nfo</path>
+		<dir>1</dir>
+	</file>
+	<file>
+		<path>btracker/screenshots</path>
+		<dir>1</dir>
+	</file>
+</installdata>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>devCU biTracker Bulk Import</grouptitle>
+		<grouplang>bit_bulkimport</grouplang>
+		<items>
+			<item>
+				<key>bit_bulk</key>
+				<string>Can bulk import files from zip files and directory?</string>
+			</item>
+		</items>
+	</group>
+	<group>
+		<grouptitle>download Manager Tools</grouptitle>
+		<grouplang>bit_tools</grouplang>
+		<items>
+			<item>
+				<key>bit_tools_topics</key>
+				<string>Can check and fix topics?</string>
+			</item>
+			<item>
+				<key>bit_tools_rebuild</key>
+				<string>Can resynchronize and rebuild caches and stats?</string>
+			</item>
+			<item>
+				<key>bit_tools_purge</key>
+				<string>Can purge subscriptions?</string>
+			</item>
+			<item>
+				<key>bit_tools_thumbs</key>
+				<string>Can rebuild thumbnails?</string>
+			</item>
+			<item>
+				<key>bit_tools_orphan</key>
+				<string>Can check for and remove orphaned files?</string>
+			</item>			
+		</items>
+	</group>
+</permissions>

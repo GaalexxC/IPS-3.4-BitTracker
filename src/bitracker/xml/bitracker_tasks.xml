@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export>
+  <group>
+    <row>
+      <task_id>36</task_id>
+      <task_title>Clear temporary uploads</task_title>
+      <task_file>bit_temp_records.php</task_file>
+      <task_next_run>1357275600</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>5</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>c661932b153bd900725472e7aa52b6ee</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Clears out files uploaded but not saved to a record</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>bittemprecords</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>bitracker</task_application>
+    </row>
+    <row>
+      <task_id>37</task_id>
+      <task_title>Prune download logs</task_title>
+      <task_file>bit_prune.php</task_file>
+      <task_next_run>1357267500</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>2</task_hour>
+      <task_minute>45</task_minute>
+      <task_cronkey>03b34ba9705ac07cbea21dbcd40b9469</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Prunes download logs based on configuration</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>bit_prune</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>bitracker</task_application>
+    </row>
+    <row>
+      <task_id>38</task_id>
+      <task_title>Clear sessions</task_title>
+      <task_file>bit_sessions.php</task_file>
+      <task_next_run>1357245240</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>1</task_hour>
+      <task_minute>-1</task_minute>
+      <task_cronkey>d1ac91e5ac5c86fc3cd8b8c2a67614bc</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Clears old download sessions</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>bit_sessions</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>bitracker</task_application>
+    </row>
+    <row>
+      <task_id>39</task_id>
+      <task_title>Clear dynamic urls</task_title>
+      <task_file>bit_urls.php</task_file>
+      <task_next_run>1357302420</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>10</task_minute>
+      <task_cronkey>8e230932b517527b4170704bff07775c</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Removes temporary dynamic urls from database</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>bit_urls</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>bitracker</task_application>
+    </row>
+    <row>
+      <task_id>40</task_id>
+      <task_title>Update file views</task_title>
+      <task_file>bit_views.php</task_file>
+      <task_next_run>1357303680</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>-1</task_hour>
+      <task_minute>30</task_minute>
+      <task_cronkey>5840350a82b28a5749f64af7834cec82</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Updates file view counts when they are set to update hourly</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>bit_views</task_key>
+      <task_safemode>0</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>bitracker</task_application>
+    </row>
+  </group>
+</export>

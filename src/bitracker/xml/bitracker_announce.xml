@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_title_title>devCU biTracker Announce Settings 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker Announce</conf_title_desc>
+      <conf_title_tab>devCU biTracker</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Private Tracker?</conf_title>
+      <conf_description>If "Yes" you must also enable passkey access below. If enabled your users cannot upload torrents from any other tracker, only your announce will be accepted and torrents must be created with the "private" flag or they will be rejected during upload process. If set to "No" then passkey access will be deactivated.
+	  </conf_description>
+      <conf_group>11</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_private</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Announce Configuration</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Enable Passkey Access?</conf_title>
+      <conf_description>If "Yes" you must also enable private tracker above. This will generate a unique passkey for users to connect to your tracker enhancing its privacy. To further strengthen privacy and security for your users, using our triple secure tracker, you may use SSL announce and IP access options available below.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_passkey</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Enable SSL Tracker?</conf_title>
+      <conf_description>If "Yes" you must have a valid SSL certificate for your domain/subdomain and the proper Chain Certificate installed for secure function. Your users torrents must be created with https announce or the upload will be rejected.</conf_description>
+      <conf_group>11</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_ssl</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group>Announce Security</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable IP Access?</conf_title>
+      <conf_description>If "Yes" your users can only connect if the IP in the database matches the connection IP. For those with dynamic IP address that change frequently, they can update their IP using the Update IP button in UCP or the handy script we offer at our site.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_ip</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Multi IP Access</conf_title>
+      <conf_description>Users can use up to 3 IP locations. We have found many like to seed from home, work, and seedboxes. You can choose how many IP addresses are available to each member, up to 3. IP Access must be enabled for this to have any effect.</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>bit_ipmulti</conf_key>
+      <conf_default>1 IP</conf_default>
+      <conf_extra>1=1 IP&#13;
+2=2 IP&#13;
+3=3 IP</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+		<setting>
+      <conf_title>Seedbox Whitelist</conf_title>
+      <conf_description>Use this setting to allow from specific seedbox hosts.  One per line.</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bit_ip_whitelist</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group>Announce Seedbox IP Access</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	<setting>
+      <conf_title>Seedbox Blacklist</conf_title>
+      <conf_description>Use this setting to disallow from specific seedbox hosts.  One per line.</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bit_ip_blacklist</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_ann</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

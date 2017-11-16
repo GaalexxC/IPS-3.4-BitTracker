@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="bitracker" templategroups="a:1:{s:14:&quot;skin_bitracker&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_bitracker">
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>bitrackerPortal</template_name>
+      <template_data>$canadd=false, $canmod=false, $category_rows=array(), $feeds=array(), $recordIds=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>categoryListing</template_name>
+      <template_data><![CDATA[$permissions=array(), $page_links='', $category=array(), $category_rows=array(), $file_rows=array(), $sort=array(), $like='', $recordIds=array()]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>fileDisplay</template_name>
+      <template_data><![CDATA[$permissions=array(), $file=array(), $category=array(), $screenshots=array(), $old_versions=array(), $hash='', $purchases=array(), $like='', $comments=array(), $renewal_terms='', $similar=array(), $tracked=FALSE]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>indexPage</template_name>
+      <template_data>$canadd=false, $canmod=false, $category_rows=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>pageEnd</template_name>
+      <template_data>$show=array(), $active=array(), $latest=array(), $random=array(), $recordIds=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>portalPaneItem</template_name>
+      <template_data>$item, $type, $recordIds=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>portalSidebarBlock</template_name>
+      <template_data><![CDATA[$title, $none, $items, $type='file', $recordIds=array(), $menutype='all']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>portalSidebarBlockInsert</template_name>
+      <template_data><![CDATA[$none, $items, $type='file', $recordIds=array()]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_bitracker_external">
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>bbCodeFile</template_name>
+      <template_data>$file=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>bitrackerAdvancedSearchFilters</template_name>
+      <template_data>$categories, $fields=null</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>commentSearchResult</template_name>
+      <template_data>$r, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>fileChanges</template_name>
+      <template_data>$file, $versions=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>fileSearchResult</template_name>
+      <template_data>$data, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>filetrackers</template_name>
+      <template_data>$file, $trackers=array(), $ajax=false, $pagelinks=null</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>followedCategoryResults</template_name>
+      <template_data>$results</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>mybitracker</template_name>
+      <template_data><![CDATA[$page_links='', $files=array()]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>portalBlock</template_name>
+      <template_data><![CDATA[$lang='',$data=array(),$show_bitracker=0]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>profileDisplay</template_name>
+      <template_data>$rows=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>searchResultsWrapper</template_name>
+      <template_data>$results, $titlesOnly</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_external</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>unapprovedComments</template_name>
+      <template_data>$comments</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_bitracker_other">
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>confirmToBuy</template_name>
+      <template_data>$info=array(), $category=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>confirmtrack</template_name>
+      <template_data>$info=array(), $files=array(), $category=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>confirmVersiontrack</template_name>
+      <template_data>$info=array(), $files=array(), $category=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_other</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>moderatorPanel</template_name>
+      <template_data>$type, $results</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_bitracker_submit">
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>filesIframe</template_name>
+      <template_data>$JSON, $id</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>mainSubmitForm</template_name>
+      <template_data><![CDATA[$type='new', $default=array(), $links=array(), $category=array(), $error_message='', $bit_customFields='', $paid_file_message='', $packageList='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>moderateSelectCategory</template_name>
+      <template_data>$categories</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>submissionStart</template_name>
+      <template_data><![CDATA[$default=array(), $error='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bitracker_submit</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>submitBrokenFile</template_name>
+      <template_data><![CDATA[$file=array(), $editor='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>xmlskin</template_master_key>
+    </template>
+  </templategroup>
+</templates>

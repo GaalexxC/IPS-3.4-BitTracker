@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_title_title>devCU biTracker Storage Settings 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker Storage Options</conf_title_desc>
+      <conf_title_tab>devCU</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>File storage</conf_title>
+      <conf_description><![CDATA[Select your file storage method here.  Depending upon the file storage method specified, fill in the appropriate information below.
+<br /><br />
+Note: While available, database storage is only recommended as a last resort.
+<br /><br />
+You are responsible for manually creating the directories to store files and screenshots in.  Note that these directories must have full write privileges (on Linux, you should CHMOD the directories 777).]]></conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>bit_filestorage</conf_key>
+      <conf_default>disk</conf_default>
+      <conf_extra>disk=Store files in a folder on your server&#13;
+ftp=Store files remotely through FTP transfer&#13;
+db=Store files in my database</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Local Storage Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow URL file link submissions</conf_title>
+      <conf_description><![CDATA[Do you wish to allow users to submit links instead of uploading a file?<br /><br />
+Note that certain information, such as file size or mimetype for example, may be missing or inaccurate.]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_allow_urls</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Which groups can link to files</conf_title>
+      <conf_description/>
+      <conf_type>multi</conf_type>
+      <conf_key>bit_groups_link</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['bit_groups_link']) )
+	{
+		$_POST['bit_groups_link'] = implode(",",$_POST['bit_groups_link']);
+	}
+	else
+	{
+		$_POST['bit_groups_link'] = "";
+	}
+	
+	$key = 'bit_groups_link';
+}
+if ( $show == 1 )
+{
+    $key='bit_groups_link[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Types of linked files</conf_title>
+      <conf_description>Specify the types of files users can link to.  This is primarily used for organizational purposes.  One per line</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bit_linked_types</conf_key>
+      <conf_default>Mirrors&#13;
+Contributed Files&#13;
+Required Software&#13;
+Similar Files&#13;
+Other Versions</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ignore mime-type for linked files</conf_title>
+      <conf_description><![CDATA[File extension won't be checked for linked files if this is set to 'Yes']]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_ignore_mime_link</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow file system link submissions</conf_title>
+      <conf_description><![CDATA[Do you wish to allow selected groups the ability to input a path to a file and have CU Bittorrent Tracker import the file?<br /><br />
+File paths on the submission form are relative to the configured bitracker storage folder]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_allow_path</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Which groups can import files</conf_title>
+      <conf_description>Specify which groups can input a file system path from the submit form - typically only users who would have FTP access would be able to do so.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>bit_path_users</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['bit_path_users']) )
+	{
+		$_POST['bit_path_users'] = implode(",",$_POST['bit_path_users']);
+	}
+	else
+	{
+		$_POST['bit_path_users'] = "";
+	}
+	
+	$key = 'bit_path_users';
+}
+if ( $show == 1 )
+{
+    $key='bit_path_users[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Local storage: download path</conf_title>
+      <conf_description>Tip: Use {root_path} to indicate your root forum directory.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_localfilepath</conf_key>
+      <conf_default>{root_path}/bitracker/torrents</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Local storage: screenshot path</conf_title>
+      <conf_description>Tip: Use {root_path} to indicate your root forum directory.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_localsspath</conf_key>
+      <conf_default>{root_path}/bitracker/screenshots</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Local Storage: NFO path</conf_title>
+      <conf_description>use {root_path} for your forum root directory</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_localnfopath</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: FTP URL</conf_title>
+      <conf_description><![CDATA[No ftp:// prefix
+<br /><br />
+Example: ftp.domain.com]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remoteurl</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group>Remote Storage Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: FTP port</conf_title>
+      <conf_description>Port your FTP server will be listening on for incoming connections</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remoteport</conf_key>
+      <conf_default>21</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: FTP username</conf_title>
+      <conf_description>Example: john_doe</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remoteuser</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>URL to Screenshots</conf_title>
+      <conf_description>If your screenshots are stored in a web-accessible folder, provide the URL to the screenshots here.  This will improve overall server performance dramatically versus serving the screenshots through the CU Bittorrent Tracker PHP code.  If blank, screenshots will still be available, but will require more resources to display.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_screenshot_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: FTP password</conf_title>
+      <conf_description>Example: some!@12_password</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remotepass</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: path to devCU biTracker</conf_title>
+      <conf_description><![CDATA[Relative to the home directory for the FTP user
+<br /><br />
+Example: &#46;&#46;/private_files/bitracker]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remotefilepath</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: path to screenshots</conf_title>
+      <conf_description><![CDATA[Relative to the home directory for the FTP user
+<br /><br />
+Example: &#46;&#46;/private_files/screenshots]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remotesspath</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: URL to devCU biTracker</conf_title>
+      <conf_description><![CDATA[URL to download the files from after transferring them via FTP to the remote server<br /><br />
+Example: ftp://myserver.com/private_files/bitracker]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remotefileurl</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remote storage: URL to screenshots</conf_title>
+      <conf_description>URL to download the screenshots from after transferring them via FTP to the remote server</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_remotessurl</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>Use dynamic download urls</conf_title>
+      <conf_description>A different url will be utilized each time a file is tracked</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_dynamic_urls</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Expiration for dynamic urls</conf_title>
+      <conf_description>How many minutes should dynamic urls be good for?</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_dynamic_expire</conf_key>
+      <conf_default>3600</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_stor</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

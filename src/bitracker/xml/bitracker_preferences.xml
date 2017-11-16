@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit_nexus</conf_title_keyword>
+      <conf_title_title>devCU biTracker - Paid Files</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>devCU</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable paid files</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_nexus_on</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_nexus</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Tax</conf_title>
+      <conf_description>The class which paid files will be taxed as.</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>bit_nexus_tax</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[$this->lang->loadLanguageFile( array( 'admin_nexus' ), 'nexus' );
+$dropdown = array( array( 0, $this->lang->words['package_notax'] ) );
+$this->DB->build( array( 'select' => '*', 'from' => 'nexus_tax', 'order' => 't_order' ) );
+$this->DB->execute();
+while ( $row = $this->DB->fetch() )
+{
+	$dropdown[] = array( $row['t_id'], $row['t_name'] );
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_nexus</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Commission</conf_title>
+      <conf_description>Enter the percentage that you will take from sales.&#13;
+Enter just a number without the percentage sign.&#13;
+Enter 100 to take full payment.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_nexus_percent</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_nexus</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Transaction fee</conf_title>
+      <conf_description>Enter the amount in your currency that you will take in addition to the commission amount for each sale.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_nexus_transfee</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit_nexus</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_title_title>devCU biTracker Preferences 1.0.0</conf_title_title>
+      <conf_title_desc>These settings allow you to configure devCU biTracker</conf_title_desc>
+      <conf_title_tab>devCU</conf_title_tab>
+      <conf_title_app>bitracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable versioning control</conf_title>
+      <conf_description>Only available for web- and nonweb- accessible storage types.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_versioning</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_title_title>General Preferences</conf_title_title>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of revisions to keep</conf_title>
+      <conf_description><![CDATA[Maximum revisions to keep<br /><strong>Note</strong>: Set to 0 for no limit]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_versioning_limit</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default files per page</conf_title>
+      <conf_description/>
+      <conf_type>input</conf_type>
+      <conf_key>bit_filesperpage</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( ! intval($value) )
+{
+ $value = 10;
+}
+if( intval($value) < 0 )
+{
+ $value = 10;
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Files per page options</conf_title>
+      <conf_description>Separate values with a ,</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_ddfilesperpage</conf_key>
+      <conf_default>5,10,15,20,25</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if ( $save == 1 )
+{
+    if ( $_POST['bit_ddfilesperpage'] )
+    {
+        $arr = explode( ",", $_POST['bit_ddfilesperpage'] );
+        
+        if ( is_array( $arr ) )
+        {
+            foreach( $arr as $k => $v )
+            {
+                if( intval( $v ) > 0 )
+                {
+                    $final_arr[] = $v;
+                }
+            }
+            
+            if ( is_array( $final_arr ) )
+            {
+                $_POST['bit_ddfilesperpage'] = implode( ",", $final_arr );
+            }
+            else
+            {
+                $_POST['bit_ddfilesperpage'] = "5,10,15,20,25";
+            }
+        }
+        else
+        {
+            $_POST['bit_ddfilesperpage'] = "5,10,15,20,25";
+        }
+    }
+    else
+    {
+        $_POST['bit_ddfilesperpage'] = "5,10,15,20,25";
+    }
+    
+    $key = 'bit_ddfilesperpage';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Comments per page</conf_title>
+      <conf_description/>
+      <conf_type>input</conf_type>
+      <conf_key>bit_comments_num</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Require approval of comments</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_comment_approval</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow members to edit their comments</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_comment_edit</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow members to delete their comments</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_comment_delete</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default maximum filesize (kB)</conf_title>
+      <conf_description>You can override this per-category</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_default_maxsize</conf_key>
+      <conf_default>2048</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default thumbnail dimensions</conf_title>
+      <conf_description>Enter a single number which will be used for both width and height</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_default_dimensions</conf_key>
+      <conf_default>120</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow members to edit their own files</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_allow_edit</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow members to delete their own files</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_allow_delete</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow file edits to auto-post</conf_title>
+      <conf_description>Select no if you wish to preview file edits before they become public</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_allow_autoedit</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Update views immediately</conf_title>
+      <conf_description>File view counts will be updated hourly if this setting is set to no.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_updateviews</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>41</conf_position>
+      <conf_start_group>Optimization</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Log all downloads</conf_title>
+      <conf_description>This is useful for statistical purposes, but can cause a very large table of logged download requests on a heavily used system.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bit_logallbitracker</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>42</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Prune download logs</conf_title>
+      <conf_description>Number of days to retain download logs.  Use 0 to not prune download logs.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>bit_log_prune</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>43</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

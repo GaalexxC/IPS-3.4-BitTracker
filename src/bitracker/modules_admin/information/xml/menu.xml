@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Overview</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Overview</subitemtitle>
+					<subitemlang>bit_overview</subitemlang>
+					<subsection>overview</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Stats</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Statistics</subitemtitle>
+					<subitemlang>bit_stats</subitemlang>
+					<subsection>stats</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Server</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Server</subitemtitle>
+					<subitemlang>bit_server</subitemlang>
+					<subsection>server</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>
