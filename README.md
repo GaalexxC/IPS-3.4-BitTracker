@@ -13,3 +13,7 @@ Doubt it
 Upload folder bitracker to admin/applications_addon/other and run the install from adminCP
 
 Thx Dan 'TG' Hamilton.
+
+More Modern version in active development for IPS 4 Community Suite
+[IPS-4.2-BitTracker](https://github.com/GaalexxC/IPS-4.2-BitTracker)
+
