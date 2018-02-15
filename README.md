@@ -4,7 +4,7 @@ A full featured bit torrent tracker module for IPB 3.4x versions. Like 3-4 years
 
 Play with it. I dont care.
 
-I suggest installing on a Win 10 Hyper-V dev board and not on a production board to test and modify.
+I suggest installing on a Hyper-V dev board and not on a production board to test and modify.
 
 #### Support
 
